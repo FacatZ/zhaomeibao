@@ -48,11 +48,37 @@
       .ui_asideMenu{
         width:250px;
         height:500px;
-        background: red;
+        background:;
         margin:0px;
         padding:0px;
         float:left;
-
+      }
+      .action{
+        width:250px;
+        height:100px;
+        background-image:url(picture/cut_23.png);
+      }
+      .nosmoke{
+        width:250px;
+        height:100px;
+        background-image:url(picture/cut_29.png);
+      }
+      .fire{
+        width:250px;
+        height:100px;
+        background-image:url(picture/cut_30.png);
+      }
+      .real{
+        width:250px;
+        height:200px;
+        background-color:B8CEEB;
+      }
+      .mark{
+        background-color:B8CEEB;
+        padding-left:50px;
+        padding-top:30px;
+        font-size:21px;
+        font-weight:bold;
       }
       .carousel{
         width:745px;
