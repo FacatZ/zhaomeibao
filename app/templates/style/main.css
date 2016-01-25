@@ -11,7 +11,7 @@
         color:3078BE;
         font-size:18px;
       }
-      #font{
+      .font{
         color:red;
         font-size:18px;
       }
@@ -95,5 +95,5 @@
         padding-left:5px;
         background:blue;
       }
-    </style>
+</style>
 

@@ -1,0 +1,60 @@
+body{
+  width:1245px;
+  display: block;
+}
+.navbar{
+  margin-bottom: 0px !important;
+}
+.navbar .open a{
+  background-color: B8CEEB !important;
+}
+.zmbNavbar{
+  height:50px;
+  background-color:B8CEEB;
+  color:3078BE;
+  font-size:18px;
+  line-height: 10px;
+}
+.zmbNavbar ul{
+  height: 40px;
+  margin-top: 10px;
+}
+.zmbNavbar ul li{
+  height: 40px;
+}
+.zmbNavbar ul li ul{
+  height: 40px;
+}
+.nav-home{
+  padding-top: 12px;
+}
+.font a{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.break{
+  padding-top: 20px;
+}
+.nav-register{
+  padding-left: 0px !important;
+}
+.nav-phone{
+  padding-top:5px;
+}
+.dropdown,.open{
+  background-color: B8CEEB !important;
+}
+.dropdown-menu{
+  background-color: B8CEEB !important;
+}
+.nav-tel{
+  padding-top:12px;
+}
+.nav-img{
+  width: 100%;
+  height: 150px;
+}
+.nav-logo{
+  margin-left: 30px;
+  margin-top: 20px;
+}
