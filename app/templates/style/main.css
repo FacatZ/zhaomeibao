@@ -3,44 +3,10 @@
 
       }
       body{
-        width:1245px;
-      }
-      .container-fluid{
-        height:50px;
-        background-color:B8CEEB;
-        color:3078BE;
-        font-size:18px;
-      }
-      .font{
-        color:red;
-        font-size:18px;
-      }
-      .cut03{
-        padding-top:10.5px;
-      }
-      .phone{
-        padding-top:12px;
-      }
-      .box{
-        height:166px;
-      }
-      .box_in{
-        float:left;
-        width:750px;
-        height:55px;
-        margin-left:600px;
-        margin-top:-15px;
-      }
-      .box_in_style{
-        font-size:30px;
-        color:B5B4B4;
-        font-weight: bold;
-        padding:15px;
-        text-decoration: none;
-        padding-bottom:5px;
+        width:1255px;
       }
       .ui-showcase{
-        width:1245px;
+        width:1255px;
         height:500px;
         margin:0px;
         padding:0px;
@@ -56,17 +22,17 @@
       .action{
         width:250px;
         height:100px;
-        background-image:url(picture/cut_23.png);
+        background-image:url(../main/picture/cut_23.png);
       }
       .nosmoke{
         width:250px;
         height:100px;
-        background-image:url(picture/cut_29.png);
+        background-image:url(../main/picture/cut_29.png);
       }
       .fire{
         width:250px;
         height:100px;
-        background-image:url(picture/cut_30.png);
+        background-image:url(../main/picture/cut_30.png);
       }
       .real{
         width:250px;
@@ -80,20 +46,84 @@
         font-size:21px;
         font-weight:bold;
       }
+
+      .action-imformation{
+        position:absolute;
+        display:none;
+        left:250px;
+        width:250px;
+        height:500px;
+        background-color:B8CEEB;
+        z-index:5000;
+        float:left;
+      }
+      .action-imformation p{
+        color:5A5A59;
+        font-size:21px;
+        padding:10px;
+        padding-bottom:0;
+      }
+      .action-imformation a{
+        color:5A5A59;
+        font-size:15px;
+        padding-left:10px;
+        text-decoration:none;
+      }
+      .action-imformation a:hover{
+        color:E4A15D;
+      }
+
       .carousel{
         width:745px;
         height:500px;
-        margin:0px;
-        padding-left:5px;
+        margin-left:5px;
         float:left;
-        background:green;
+        background-color:B5B4B4;
+      }
+      .carousel-indicators li {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: 1px;
+        cursor: pointer;
+        background-color:#fff;
+        border: 1px solid 5A5A59;
+        border-radius: 12px;      
+      }
+      .carousel-indicators .active {
+        width: 24px;
+        height: 24px;
+        border: 1px solid 5A5A59;
+        background-color:5A5A59;
+      }
+      .leading{
+        position:absolute;
+        width:34px;
+        height:39px;
+        top:435px;  
+      }
+      .left-img{
+        width:34px;
+        height:39px;
+        background-image:url(../main/picture/cut_40.png);
+      }
+      .right-img{
+        width:34px;
+        height:39px;
+        background-image:url(../main/picture/cut_42.png);
+      }
+      .leading.left{
+        left:100px;
+      }
+      .leading.right{
+        right:100px;
       }
       .cat_zm{
         width:250px;
         height:500px;
         float:left;
-        padding-left:5px;
-        background:blue;
+        margin-left:5px;
+        background-color:B5B4B4;
       }
 </style>
 
