@@ -125,5 +125,62 @@
         margin-left:5px;
         background-color:B5B4B4;
       }
+      .cat_zm p {
+        margin-top:15px;
+        margin-left:20px;
+        font-size:21px;
+        color:5A5A59;
+        font-weight:bold;
+        float:left;
+      }
+      .txtScroll-top{ 
+        width:230px;  
+        overflow:hidden; 
+        position:relative; 
+        height:380px; 
+        margin-left:20px;
+      }
+      .txtScroll-top .hd{ 
+        overflow:hidden;  
+        height:380px;
+        background:#f4f4f4; 
+        width:30px; 
+        float:right;
+        background-color: B5B4B4;
+      }
+      .txtScroll-top .hd .prev,.txtScroll-top .hd .next{ 
+        display:block;  
+        width:30px; 
+        height:30px; 
+        float:right; 
+        margin-right:5px;  
+        overflow:hidden; 
+        margin-left:2px;
+        cursor:pointer; 
+        background:url(../main/picture/cut_26.png) no-repeat;
+        float: left;
+      }
+      .txtScroll-top .hd .next{ 
+        background:url(../main/picture/cut_49.png) no-repeat; 
+        margin-top:320px; 
+      }
+      .txtScroll-top .bd{ 
+        width:195px; 
+        height:380px; 
+        float:left;
+        background-color: 5A5A59;
+        padding-left:5px;
+      }
+      .txtScroll-top .infoList li{ 
+        height:24px; 
+        line-height:30px;   
+      }
+      .txtScroll-top .infoList li a{
+        text-decoration:none; 
+        color:black;
+      }
+      .txtScroll-top .infoList li a:hover{
+        color:E4A15D;
+      }
 </style>
 

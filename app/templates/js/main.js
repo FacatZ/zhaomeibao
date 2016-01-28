@@ -50,4 +50,23 @@ $(document).ready(function(){
   $(".right-img").mouseout(function(){
     $(".right-img").css("background-image","url(../main/picture/cut_42.png)");
   });
+  
+  // $(".top_img").mouseover(function(){
+  //   $(".top_img").css(("background-image","url(../main/picture/cut_change_26.png)");
+  // });
+  // $(".top_img").mouseout(function(){
+  //   $(".top_img").css("background-image","url(../main/picture/cut_26.png)");
+  // });
+
+  // $(".bottom_img").mouseover(function(){
+  //   $(".bottom_img").css(("background-image","url(../main/picture/cut_change_49.png)");
+  // });
+  // $(".bottom_img").mouseout(function(){
+  //   $(".bottom_img").css("background-image","url(../main/picture/cut_49.png)");
+  // });
+  
+  jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:15});
 });
+
+
+
