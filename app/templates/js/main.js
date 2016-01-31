@@ -109,6 +109,38 @@ $(document).ready(function(){
   $(".pic7").mouseout(function(){
     $(".pic7").attr("src","../main/picture/cut2_09.png");
   });
+
+  $(".north-area").click(function(){
+    $(".north-area").attr("src","../main/picture/cut2_change_20.png");
+    $(".south-area").attr("src","../main/picture/cut2_22.png");
+    $(".else-area").attr("src","../main/picture/cut2_24.png");
+    $(".east-area").attr("src","../main/picture/cut2_18.png");
+  });
+  $(".south-area").click(function(){
+    $(".south-area").attr("src","../main/picture/cut2_change_22.png");
+    $(".north-area").attr("src","../main/picture/cut2_20.png");
+    $(".else-area").attr("src","../main/picture/cut2_24.png");
+    $(".east-area").attr("src","../main/picture/cut2_18.png");
+  });
+  $(".else-area").click(function(){
+    $(".else-area").attr("src","../main/picture/cut2_change_24.png");
+    $(".north-area").attr("src","../main/picture/cut2_20.png");
+    $(".south-area").attr("src","../main/picture/cut2_22.png");
+    $(".east-area").attr("src","../main/picture/cut2_18.png");
+  });
+  $(".east-area").click(function(){
+    $(".east-area").attr("src","../main/picture/cut2_change_18.png");
+    $(".else-area").attr("src","../main/picture/cut2_24.png");
+    $(".north-area").attr("src","../main/picture/cut2_20.png");
+    $(".south-area").attr("src","../main/picture/cut2_22.png");
+  });
+  
+
+
+
+
+
+
 });
 
 
