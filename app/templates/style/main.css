@@ -3,10 +3,10 @@
 
       }
       body{
-        width:1255px;
+        width:1258px;
       }
       .ui-showcase{
-        width:1255px;
+        width:1258px;
         height:500px;
         margin:0px;
         padding:0px;
@@ -300,7 +300,7 @@
       }
       .action-area{
         height:800px;
-        width:1255px;
+        width:1258px;
         background-color:B5B4B4;
       }
       .action-img{
@@ -350,7 +350,7 @@
       .link-container a img{
         height:;
         float:left;
-        padding-right:20px;
+        margin-right:20px;
       }
       .east-area{
         float:left;
@@ -528,6 +528,436 @@
         margin-top:5px;
         margin-left:120px;
         float:left;
+      }
+      .nosmoke-area{
+        width:1258px;
+        height:500px;
+        background-color:B5B4B4;
+      }
+      .nosmoke-img{
+        height:280px;
+        width:125px;
+        background-color:white;
+        float:left;
+        margin-left:12px;
+        margin-top:72px;
+        border-radius:20px 0 0 20px;
+      }
+      .nosmoke-img p{
+        font-size:36px;
+        color:32AF56;
+        font-weight:bold;
+        line-height:40px;
+        margin-left:10px;
+        margin-top:30px;
+      }
+      .nosmoke-img img{
+        margin-top:20px;
+      }
+      .nosmoke-content{
+        height:450px;
+        width:750px;
+        margin-top:30px;
+        float:left;
+      }
+      .nosmoke-box{
+        height:420px;
+        width:750px;
+        float:left;
+        background-color:white;
+      }
+      .nosmoke-menu{
+        height:45px;
+        width:750px;
+        margin-top:-2px;
+        float:left;
+        background-color:B6DBB7;
+      }
+      .nosmoke-menu p{
+        font-size:18px;
+        color:black;
+        float:left;
+        font-weight:bold;
+        padding-top:10px;
+        padding-right:20px;
+        padding-left:20px;
+      }
+      .nosmoke-menu a img{
+        margin-top:5px;
+      }
+      .nosmoke-content-all{
+        height:47px;
+        width:748px;
+        margin-left:2px;
+        float:left;
+        background-color:white;
+        font-size:15px;
+        color:black;
+        float:left;
+        font-weight:bold;
+        border-bottom:1px solid;
+        border-color:B6DBB7;
+      }
+      .nosmoke-content-all p1{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:13px;
+      }
+      .nosmoke-content-all p2{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:12px;
+      }
+      .nosmoke-content-all p3{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:14px;
+      }
+      .nosmoke-content-all p4{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:31px;
+      }
+      .nosmoke-content-all p5{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:36px;
+      }
+      .nosmoke-content-all p6{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:26px;
+      }
+      .nosmoke-content-all p7{
+        float:left;
+        padding-top:13px;
+        padding-right:22px;
+        padding-left:16px;
+      }
+      .nosmoke-content-all a img{
+        float:left;
+        padding:0px;
+        margin-top:11px;
+        margin-left:30px;
+      }
+      .nosmoke-content-last{
+        border:none;
+      }
+      .nosmoke-more{
+        float:left;
+        margin-top:10px;
+        margin-left:505px;
+      }
+      .purchase-nosmoke{
+        width:350px;
+        height:450px;
+        float:left;
+        margin-left:8px;
+        margin-top:40px;
+        background-color:white;
+      }
+      .nosmoke-purchase{
+        background-color:B6DBB7;
+      }
+      .nosmoke-purchase p{
+        color:32AF56;
+      }
+      .nosmoke-content-purchase{
+        height:100px;
+        width:350px;
+        border:2px solid;
+        border-color:B6DBB7;
+        border-top:none;
+        float:left;
+      }
+      .nosmoke-content-purchase p1{
+        font-size:21px;
+        color:32AF56;
+        font-weight:bold;
+        margin-top:20px;
+        margin-left:20px;
+        float:left;
+      }
+      .nosmoke-content-purchase p2{
+        font-weight:bold;
+        font-size:18px;
+        margin-top:23px;
+        margin-left:10px;
+        float:left;
+      }
+      .nosmoke-content-purchase p6{
+        font-weight:bold;
+        font-size:18px;
+        margin-top:23px;
+        margin-left:10px;
+        float:left;
+      }
+      .nosmoke-content-purchase p3{
+        margin-top:20px;
+        margin-left:40px;
+        font-weight:bold;
+        font-size:21px;
+        color:red;
+        float:left;
+      }
+      .nosmoke-content-purchase p4{
+        font-weight:bold;
+        font-size:18px;
+        margin-top:5px;
+        margin-left:20px;
+        float:left;
+      }
+      .nosmoke-content-purchase p5{
+        font-weight:bold;
+        margin-top:5px;
+        margin-left:15px;
+        font-size:18px;
+        color:5A5A59;
+        float:left;
+      }
+      .nosmoke-content-purchase a img{
+        margin-top:5px;
+        margin-left:120px;
+        float:left;
+      }
+      .fire-img p{
+        color:AEA71D;
+      }
+      .fire-menu{
+        background-color:EBE166;
+      }
+      .fire-all{
+        border-color:EBE166;
+      }
+      .purchase-fire{
+        background-color:EBE166;
+      }
+      .purchase-fire p{
+        color:AEA71D;
+      }
+      .fire-content{
+        border-color:EBE166;
+      }
+      .fire-content p1{
+        color:AEA71D;
+      }
+      .fire-content p6{
+        margin-left:20px;
+      }
+      .fire-content p3{
+        margin-left:50px;
+      }
+      .three-container{
+        height:250px;
+        width:1258px;
+        background-color:B5B4B4;
+      }
+      .the-box{
+        height:250px;
+        width:418px;
+        background-color:white;
+        margin-right:2px;
+        float:left;
+      }
+      .the-last{
+        margin:0px;
+      }
+      .the-box img{
+        margin-left:100px;
+        margin-top:10px;
+        float:left;
+      }
+      .the-box p{
+        margin-left:40px;
+        margin-top:20px;
+        font-weight:bold;
+        font-size:24px;
+        color:black;
+        float:left;
+      }
+      .inline-box{
+        width:360px;
+        height:22px;
+        margin-left:30px;
+        margin-top:5px;
+        border-top:3px solid;
+        border-bottom:3px solid;
+        border-color:B5B4B4;
+        float:left;
+      }
+      .inline-box p{
+        margin:0px;
+        margin-right:35px;
+        padding:0px;
+        font-size:12px;
+        font-weight:bold;
+        float:left;
+      }
+      .box-content{
+        width:360px;
+        height:25px;
+        margin-left:30px;
+        float:left;
+        color:black;
+        font-size:12px;
+        font-weight:bold;
+      }
+      .box-content p1{
+        margin-left:2px;
+      }
+      .box-content p2{
+        margin-left:80px;
+      }
+      .box-content p3{
+        margin-left:70px;
+      }
+      .box-content p4{
+        margin-left:65px;
+      }
+      .box2 p{
+        margin-right:57px;
+      }
+      .box2 p2{
+        margin-left:68px;
+      }
+      .box2 p3{
+        margin-left:55px;
+      }
+      .box2 p4{
+        margin-left:52px;
+      }
+      .box3 p{
+        margin-right:36px;
+      }
+      .box3 p2{
+        margin-left:35px;
+      }
+      .box3 p3{
+        margin-left:27px;
+      }
+      .box3 p4{
+        margin-left:40px;
+      }
+      .box3 p5{
+        margin-left:52px;
+      }
+
+      .footer{
+        width:1258px;
+        height:450px;
+        float:left;
+      }
+      .footer-content{
+        width:1258px;
+        height:250px;
+        background-color:576165;
+        float:left;
+      }
+      .friend-link{
+        margin-left:40px;
+        margin-top:30px;
+        width:130px;
+        height:150px;
+        border-left:3px solid;
+        border-color:white;
+        float:left;
+      }
+      .friend-link img{
+        margin-top:-5px;
+        margin-left:10px;
+        float:left;
+      }
+      .friend-link p{
+        margin-left:10px;
+        font-weight:bold;
+        font-size:18px;
+        color:white;
+        float:left;
+      }
+      .friend-link a{
+        margin-left:60px;
+        text-decoration:none;
+        color:white;
+        font-weight:bold;
+        font-size:18px;
+        float:left;
+      }
+      .friend-link a:hover{
+        color:E4A15D;
+      }
+      .buybuy{
+        width:200px;
+      }
+      .sell{
+        width:200px;
+      }
+      .sell a{
+        margin-left:70px;
+      }
+      .help{
+        width:180px;
+      }
+      .help p{
+        margin-left:20px;
+      }
+      .help a{
+        margin-left:50px;
+      }
+      .care{
+        width:300px;
+      }
+      .picture1,.picture2{
+        margin-top:10px;
+        width:90px;
+        height:90px;
+        float:left;
+        background-color:B5B4B4;
+        border:1px solid white;
+      }
+      .picture1{
+        margin-left:80px;
+      }
+      .picture2{
+        margin-left:5px;
+      }
+      .footer-copyright{
+        width:1258px;
+        height:200px;
+        background-color:0B314F;
+        float:left;
+      }
+      .line-one{
+        margin-top:20px;
+        margin-left:320px;
+      }
+      .line-one a{
+        font-size:21px;
+        color:white;
+        text-decoration:none;
+      }
+      .line-one a:hover{
+        color:E4A15D;
+      }
+      .line-two{
+        margin-left:330px;
+      }
+      .line-two p{
+        font-size:21px;
+        color:white;
+      }
+      .line-two a{
+        font-size:21px;
+        color:white;
+        text-decoration:none;
+      }
+      .line-two a:hover{
+        color:E4A15D;
       }
 </style>
 
