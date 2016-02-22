@@ -1,0 +1,157 @@
+<style>
+  a{
+
+  }
+  body{
+  	width:1258px;
+  	margin:0px;
+  	padding:0px;
+  }
+  .main{
+  	width:1258px;
+  	background-color:rgb(239,239,239);
+  	float:left;
+  }
+  .search{
+  	margin-top:10px;
+  	margin-left:20px;
+  	width:850px;
+  	height:50px;
+  	background-color:rgb(216,216,216);
+  	float:left;
+  }
+  .search p{
+  	padding-left:15px;
+  	font-size:18px;
+  	color:black;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    float:left;
+  }
+  .search input{
+  	margin-top:14px;
+  	margin-left:7px;
+  	width:80px;
+  	height:25px;
+  	font-size:18px;
+  	border:0px;
+  	outline:none;
+  	float:left;
+  }
+  .search .big-text{
+  	width:100px;
+  }
+  .search img{
+  	margin-top:10px;
+  	margin-left:50px;
+  	cursor:pointer;
+  }
+  .main-infor{
+  	margin-top:20px;
+  	margin-left:20px;
+  	width:850px;
+  	height:200px;
+  	background-color:rgb(216,216,216);
+  	float:left;
+  }
+  .main-infor p1{
+  	margin-top:5px;
+  	margin-left:5px;
+  	font-size:14px;
+  	font-weight:bold;
+  	color:black;
+  	float:left;
+  }
+  .main-infor p2{
+  	margin-top:5px;
+  	margin-left:5px;
+  	font-size:14px;
+  	color:EA5A2A;
+  	float:left;
+  }
+  .main-infor p3{
+  	margin-top:5px;
+  	margin-left:5px;
+  	margin-right:100px;
+  	font-size:14px;
+  	color:EA5A2A;
+  	float:left;
+  }
+  .main-infor p4{
+  	margin-top:20px;
+  	margin-left:50px;
+  	margin-right:200px;
+  	font-size:36px;
+  	font-weight:bold;
+  	color:3078BE;
+  	float:left;
+  }
+  .main-infor p7{
+  	margin-top:20px;
+  	margin-left:50px;
+  	font-size:36px;
+  	font-weight:bold;
+  	color:EA5A2A;
+  	float:left;
+  }
+  .main-infor p5{
+  	margin-top:15px;
+  	margin-left:50px;
+  	font-size:30px;
+  	font-weight:bold;
+  	color:EA5A2A;
+  	float:left;
+  }
+  .main-infor p6{
+  	margin-top:23px;
+  	margin-right:;
+  	font-size:18px;
+  	font-weight:bold;
+  	color:black;
+  	float:left;
+  }
+  .main-infor a img{
+    margin-left:120px;
+    margin-top:15px;
+    margin-right:40px;
+  }
+  .main-infor img{
+  	margin-left:30px;
+  	margin-top:5px;
+  	float:left;
+  }
+  .main-infor p8{
+  	margin-left:5px;
+  	margin-top:12px;
+  	font-size:18px;
+  	color:black;
+  	font-weight:bold;
+  	float:left;
+  }
+  .line{
+  	margin:0px;
+  	margin-left:50px;
+  	margin-top:7px;
+  	padding:0px;
+  	height:28px;
+  	width:1px;
+  	background-color:black;
+  	float:left;
+  }
+  .line-two{
+  	margin:0px;
+  	margin-left:30px;
+  	margin-top:7px;
+  	padding:0px;
+  	height:28px;
+  	width:1px;
+  	background-color:black;
+  	float:left;
+  }
+  .main-infor div a img{
+  	margin-left:10px;
+  	float:left;
+  }
+</style>
+
+
