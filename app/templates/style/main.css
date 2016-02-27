@@ -4,6 +4,7 @@
       }
       body{
         width:1258px;
+        margin:0 auto;
       }
       .ui-showcase{
         width:1258px;
@@ -50,7 +51,7 @@
       .action-imformation{
         position:absolute;
         display:none;
-        left:250px;
+        left:328px;
         width:250px;
         height:500px;
         background-color:B8CEEB;
@@ -149,7 +150,8 @@
         background-color: B5B4B4;
       }
       .txtScroll-top .hd .prev,.txtScroll-top .hd .next{ 
-        display:block;  
+        display:block; 
+        margin-top:5px; 
         width:30px; 
         height:30px; 
         float:right; 
@@ -355,11 +357,32 @@
       .east-area{
         float:left;
       }
-      .action-box{
+      .action-box-east{
         height:708px;
         width:750px;
         float:left;
         background-color:white;
+      }
+      .action-box-north{
+        height:708px;
+        width:750px;
+        float:left;
+        background-color:white;
+        display:none;
+      }
+      .action-box-south{
+        height:708px;
+        width:750px;
+        float:left;
+        background-color:white;
+        display:none;
+      }
+      .action-box-else{
+        height:708px;
+        width:750px;
+        float:left;
+        background-color:white;
+        display:none;
       }
       .action-menu{
         height:45px;
@@ -846,118 +869,6 @@
       }
       .box3 p5{
         margin-left:52px;
-      }
-
-      .footer{
-        width:1258px;
-        height:450px;
-        float:left;
-      }
-      .footer-content{
-        width:1258px;
-        height:250px;
-        background-color:576165;
-        float:left;
-      }
-      .friend-link{
-        margin-left:40px;
-        margin-top:30px;
-        width:130px;
-        height:150px;
-        border-left:3px solid;
-        border-color:white;
-        float:left;
-      }
-      .friend-link img{
-        margin-top:-5px;
-        margin-left:10px;
-        float:left;
-      }
-      .friend-link p{
-        margin-left:10px;
-        font-weight:bold;
-        font-size:18px;
-        color:white;
-        float:left;
-      }
-      .friend-link a{
-        margin-left:60px;
-        text-decoration:none;
-        color:white;
-        font-weight:bold;
-        font-size:18px;
-        float:left;
-      }
-      .friend-link a:hover{
-        color:E4A15D;
-      }
-      .buybuy{
-        width:200px;
-      }
-      .sell{
-        width:200px;
-      }
-      .sell a{
-        margin-left:70px;
-      }
-      .help{
-        width:180px;
-      }
-      .help p{
-        margin-left:20px;
-      }
-      .help a{
-        margin-left:50px;
-      }
-      .care{
-        width:300px;
-      }
-      .picture1,.picture2{
-        margin-top:10px;
-        width:90px;
-        height:90px;
-        float:left;
-        background-color:B5B4B4;
-        border:1px solid white;
-      }
-      .picture1{
-        margin-left:80px;
-      }
-      .picture2{
-        margin-left:5px;
-      }
-      .footer-copyright{
-        width:1258px;
-        height:200px;
-        background-color:0B314F;
-        float:left;
-      }
-      .line-one{
-        margin-top:20px;
-        margin-left:320px;
-      }
-      .line-one a{
-        font-size:21px;
-        color:white;
-        text-decoration:none;
-      }
-      .line-one a:hover{
-        color:E4A15D;
-      }
-      .line-two{
-        margin-left:330px;
-      }
-      .line-two p{
-        font-size:21px;
-        color:white;
-      }
-      .line-two a{
-        font-size:21px;
-        color:white;
-        text-decoration:none;
-      }
-      .line-two a:hover{
-        color:E4A15D;
       }
 </style>
 

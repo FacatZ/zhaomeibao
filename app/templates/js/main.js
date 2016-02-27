@@ -51,19 +51,19 @@ $(document).ready(function(){
     $(".right-img").css("background-image","url(../main/picture/cut_42.png)");
   });
   
-  // $(".top_img").mouseover(function(){
-  //   $(".top_img").css(("background-image","url(../main/picture/cut_change_26.png)");
-  // });
-  // $(".top_img").mouseout(function(){
-  //   $(".top_img").css("background-image","url(../main/picture/cut_26.png)");
-  // });
+  $(".prev").mouseover(function(){
+    $(".prev").css("background-image","url(../main/picture/cut_change_26.png)");
+  });
+  $(".prev").mouseout(function(){
+    $(".prev").css("background-image","url(../main/picture/cut_26.png)");
+  });
 
-  // $(".bottom_img").mouseover(function(){
-  //   $(".bottom_img").css(("background-image","url(../main/picture/cut_change_49.png)");
-  // });
-  // $(".bottom_img").mouseout(function(){
-  //   $(".bottom_img").css("background-image","url(../main/picture/cut_49.png)");
-  // });
+  $(".next").mouseover(function(){
+    $(".next").css("background-image","url(../main/picture/cut_change_49.png)");
+  });
+  $(".next").mouseout(function(){
+    $(".next").css("background-image","url(../main/picture/cut_49.png)");
+  });
   
   jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:15});
 
@@ -115,24 +115,40 @@ $(document).ready(function(){
     $(".south-area").attr("src","../main/picture/cut2_22.png");
     $(".else-area").attr("src","../main/picture/cut2_24.png");
     $(".east-area").attr("src","../main/picture/cut2_18.png");
+    $(".action-box-south").css("display","none");
+    $(".action-box-else").css("display","none");
+    $(".action-box-east").css("display","none");
+    $(".action-box-north").css("display","block");
   });
   $(".south-area").click(function(){
     $(".south-area").attr("src","../main/picture/cut2_change_22.png");
     $(".north-area").attr("src","../main/picture/cut2_20.png");
     $(".else-area").attr("src","../main/picture/cut2_24.png");
     $(".east-area").attr("src","../main/picture/cut2_18.png");
+    $(".action-box-south").css("display","block");
+    $(".action-box-else").css("display","none");
+    $(".action-box-east").css("display","none");
+    $(".action-box-north").css("display","none");
   });
   $(".else-area").click(function(){
     $(".else-area").attr("src","../main/picture/cut2_change_24.png");
     $(".north-area").attr("src","../main/picture/cut2_20.png");
     $(".south-area").attr("src","../main/picture/cut2_22.png");
     $(".east-area").attr("src","../main/picture/cut2_18.png");
+    $(".action-box-south").css("display","none");
+    $(".action-box-else").css("display","block");
+    $(".action-box-east").css("display","none");
+    $(".action-box-north").css("display","none");
   });
   $(".east-area").click(function(){
     $(".east-area").attr("src","../main/picture/cut2_change_18.png");
     $(".else-area").attr("src","../main/picture/cut2_24.png");
     $(".north-area").attr("src","../main/picture/cut2_20.png");
     $(".south-area").attr("src","../main/picture/cut2_22.png");
+    $(".action-box-south").css("display","none");
+    $(".action-box-else").css("display","none");
+    $(".action-box-east").css("display","block");
+    $(".action-box-north").css("display","none");
   });
   
 
