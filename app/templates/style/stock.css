@@ -1,0 +1,415 @@
+body {
+	width:1258px;
+	margin: auto;
+}
+
+.darkBackground {
+	background-color: #B5B4B4;
+}
+
+.Box {
+	background-color: #D2D2D2;
+}
+
+.chooseTableButtonBox {
+	height: 50px;
+	width: 100%;
+	padding-right: 14px;
+}
+
+.chooseTableButton {
+	float: right;
+	width: 100px;
+	height: 40px;
+	background-color: white;
+	color: #3078BE;
+
+}
+
+.chooseTable {
+	width: 1240px;
+	margin: auto;
+}
+
+.chooseTable tr {
+	height: 50px;
+}
+
+.tableTittle {
+	width: 150px;
+	background-color: #B5B4B4;
+	color: #656666;
+	text-align: center;
+	font-size: 18px;
+}
+
+.tableBody {
+	background-color: white;
+}
+
+.tableBox {
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	min-width: 80px;
+	text-align: center;
+	line-height: 30px;
+	color: #656666;
+	font-size: 18px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.tableHigh {
+	height: 100px !important;
+}
+
+.tableBoxLogos {
+	margin: 0px 5px;
+}
+
+.tableBoxLogos tr {
+	height: 40px;
+}
+
+.tableBoxLogos td {
+	width: 75px;
+	height: 40px;
+}
+
+.More {
+	width: 100px;
+	height: 30px;
+	margin: -1px auto 0px auto;
+	background: white;
+	border-radius: 0 0 10px 10px;
+	border-style: none solid solid solid;
+	border-width: 1px;
+	border-color: black;
+	cursor: pointer;
+	color: #3078BE;
+	line-height: 30px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.infoBox {
+	width: 1240px;
+	margin: auto;
+	margin-top: 40px;
+}
+
+.infoMenuBox {
+	width: 100%;
+	background: white;
+}
+
+.infoMenuBox a:link {
+	color: #656666;
+	text-decoration: none;
+}
+
+.infoMenuBox a:visited {
+	color: #656666;
+	text-decoration: none;
+}
+
+.infoMenuBox a:hover {
+	color: #656666;
+	text-decoration: none;
+}
+
+.infoMenuBox a:active {
+	color: #656666;
+	text-decoration: none;
+}
+
+.infoMenuTable {
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	background-color: #B5B4B4;
+	color: #656666;
+	font-size: 18px;
+	height: 30px;
+	margin: 5px 10px;
+}
+
+.infoMenu {
+	height: 30px;
+	background-color: white;
+}
+
+.infoMenu td {
+	width: 50px;
+	height: 30px;
+}
+
+.infoMenuMR a {
+	display: block;
+	width: 100%;
+	height: 30px;
+}
+
+.infoMenuJG a {
+	display: block;
+	width: 100%;
+	height: 30px;
+}
+
+.infoMenuKC a {
+	display: block;
+	width: 100%;
+	height: 30px;
+}
+
+.infoMenuRQ a {
+	display: block;
+	width: 100%;
+	height: 30px;
+}
+
+.infoBoxJGD {
+	text-align: center;
+	line-height: 30px;
+	color: #656666;
+	font-size: 18px;
+	margin-top: 5px;
+	float: left;
+	width: 75px;
+	height: 30px;
+	margin-left: 15px;
+	border: solid 1px;
+}
+
+.infoBoxZDJ {
+	text-align: center;
+	line-height: 30px;
+	color: #656666;
+	font-size: 18px;
+	margin-top: 5px;
+	float: left;
+	width: 75px;
+	height: 30px;
+	margin-left: 15px;
+	border: solid 1px;
+}
+
+.infoBoxLine {
+	text-align: center;
+	line-height: 40px;
+	color: #656666;
+	font-size: 18px;
+	margin-left: 5px;
+	float: left;
+}
+
+.infoBoxZGJ {
+	text-align: center;
+	line-height: 30px;
+	color: #656666;
+	font-size: 18px;
+	margin-top: 5px;
+	float: left;
+	width: 75px;
+	height: 30px;
+	margin-left: 5px;
+	border: solid 1px;
+}
+
+.infoBoxYXQ {
+	text-align: center;
+	line-height: 30px;
+	color: #656666;
+	font-size: 18px;
+	margin-top: 5px;
+	float: left;
+	width: 75px;
+	height: 30px;
+	margin-left: 15px;
+	border: solid 1px;
+}
+
+.infoBoxInfo {
+	margin: 5px 30px 5px 40px;
+	float: left;
+	width: 500px;
+	height: 30px;
+}
+
+.infoBoxGP {
+	float: left;
+	width: 240px;
+	height: 100%;
+	text-align: center;
+	line-height: 35px;
+	color: #656666;
+	font-size: 18px;
+}
+
+.infoBoxGPPic {
+	float: left;
+	width: 32px;
+	height: 32px;
+	background: url(../main/picture/stock4.png) center no-repeat;
+}
+
+.infoBoxGP span {
+	margin: 0px 5px;
+	color: #EB634D;
+}
+
+.infoBoxTotal {
+	float: left;
+	width: 200px;
+	height: 100%;
+	text-align: center;
+	line-height: 35px;
+	color: #656666;
+	font-size: 18px;
+}
+
+.infoBoxNow {
+	float: left;
+	width: 50px;
+	height: 100%;
+	text-align: center;
+	line-height: 35px;
+	color: #656666;
+	font-size: 18px;
+}
+
+.infoBoxL {
+	background: url(../main/picture/stock6.png) center no-repeat;
+	width: 30px;
+	float: right;
+	height: 30px;
+	margin: 5px 0px;
+	border: none;
+}
+
+.infoBoxR {
+	background: url(../main/picture/stock7.png) center no-repeat;
+	width: 30px;
+	float: right;
+	height: 30px;
+	margin: 5px 0px;
+	border: none;
+	margin-left: 5px;
+}
+
+.infoTittle {
+	height: 60px;
+	background-color: #B5B4B4;
+	color: #656666;
+	font-size: 18px;
+}
+
+.infoTittle div{
+	text-align: center;
+	float: left;
+}
+
+.stockClassification {
+	width: 100px;
+}
+
+.stockName {
+	width: 100px;
+}
+
+.stockCompany {
+	width: 240px;
+}
+
+.stockKAL {
+	width: 150px;
+}
+
+.stockQuantity {
+	width: 150px;
+}
+
+.stockPrice {
+	width: 160px;
+}
+
+.stockPlace {
+	width: 120px;
+}
+
+.stockDate {
+	width: 120px;
+}
+
+.stockOperation {
+	width: 67px;
+}
+
+.stockOperationButton {
+	display: block;
+	margin-top: 9px;
+	width: 67px;
+	height: 33px;
+	cursor: pointer;
+	background: url(../main/picture/stock10.png) center no-repeat;
+}
+
+.infoInner {
+	height: 60px;
+	background-color: white;
+	font-size: 18px;
+	color: #000;
+}
+
+.infoInner div {
+	text-align: center;
+	float: left;
+	line-height: 50px;
+}
+
+.stockButtonBox {
+	height: 100px;
+}
+
+.stockButtons {
+	margin-left: 650px;
+	margin-top: 30px;
+	width: 700px;
+	height: 30px;
+}
+
+.stockButtons div{
+	float: left;
+}
+
+.stockButton {
+	color: #656666;
+	font-size: 18px;
+	padding: 0px;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	border-style: solid;;
+	border-width: 1px;
+	background-color: white;
+	background-position:center;
+	background-repeat:no-repeat;
+	line-height: 30px;
+}
+
+.stockButtonPrePre {
+	background-image: url("../main/picture/stock12.png");
+}
+
+.stockButtonPre {
+	background-image: url("../main/picture/stock11.png");
+}
+
+.stockButtonNext {
+	background-image: url("../main/picture/stock9.png");
+}
+
+.stockButtonNextNext {
+	background-image: url("../main/picture/stock13.png");
+}

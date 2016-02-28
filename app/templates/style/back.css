@@ -1,0 +1,347 @@
+body {
+	width: 1258px;
+	margin: auto;
+	font-family: "Microsoft YaHei" ! important;
+	font-weight: bold;
+}
+
+.backTittle {
+	height: 60px;
+	width: 100%;
+	background-color: #C8C9C9;
+}
+
+.backTittleLogo {
+	margin-left: 30px;
+	font-size: 21px;
+	line-height: 60px;
+	float: left;
+}
+
+.backTittleLogo img {
+	margin-left: 10px;
+}
+
+.backTittleEmail {
+	margin-left: 700px;
+	float: left;
+	line-height: 60px;
+	font-size: 21px;
+}
+
+.backTittleEmail img {
+	margin-right: 10px;
+}
+
+.backTittleMember {
+	margin-left: 70px;
+	float: left;
+	line-height: 60px;
+	font-size: 21px;
+}
+
+.backTittleMember img {
+	margin-right: 10px;
+}
+
+.backMenuList {
+	width: 200px;
+	height: 400px;
+	float: left;
+	border:1px solid #C8C9C9;
+}
+
+.backMenuList tr {
+	height: 80px;
+	color: #4F5365;
+	font-size: 21px;
+	text-align: center;
+}
+
+.backMenuList img {
+	margin-right: 20px;
+}
+
+.backArticleBox {
+	float: left;
+	width: 1056px;
+	height: 1500px;
+	background-color: #EFEEEE;
+}
+
+.backArticleMenuBox {
+	margin-top: 50px;
+	width: 333px;
+	border:1px solid black;
+	margin-left: 20px;
+	float: left;
+}
+
+.backArticleMenuNew a:link {
+	width: 82px;
+	height: 32px;
+	display: block;
+	background-image: url(../main/picture/back21.png);
+}
+
+.backArticleMenuNew a:active {
+	display: block;
+	background-image: url(../main/picture/back-change21.png);
+}
+
+.backArticleMenuSave a:link {
+	width: 82px;
+	height: 32px;
+	display: block;
+	background-image: url(../main/picture/back23.png);
+}
+
+.backArticleMenuSave a:active {
+	display: block;
+	background-image: url(../main/picture/back-change23.png);
+}
+
+.backArticleMenuSee a:link {
+	width: 82px;
+	height: 32px;
+	display: block;
+	background-image: url(../main/picture/back25.png);
+}
+
+.backArticleMenuSee a:active {
+	display: block;
+	background-image: url(../main/picture/back-change25.png);
+}
+
+.backArticleMenuDelete a:link {
+	width: 82px;
+	height: 32px;
+	display: block;
+	background-image: url(../main/picture/back18.png);
+}
+
+.backArticleMenuDelete a:active {
+	display: block;
+	background-image: url(../main/picture/back-change18.png);
+}
+
+.backArticleMenuOptions {
+	margin-left: 200px;
+	margin-top: 50px;
+	float: left;
+	width: 480px;
+	height: 32px;
+}
+
+.backArticleMenuOptions select {
+	border: solid black 1px;
+	width: 200px;
+	height: 38px;
+	float: left;
+}
+
+.backArticleMenuOptions input {
+	border: solid black 1px;
+	margin-left: 15px;
+	float: left;
+	width: 200px;
+	height: 38px;
+}
+
+.backArticleMenuOptions button {
+	border: solid black 1px;
+	margin-left: 2px;
+	width: 60px;
+	height: 38px;
+	background-color: #C8C9C9;
+}
+
+.backArticleTable {
+	height: 1000px;
+	float: left;
+	height: 50px;
+	width: 100%;
+	margin: 0px;
+	line-height: 50px;
+	font-size: 18px;
+	margin-top: 50px;
+}
+
+.backArticleTable input{
+	margin-top: 18px;
+	float: left;
+}
+ 
+.backArticleTable div {
+	float: left;
+}
+
+.checkboxID {
+	margin-left: 30px;
+	width: 85px;
+}
+
+.checkboxTitle {
+	width: 230px;
+}
+
+.checkboxType {
+	width: 115px;
+}
+
+.checkboxOrigin {
+	width: 85px;
+}
+
+.checkboxDate {
+	width: 195px;
+}
+
+.checkboxOption {
+	width: 200px;
+}
+
+.checkboxOption table{
+	margin-top: 8px;
+	border:1px solid black;
+	width: 100%;
+	height: 34px;
+}
+
+.checkboxOption td{
+	width: 72px;
+	height: 32px;
+}
+
+.checkboxOptionEdit {
+	width: 72px;
+	height: 32px;
+	display: block;
+	background: url('../main/picture/back49.png');
+}
+
+.checkboxOptionCopy {
+	width: 72px;
+	height: 32px;
+	display: block;
+	background: url('../main/picture/back44.png');
+}
+
+.checkboxOptionDelete {
+	width: 72px;
+	height: 32px;
+	display: block;
+	background: url('../main/picture/back47.png');
+}
+
+.checkboxNormal {
+	margin-left: 10px;
+	padding-left: 10px;
+	width: 990px;
+}
+
+.checkboxDark {
+	margin-left: 10px;
+	padding-left: 10px;
+	width: 990px;
+	background: #C8C9C9;
+}
+
+.stockButtonBox {
+	height: 100px;
+}
+
+.stockButtons {
+	margin-left: 500px;
+	margin-top: 30px;
+	width: 700px;
+	height: 30px;
+}
+
+.stockButtons div{
+	float: left;
+}
+
+.stockButton {
+	color: #656666;
+	font-size: 18px;
+	padding: 0px;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	border-style: solid;;
+	border-width: 1px;
+	background-color: white;
+	background-position:center;
+	background-repeat:no-repeat;
+	line-height: 30px;
+}
+
+.stockButtonPrePre {
+	background-image: url("../main/picture/stock12.png");
+}
+
+.stockButtonPre {
+	background-image: url("../main/picture/stock11.png");
+}
+
+.stockButtonNext {
+	background-image: url("../main/picture/stock9.png");
+}
+
+.stockButtonNextNext {
+	background-image: url("../main/picture/stock13.png");
+}
+
+.backIssueName {
+	font-size: 21px;
+	margin-top: 30px;
+	margin-left: 50px;
+}
+
+.backIssueTitle {
+	padding-left: 50px;
+	margin-top: 50px;
+}
+
+.backIssueOrigin {
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+.backIssueArea {
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+.backIssueInner {
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+.backIssueInner textarea {
+	resize: none;
+}
+
+.backIssueButtons {
+	padding-left: 50px;
+	margin-top: 50px;
+}
+
+.backIssueButtons a {
+	display: block;
+	width: 100px;
+	height: 46px;
+}
+
+.backIssue02 {
+	margin-left: 100px;
+	float: left;
+	background: url(../main/picture/backIssue02.png);
+}
+
+.backIssue01 {
+	margin-left: 35px;
+	float: left;
+	background: url(../main/picture/backIssue01.png);
+}
