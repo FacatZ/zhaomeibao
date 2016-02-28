@@ -33,6 +33,19 @@ $(document).ready(function(){
     $(".action-imformation").css("display","none");
   });
 
+  $("#left").mouseover(function(){
+    $("#left").attr("src","../main/picture/cut_change_33.png")
+  });
+  $("#left").mouseout(function(){
+    $("#left").attr("src","../main/picture/cut_33.png")
+  });
+  $("#right").mouseover(function(){
+    $("#right").attr("src","../main/picture/cut_change_35.png")
+  });
+  $("#right").mouseout(function(){
+    $("#right").attr("src","../main/picture/cut_35.png")
+  });
+
   $(".carousel").carousel({
     interval:4000
   })
@@ -51,18 +64,18 @@ $(document).ready(function(){
     $(".right-img").css("background-image","url(../main/picture/cut_42.png)");
   });
   
-  $(".prev").mouseover(function(){
-    $(".prev").css("background-image","url(../main/picture/cut_change_26.png)");
+  $("#top_img").mouseover(function(){
+    $("#top_img").css("background-image","url(../main/picture/cut_change_26.png)");
   });
-  $(".prev").mouseout(function(){
-    $(".prev").css("background-image","url(../main/picture/cut_26.png)");
+  $("#top_img").mouseout(function(){
+    $("#top_img").css("background-image","url(../main/picture/cut_26.png)");
   });
 
-  $(".next").mouseover(function(){
-    $(".next").css("background-image","url(../main/picture/cut_change_49.png)");
+  $("#bottom_img").mouseover(function(){
+    $("#bottom_img").css("background-image","url(../main/picture/cut_change_49.png)");
   });
-  $(".next").mouseout(function(){
-    $(".next").css("background-image","url(../main/picture/cut_49.png)");
+  $("#bottom_img").mouseout(function(){
+    $("#bottom_img").css("background-image","url(../main/picture/cut_49.png)");
   });
   
   jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:15});

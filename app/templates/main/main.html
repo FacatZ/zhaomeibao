@@ -12,14 +12,26 @@
          <div class="action"></div>
          <div class="nosmoke"></div>
          <div class="fire"></div>
-         <div class="real">
-           <div class="mark">
-             <a href="#" class="real-left"><img src="picture/cut_33.png"></a>
-             <h>现货行情</h>
-             <a href="#"><img src="picture/cut_35.png"></a>
+
+         <div class="txtScroll-left">
+           <div class="hd">
+             <a class="prev"><img src="picture/cut_33.png" id="left"></a>
+             <p1>现货行情</p1>
+             <a class="next"><img src="picture/cut_35.png" id="right"></a>
+           </div>
+           <div class="bd">
+             <ul class="infoList">
+               <li><a href="#" target="_blank">企业1<br>售价售价</a></li>
+               <li><a href="#" target="_blank">企业2<br>售价售价</a></li>
+               <li><a href="#" target="_blank">企业3<br>售价售价</a></li>
+               <li><a href="#" target="_blank">企业4<br>售价售价</a></li>
+               <li><a href="#" target="_blank">企业5<br>售价售价</a></li>
+               <li><a href="#" target="_blank">企业6<br>售价售价</a></li>
+             </ul>
            </div>
          </div>
-       </div>
+
+     </div>
 
        <div class="action-imformation">
          <p>产地</p>
@@ -78,8 +90,8 @@
          
          <div class="txtScroll-top">
            <div class="hd">
-             <a class="prev" class="top_img"></a>
-             <a class="next" class="bottom_img"></a>
+             <a class="prev" id="top_img"></a>
+             <a class="next" id="bottom_img"></a>
            </div>
            <div class="bd">
              <ul class="infoList">
@@ -1157,5 +1169,9 @@
   <script src="../js/bootstrap.js"></script>
   <script src="../js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="../js/main.js"></script>
+  <script>
+   jQuery(".txtScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:3,trigger:"click"});
+
+  </script>
   </body>
 </html>
