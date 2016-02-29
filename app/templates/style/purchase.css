@@ -4,7 +4,7 @@
   }
   body{
   	width:1258px;
-  	margin:0px;
+  	margin:0 auto;
   	padding:0px;
   }
   .main{
@@ -57,7 +57,7 @@
   .main-infor p1{
   	margin-top:5px;
   	margin-left:5px;
-  	font-size:14px;
+  	font-size:15px;
   	font-weight:bold;
   	color:black;
   	float:left;
@@ -65,7 +65,7 @@
   .main-infor p2{
   	margin-top:5px;
   	margin-left:5px;
-  	font-size:14px;
+  	font-size:15px;
   	color:EA5A2A;
   	float:left;
   }
@@ -73,7 +73,7 @@
   	margin-top:5px;
   	margin-left:5px;
   	margin-right:100px;
-  	font-size:14px;
+  	font-size:15px;
   	color:EA5A2A;
   	float:left;
   }
@@ -88,7 +88,7 @@
   }
   .main-infor p7{
   	margin-top:20px;
-  	margin-left:80px;
+  	margin-left:100px;
   	font-size:36px;
   	font-weight:bold;
   	color:EA5A2A;
@@ -111,9 +111,9 @@
   	float:left;
   }
   .main-infor a img{
-    margin-left:140px;
+    margin-left:160px;
     margin-top:15px;
-    margin-right:40px;
+    margin-right:20px;
   }
   .main-infor img{
   	margin-left:30px;
@@ -296,6 +296,46 @@
     font-size:18px;
     font-weight:bold;
     float:left;
+  }
+  .stockButtonBox{
+    width:1258px;
+    height:100px;
+    float:left;
+  }
+  .stockButtons {
+  margin-left: 320px;
+  margin-top: 30px;
+  width: 700px;
+  height: 30px;
+  }
+  .stockButtons div{
+  float: left;
+  }
+  .stockButton {
+    color: #656666;
+    font-size: 18px;
+    padding: 0px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-style: solid;;
+    border-width: 1px;
+    background-color: white;
+    background-position:center;
+    background-repeat:no-repeat;
+    line-height: 30px;
+  }
+  .stockButtonPrePre {
+    background-image: url("../main/picture/stock12.png");
+  }
+  .stockButtonPre {
+    background-image: url("../main/picture/stock11.png");
+  }
+  .stockButtonNext {
+    background-image: url("../main/picture/stock9.png");
+  }
+  .stockButtonNextNext {
+    background-image: url("../main/picture/stock13.png");
   }
 </style>
 

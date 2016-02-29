@@ -38,12 +38,14 @@
       .txtScroll-left{
         width:250px;
         height:200px;
-        background-color:B8CEEB;
+        background-color:rgb(243,243,243);
+        border-top:1px solid;
+        border-color:rgb(239,239,241);
       }
       .txtScroll-left .hd{ 
         overflow:hidden;  
         height:80px; 
-        background-color:B8CEEB; 
+        background-color:rgb(243,243,243); 
         float:left;  
         width:250px;
       }
@@ -105,22 +107,23 @@
         position:absolute;
         display:none;
         left:328px;
-        width:250px;
+        width:400px;
         height:500px;
-        background-color:B8CEEB;
+        background-color:F9FAFA;
         z-index:5000;
         float:left;
       }
       .action-imformation p{
         color:5A5A59;
-        font-size:21px;
-        padding:10px;
-        padding-bottom:0;
+        font-size:18px;
+        margin:10px;
+        margin-left:15px;
+        margin-bottom:5px;
       }
       .action-imformation a{
         color:5A5A59;
         font-size:15px;
-        padding-left:10px;
+        margin-left:15px;
         text-decoration:none;
       }
       .action-imformation a:hover{
@@ -132,7 +135,7 @@
         height:500px;
         margin-left:5px;
         float:left;
-        background-color:B5B4B4;
+        background-color:rgb(231,231,231);
       }
       .carousel-indicators li {
         display: inline-block;
@@ -177,7 +180,7 @@
         height:500px;
         float:left;
         margin-left:5px;
-        background-color:B5B4B4;
+        background-color:rgb(243,243,245);
       }
       .cat_zm p {
         margin-top:15px;
@@ -200,7 +203,7 @@
         background:#f4f4f4; 
         width:30px; 
         float:right;
-        background-color: B5B4B4;
+        background-color:rgb(243,243,245);
       }
       .txtScroll-top .hd .prev,.txtScroll-top .hd .next{ 
         display:block; 
@@ -223,7 +226,7 @@
         width:195px; 
         height:380px; 
         float:left;
-        background-color: 5A5A59;
+        background-color:rgb(172,171,172);
         padding-left:5px;
       }
       .txtScroll-top .infoList li{ 
@@ -361,7 +364,7 @@
       .action-img{
         height:280px;
         width:125px;
-        background-color:white;
+        background-color:21A3DE;
         float:left;
         margin-left:12px;
         margin-top:72px;
@@ -369,7 +372,7 @@
       }
       .action-img p{
         font-size:36px;
-        color:3078BE;
+        color:FFFFFF;
         font-weight:bold;
         line-height:40px;
         margin-left:10px;
@@ -485,7 +488,7 @@
         float:left;
         padding-top:13px;
         padding-right:22px;
-        padding-left:14px;
+        padding-left:18px;
       }
       .action-content-all p4{
         float:left;
@@ -531,12 +534,12 @@
       .purchase-head{
         height:50px;
         width:350px;
-        background-color:B8CEEB;
+        background-color:21A3DE;
         float:left;
       }
       .purchase-head p{
         font-size:21px;
-        color:3078BE;
+        color:FFFFFF;
         float:left;
         font-weight:bold;
         padding:10px;
@@ -558,7 +561,7 @@
         height:100px;
         width:350px;
         border:2px solid;
-        border-color:B8CEEB;
+        border-color:21A3DE;
         border-top:none;
         float:left;
       }
@@ -613,7 +616,7 @@
       .nosmoke-img{
         height:280px;
         width:125px;
-        background-color:white;
+        background-color:rgb(54,185,172);
         float:left;
         margin-left:12px;
         margin-top:72px;
@@ -621,7 +624,7 @@
       }
       .nosmoke-img p{
         font-size:36px;
-        color:32AF56;
+        color:FFFFFF;
         font-weight:bold;
         line-height:40px;
         margin-left:10px;
@@ -739,16 +742,16 @@
         background-color:white;
       }
       .nosmoke-purchase{
-        background-color:B6DBB7;
+        background-color:rgb(54,185,172);
       }
       .nosmoke-purchase p{
-        color:32AF56;
+        color:FFFFFF;
       }
       .nosmoke-content-purchase{
         height:100px;
         width:350px;
         border:2px solid;
-        border-color:B6DBB7;
+        border-color:rgb(54,185,172);
         border-top:none;
         float:left;
       }
@@ -802,8 +805,11 @@
         margin-left:120px;
         float:left;
       }
+      .fire-img{
+        background-color:rgb(245,170,102);
+      }
       .fire-img p{
-        color:AEA71D;
+        color:FFFFFF;
       }
       .fire-menu{
         background-color:EBE166;
@@ -812,13 +818,13 @@
         border-color:EBE166;
       }
       .purchase-fire{
-        background-color:EBE166;
+        background-color:rgb(245,170,102);
       }
       .purchase-fire p{
-        color:AEA71D;
+        color:FFFFFF;
       }
       .fire-content{
-        border-color:EBE166;
+        border-color:rgb(245,170,102);
       }
       .fire-content p1{
         color:AEA71D;
@@ -836,12 +842,12 @@
       }
       .the-box{
         height:250px;
-        width:418px;
+        width:419px;
         background-color:white;
-        margin-right:2px;
         float:left;
       }
       .the-last{
+        width:420px;
         margin:0px;
       }
       .the-box img{
@@ -858,14 +864,16 @@
         float:left;
       }
       .inline-box{
-        width:360px;
+        width:390px;
         height:22px;
-        margin-left:30px;
+        margin-left:15px;
         margin-top:5px;
+        padding-left:15px;
         border-top:3px solid;
         border-bottom:3px solid;
-        border-color:B5B4B4;
+        border-color:white;
         float:left;
+        background-color:rgb(231,231,231);
       }
       .inline-box p{
         margin:0px;
@@ -876,16 +884,17 @@
         float:left;
       }
       .box-content{
-        width:360px;
+        width:390px;
         height:25px;
-        margin-left:30px;
+        margin-left:15px;
         float:left;
         color:black;
         font-size:12px;
         font-weight:bold;
+        background-color:rgb(231,231,231);
       }
       .box-content p1{
-        margin-left:2px;
+        margin-left:17px;
       }
       .box-content p2{
         margin-left:80px;
