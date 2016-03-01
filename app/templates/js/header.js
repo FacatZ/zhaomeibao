@@ -18,8 +18,8 @@ $(document).ready(function(){
 
   $("#main").mouseover(function(){
     $("#slide-act").animate({
-      "margin-left":"5px",
-      "width":"80px"
+      "margin-left":"30px",
+      "width":"52px"
     },{
     	duration:100
     });
@@ -27,8 +27,8 @@ $(document).ready(function(){
 
   $("#resource").mouseover(function(){
     $("#slide-act").animate({
-      "margin-left":"100px",
-      "width":"140px"
+      "margin-left":"130px",
+      "width":"110px"
     },{
     	duration:100
     });
@@ -36,8 +36,8 @@ $(document).ready(function(){
   
   $("#purchase").mouseover(function(){
     $("#slide-act").animate({
-      "margin-left":"260px",
-      "width":"140px"
+      "margin-left":"278px",
+      "width":"110px"
     },{
     	duration:100
     });
@@ -45,8 +45,8 @@ $(document).ready(function(){
 
   $("#logistics").mouseover(function(){
     $("#slide-act").animate({
-      "margin-left":"417px",
-      "width":"80px"
+      "margin-left":"436px",
+      "width":"52px"
     },{
     	duration:100
     });
@@ -54,8 +54,8 @@ $(document).ready(function(){
 
   $("#price").mouseover(function(){
     $("#slide-act").animate({
-      "margin-left":"515px",
-      "width":"140px"
+      "margin-left":"535px",
+      "width":"110px"
     },{
     	duration:100
     });
@@ -63,8 +63,8 @@ $(document).ready(function(){
   
   $(".nav-link").mouseleave(function(){
     $("#slide-act").animate({
-      "margin-left":"5px",
-      "width":"80px"
+      "margin-left":"30px",
+      "width":"52px"
     },{
       duration:100
     });

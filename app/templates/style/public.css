@@ -112,9 +112,9 @@
   .nav-link a{
     padding-left:0px;
     padding-top:15px;
-    padding-left:15px;
-    padding-right:22px;
-    font-size:30px;
+    padding-left:35px;
+    padding-right:30px;
+    font-size:21px;
     color:B5B4B4;
     font-weight:bold;
     text-decoration:none;
@@ -124,10 +124,10 @@
     color:E4A15D;
   }
   #slide-act{
-    margin-left:5px;
+    margin-left:30px;
     height:5px;
-    width:80px;
-    background-color:3078BE;
+    width:52px;
+    background-color:21A3DE;
     float:left;
   }
 </style>

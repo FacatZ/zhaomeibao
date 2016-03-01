@@ -65,6 +65,7 @@
   .main-infor p2{
   	margin-top:5px;
   	margin-left:5px;
+    margin-right:10px;
   	font-size:15px;
   	color:EA5A2A;
   	float:left;
@@ -72,7 +73,7 @@
   .main-infor p3{
   	margin-top:5px;
   	margin-left:5px;
-  	margin-right:100px;
+  	margin-right:350px;
   	font-size:15px;
   	color:EA5A2A;
   	float:left;
@@ -80,11 +81,35 @@
   .main-infor p4{
   	margin-top:20px;
   	margin-left:50px;
-  	margin-right:200px;
   	font-size:36px;
   	font-weight:bold;
   	color:3078BE;
   	float:left;
+  }
+  .main-infor p41{
+    margin-top:20px;
+    margin-left:20px;
+    font-size:36px;
+    font-weight:bold;
+    color:3078BE;
+    float:left;
+  }
+  .main-infor p42{
+    margin-top:20px;
+    margin-left:10px;
+    margin-right:200px;
+    font-size:36px;
+    font-weight:bold;
+    color:3078BE;
+    float:left;
+  }
+  .main-infor p43{
+    margin-top:20px;
+    margin-left:10px;
+    font-size:36px;
+    font-weight:bold;
+    color:3078BE;
+    float:left;
   }
   .main-infor p7{
   	margin-top:20px;
@@ -110,6 +135,30 @@
   	color:black;
   	float:left;
   }
+  .main-infor p61{
+    margin-top:23px;
+    margin-left:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:black;
+    float:left;
+  }
+  .main-infor p62{
+    margin-top:23px;
+    margin-left:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:black;
+    float:left;
+  }
+  .main-infor p63{
+    margin-top:23px;
+    margin-right:;
+    font-size:18px;
+    font-weight:bold;
+    color:black;
+    float:left;
+  }
   .main-infor a img{
     margin-left:160px;
     margin-top:15px;
@@ -128,6 +177,21 @@
   	color:black;
   	font-weight:bold;
   	float:left;
+  }
+  .main-infor p81{
+    margin-top:12px;
+    font-size:18px;
+    color:black;
+    font-weight:bold;
+    float:left;
+  }
+  .main-infor p9{
+    margin-left:20px;
+    margin-top:12px;
+    font-size:18px;
+    color:black;
+    font-weight:bold;
+    float:left;
   }
   .line{
   	margin:0px;

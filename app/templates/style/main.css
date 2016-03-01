@@ -106,12 +106,11 @@
       .action-imformation{
         position:absolute;
         display:none;
-        left:328px;
+        left:23%;
         width:400px;
         height:500px;
         background-color:F9FAFA;
         z-index:5000;
-        float:left;
       }
       .action-imformation p{
         color:5A5A59;
@@ -445,7 +444,7 @@
         width:750px;
         margin-top:-2px;
         float:left;
-        background-color:A6B9CE;
+        background-color:rgb(243,243,243);
       }
       .action-menu p{
         font-size:18px;
@@ -650,7 +649,7 @@
         width:750px;
         margin-top:-2px;
         float:left;
-        background-color:B6DBB7;
+        background-color:rgb(243,243,243);
       }
       .nosmoke-menu p{
         font-size:18px;
@@ -693,7 +692,7 @@
         float:left;
         padding-top:13px;
         padding-right:22px;
-        padding-left:14px;
+        padding-left:20px;
       }
       .nosmoke-content-all p4{
         float:left;
@@ -812,7 +811,7 @@
         color:FFFFFF;
       }
       .fire-menu{
-        background-color:EBE166;
+        background-color:rgb(243,243,243);
       }
       .fire-all{
         border-color:EBE166;
