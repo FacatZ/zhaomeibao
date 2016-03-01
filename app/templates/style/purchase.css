@@ -161,25 +161,25 @@
   }
   .main-infor a img{
     margin-left:160px;
-    margin-top:15px;
-    margin-right:20px;
+    margin-top:10px;
+    margin-right:0px;
     float:left;
   }
   .main-infor img{
   	margin-left:30px;
-  	margin-top:5px;
+  	margin-top:10px;
   	float:left;
   }
   .main-infor p8{
   	margin-left:5px;
-  	margin-top:12px;
+  	margin-top:17px;
   	font-size:18px;
   	color:black;
   	font-weight:bold;
   	float:left;
   }
   .main-infor p81{
-    margin-top:12px;
+    margin-top:17px;
     font-size:18px;
     color:black;
     font-weight:bold;
@@ -187,7 +187,7 @@
   }
   .main-infor p9{
     margin-left:20px;
-    margin-top:12px;
+    margin-top:17px;
     font-size:18px;
     color:black;
     font-weight:bold;
@@ -196,7 +196,7 @@
   .line{
   	margin:0px;
   	margin-left:50px;
-  	margin-top:7px;
+  	margin-top:12px;
   	padding:0px;
   	height:28px;
   	width:1px;
@@ -206,7 +206,7 @@
   .line-two{
   	margin:0px;
   	margin-left:30px;
-  	margin-top:7px;
+  	margin-top:12px;
   	padding:0px;
   	height:28px;
   	width:1px;
@@ -216,7 +216,7 @@
   .main-infor div a img{
     margin:0px;
     padding:0px;
-    margin-top:5px;
+    margin-top:10px;
   	margin-left:20px;
   	float:left;
   }
