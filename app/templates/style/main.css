@@ -410,7 +410,7 @@
       .action-area{
         height:800px;
         width:1258px;
-        background-color:B5B4B4;
+        background-color:E8E7E7;
       }
       .action-img{
         height:280px;
@@ -526,44 +526,51 @@
       .action-content-all p1{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:13px;
+        height:46px;
+        width:75px;
+        text-align:center;
       }
       .action-content-all p2{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:12px;
+        width:75px;
+        text-align:center;
       }
       .action-content-all p3{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:18px;
+        width:75px;
+        text-align:center;
       }
       .action-content-all p4{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:31px;
+        width:90px;
+        text-align:center;
       }
       .action-content-all p5{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:36px;
+        width:120px;
+        text-align:center;
       }
       .action-content-all p6{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:26px;
+        width:125px;
+        text-align:center;
       }
       .action-content-all p7{
+        height:46px;
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:16px;
+        width:75px;
+        text-align:center;
       }
       .action-content-all a img{
         float:left;
@@ -662,7 +669,7 @@
       .nosmoke-area{
         width:1258px;
         height:500px;
-        background-color:B5B4B4;
+        background-color:E8E7E7;
       }
       .nosmoke-img{
         height:280px;
@@ -731,44 +738,51 @@
       .nosmoke-content-all p1{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:13px;
+        height:46px;
+        width:75px;
+        text-align:center;
       }
       .nosmoke-content-all p2{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:12px;
+        height:46px;
+        width:75px;
+        text-align:center;
       }
       .nosmoke-content-all p3{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:20px;
+        height:46px;
+        width:75px;
+        text-align:center;
       }
       .nosmoke-content-all p4{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:31px;
+        height:46px;
+        width:90px;
+        text-align:center;
       }
       .nosmoke-content-all p5{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:36px;
+        height:46px;
+        width:120px;
+        text-align:center;
       }
       .nosmoke-content-all p6{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:26px;
+        height:46px;
+        width:125px;
+        text-align:center;
       }
       .nosmoke-content-all p7{
         float:left;
         padding-top:13px;
-        padding-right:22px;
-        padding-left:16px;
+        height:46px;
+        width:75px;
+        text-align:center;
       }
       .nosmoke-content-all a img{
         float:left;
