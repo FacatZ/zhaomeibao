@@ -106,7 +106,7 @@
       .action-imformation{
         position:absolute;
         display:none;
-        left:23%;
+        left:333px;
         width:400px;
         height:500px;
         background-color:F9FAFA;
@@ -126,6 +126,58 @@
         text-decoration:none;
       }
       .action-imformation a:hover{
+        color:E4A15D;
+      }
+
+      .nosmoke-imformation{
+        position:absolute;
+        display:none;
+        left:333px;
+        width:400px;
+        height:500px;
+        background-color:F9FAFA;
+        z-index:5000;
+      }
+      .nosmoke-imformation p{
+        color:5A5A59;
+        font-size:18px;
+        margin:10px;
+        margin-left:15px;
+        margin-bottom:5px;
+      }
+      .nosmoke-imformation a{
+        color:5A5A59;
+        font-size:15px;
+        margin-left:15px;
+        text-decoration:none;
+      }
+      .nosmoke-imformation a:hover{
+        color:E4A15D;
+      }
+
+      .fire-imformation{
+        position:absolute;
+        display:none;
+        left:333px;
+        width:400px;
+        height:500px;
+        background-color:F9FAFA;
+        z-index:5000;
+      }
+      .fire-imformation p{
+        color:5A5A59;
+        font-size:18px;
+        margin:10px;
+        margin-left:15px;
+        margin-bottom:5px;
+      }
+      .fire-imformation a{
+        color:5A5A59;
+        font-size:15px;
+        margin-left:15px;
+        text-decoration:none;
+      }
+      .fire-imformation a:hover{
         color:E4A15D;
       }
 

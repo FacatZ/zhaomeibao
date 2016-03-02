@@ -10,20 +10,20 @@ $(document).ready(function(){
 
   $(".nosmoke").mouseover(function(){
     $(".nosmoke").css("background-image","url(../main/picture/change_cut_29.png)");
-    $(".action-imformation").css("display","block");
+    $(".nosmoke-imformation").css("display","block");
   });
   $(".nosmoke").mouseout(function(){
     $(".nosmoke").css("background-image","url(../main/picture/cut_29.png)");
-    $(".action-imformation").css("display","none");
+    $(".nosmoke-imformation").css("display","none");
   });
 
   $(".fire").mouseover(function(){
     $(".fire").css("background-image","url(../main/picture/change_cut_30.png)");
-    $(".action-imformation").css("display","block");
+    $(".fire-imformation").css("display","block");
   });
   $(".fire").mouseout(function(){
     $(".fire").css("background-image","url(../main/picture/cut_30.png)");
-    $(".action-imformation").css("display","none");
+    $(".fire-imformation").css("display","none");
   });
 
   $(".action-imformation").mouseover(function(){
@@ -31,6 +31,34 @@ $(document).ready(function(){
   });
   $(".action-imformation").mouseout(function(){
     $(".action-imformation").css("display","none");
+  });
+  $(".nosmoke-imformation").mouseover(function(){
+    $(".nosmoke-imformation").css("display","block");
+  });
+  $(".nosmoke-imformation").mouseout(function(){
+    $(".nosmoke-imformation").css("display","none");
+  });
+  $(".fire-imformation").mouseover(function(){
+    $(".fire-imformation").css("display","block");
+  });
+  $(".fire-imformation").mouseout(function(){
+    $(".fire-imformation").css("display","none");
+  });
+
+  $(window).resize(function(){
+    var a = $(".ui_asideMenu").offset().left;
+    var b = a+250;
+    $(".action-imformation").css("left",b);
+  });
+  $(window).resize(function(){
+    var a = $(".ui_asideMenu").offset().left;
+    var b = a+250;
+    $(".nosmoke-imformation").css("left",b);
+  });
+  $(window).resize(function(){
+    var a = $(".ui_asideMenu").offset().left;
+    var b = a+250;
+    $(".fire-imformation").css("left",b);
   });
 
   $("#left").mouseover(function(){
