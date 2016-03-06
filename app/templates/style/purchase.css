@@ -6,6 +6,7 @@
   	width:1258px;
   	margin:0 auto;
   	padding:0px;
+    font-family:normal;
   }
   .main{
   	width:1258px;
@@ -55,7 +56,14 @@
   	background-color:rgb(216,216,216);
   	float:left;
   }
-  .main-infor p1{
+  .main-infor-lineone{
+    width:850px;
+    height:20px;
+    float:left;
+  }
+  .main-infor-lineone p1{
+    width:75px;
+    height:15px;
   	margin-top:5px;
   	margin-left:5px;
   	font-size:15px;
@@ -63,7 +71,9 @@
   	color:black;
   	float:left;
   }
-  .main-infor p2{
+  .main-infor-lineone p2{
+    width:90px;
+    height:15px;
   	margin-top:5px;
   	margin-left:5px;
     margin-right:10px;
@@ -71,15 +81,22 @@
   	color:EA5A2A;
   	float:left;
   }
-  .main-infor p3{
+  .main-infor-lineone p3{
+    width:122.5px;
+    height:15px;
   	margin-top:5px;
   	margin-left:5px;
-  	margin-right:350px;
+  	margin-right:450px;
   	font-size:15px;
   	color:EA5A2A;
   	float:left;
   }
-  .main-infor p4{
+  .main-infor-linetwo{
+    width:850px;
+    height:70px;
+    float:left;
+  }
+  .main-infor-linetwo p4{
   	margin-top:20px;
   	margin-left:50px;
   	font-size:36px;
@@ -87,7 +104,7 @@
   	color:3078BE;
   	float:left;
   }
-  .main-infor p41{
+  .main-infor-linetwo p41{
     margin-top:20px;
     margin-left:20px;
     font-size:36px;
@@ -95,16 +112,7 @@
     color:3078BE;
     float:left;
   }
-  .main-infor p42{
-    margin-top:20px;
-    margin-left:10px;
-    margin-right:200px;
-    font-size:36px;
-    font-weight:bold;
-    color:3078BE;
-    float:left;
-  }
-  .main-infor p43{
+  .main-infor-linetwo p42{
     margin-top:20px;
     margin-left:10px;
     font-size:36px;
@@ -112,66 +120,84 @@
     color:3078BE;
     float:left;
   }
-  .main-infor p7{
+  .main-infor-linetwo p43{
+    margin-top:20px;
+    margin-left:10px;
+    font-size:36px;
+    font-weight:bold;
+    color:3078BE;
+    float:left;
+  }
+  .main-infor-linetwo p7{
   	margin-top:20px;
-  	margin-left:100px;
+  	margin-left:300px;
   	font-size:36px;
   	font-weight:bold;
   	color:EA5A2A;
   	float:left;
   }
-  .main-infor p5{
-  	margin-top:15px;
+  .main-infor-linethree{
+    width:850px;
+    height:50px;
+    float:left;
+  }
+  .main-infor-linethree p5{
+  	margin-top:5px;
   	margin-left:50px;
   	font-size:30px;
   	font-weight:bold;
   	color:EA5A2A;
   	float:left;
   }
-  .main-infor p6{
-  	margin-top:23px;
+  .main-infor-linethree p6{
+  	margin-top:13px;
   	margin-right:;
   	font-size:18px;
   	font-weight:bold;
   	color:black;
   	float:left;
   }
-  .main-infor p61{
-    margin-top:23px;
+  .main-infor-linethree p61{
+    margin-top:13px;
     margin-left:10px;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
   }
-  .main-infor p62{
-    margin-top:23px;
+  .main-infor-linethree p62{
+    margin-top:13px;
     margin-left:10px;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
   }
-  .main-infor p63{
-    margin-top:23px;
+  .main-infor-linethree p63{
+    margin-top:13px;
     margin-right:;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
   }
-  .main-infor a img{
+  .main-infor-linethree a img{
     margin-left:160px;
-    margin-top:10px;
-    margin-right:0px;
+    margin-top:0px;
+    margin-right:32px;
     float:left;
   }
-  .main-infor img{
-  	margin-left:30px;
-  	margin-top:10px;
-  	float:left;
+  .main-infor-linefour{
+    float:left;
+    width:850px;
+    height:55px;
   }
-  .main-infor p8{
+  .main-infor-linefour img{
+    margin-left:30px;
+    margin-top:10px;
+    float:left;
+  }
+  .main-infor-linefour p8{
   	margin-left:5px;
   	margin-top:17px;
   	font-size:18px;
@@ -179,14 +205,14 @@
   	font-weight:bold;
   	float:left;
   }
-  .main-infor p81{
+  .main-infor-linefour p81{
     margin-top:17px;
     font-size:18px;
     color:black;
     font-weight:bold;
     float:left;
   }
-  .main-infor p9{
+  .main-infor-linefour p9{
     margin-left:20px;
     margin-top:17px;
     font-size:18px;
@@ -214,7 +240,7 @@
   	background-color:black;
   	float:left;
   }
-  .main-infor div a img{
+  .main-infor-linefour div a img{
     margin:0px;
     padding:0px;
     margin-top:10px;
