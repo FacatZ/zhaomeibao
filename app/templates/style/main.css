@@ -628,19 +628,23 @@
         color:3078BE;
         font-weight:bold;
         margin-top:20px;
-        margin-left:20px;
+        text-align:center;
+        width:80px;
         float:left;
       }
       .purchase-content p2{
         font-weight:bold;
+        margin-left:15px;
         font-size:18px;
         margin-top:23px;
-        margin-left:10px;
+        width:100px;
         float:left;
       }
       .purchase-content p3{
         margin-top:20px;
-        margin-left:130px;
+        margin-left:90px;
+        width:60px;
+        text-align:center;
         font-weight:bold;
         font-size:21px;
         color:red;
@@ -650,20 +654,22 @@
         font-weight:bold;
         font-size:18px;
         margin-top:5px;
-        margin-left:20px;
+        text-align:center;
+        width:85px;
         float:left;
       }
       .purchase-content p5{
         font-weight:bold;
         margin-top:5px;
-        margin-left:15px;
+        padding-right:5px;
+        width:150px;
+        margin-left:12px;
         font-size:18px;
         color:5A5A59;
         float:left;
       }
       .purchase-content a img{
         margin-top:5px;
-        margin-left:120px;
         float:left;
       }
       .nosmoke-area{
@@ -825,28 +831,31 @@
         color:32AF56;
         font-weight:bold;
         margin-top:20px;
-        margin-left:20px;
+        text-align:center;
+        width:95px;
         float:left;
       }
       .nosmoke-content-purchase p2{
         font-weight:bold;
         font-size:18px;
         margin-top:23px;
-        margin-left:10px;
+        width:80px;
         float:left;
       }
       .nosmoke-content-purchase p6{
         font-weight:bold;
         font-size:18px;
         margin-top:23px;
-        margin-left:10px;
+        padding-left:5px;
+        width:100px;
         float:left;
       }
       .nosmoke-content-purchase p3{
         margin-top:20px;
-        margin-left:40px;
         font-weight:bold;
         font-size:21px;
+        text-align:center;
+        width:60px;
         color:red;
         float:left;
       }
@@ -854,20 +863,23 @@
         font-weight:bold;
         font-size:18px;
         margin-top:5px;
-        margin-left:20px;
+        text-align:center;
+        width:93px;
         float:left;
       }
       .nosmoke-content-purchase p5{
         font-weight:bold;
         margin-top:5px;
-        margin-left:15px;
+        height:25px;
+        padding-right:5px;
+        width:150px;
         font-size:18px;
         color:5A5A59;
         float:left;
+        overflow:hidden;
       }
       .nosmoke-content-purchase a img{
         margin-top:5px;
-        margin-left:120px;
         float:left;
       }
       .fire-img{
@@ -893,12 +905,6 @@
       }
       .fire-content p1{
         color:AEA71D;
-      }
-      .fire-content p6{
-        margin-left:20px;
-      }
-      .fire-content p3{
-        margin-left:50px;
       }
       .three-container{
         height:250px;
@@ -959,43 +965,53 @@
         background-color:rgb(231,231,231);
       }
       .box-content p1{
-        margin-left:17px;
+        width:76px;
+        text-align:center;
+        float:left;
       }
       .box-content p2{
-        margin-left:80px;
+        float:left;
+        text-align:center;
+        width:105px;
       }
       .box-content p3{
-        margin-left:70px;
+        float:left;
+        text-align:center;
+        width:90px;
       }
       .box-content p4{
-        margin-left:65px;
+        float:left;
+        text-align:center;
+        width:85px;
       }
       .box2 p{
         margin-right:57px;
       }
       .box2 p2{
-        margin-left:68px;
+        width:125px;
       }
       .box2 p3{
-        margin-left:55px;
+        width:48px;
       }
       .box2 p4{
-        margin-left:52px;
+        width:115px;
       }
       .box3 p{
         margin-right:36px;
       }
+      .box3 p1{
+        width:67px;
+      }
       .box3 p2{
-        margin-left:35px;
+        width:78px;
       }
       .box3 p3{
-        margin-left:27px;
-      }
-      .box3 p4{
-        margin-left:40px;
+        width:60px;
       }
       .box3 p5{
-        margin-left:52px;
+        width:76px;
+        text-align:center;
+        float:left;
       }
 </style>
 

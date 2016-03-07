@@ -20,10 +20,8 @@
       .friend-link{
         margin-left:40px;
         margin-top:30px;
-        width:130px;
+        width:170px;
         height:150px;
-        border-left:3px solid;
-        border-color:white;
         float:left;
       }
       .friend-link img{
@@ -39,7 +37,8 @@
         float:left;
       }
       .friend-link a{
-        margin-left:60px;
+        text-align:center;
+        width:170px;
         text-decoration:none;
         color:white;
         font-weight:bold;
@@ -50,24 +49,39 @@
         color:E4A15D;
       }
       .buybuy{
-        width:200px;
+        border-left:3px solid;
+        border-color:white;
+        margin-left:0px;
+        width:240px;
+      }
+      .buybuy a{
+        width:237px;
       }
       .sell{
-        width:200px;
+        border-left:3px solid;
+        border-color:white;
+        margin-left:0px;
+        width:240px;
       }
       .sell a{
-        margin-left:70px;
+        width:237px;
       }
       .help{
-        width:180px;
+        margin-left:0px;
+        border-left:3px solid;
+        border-color:white;
+        width:220px;
       }
       .help p{
         margin-left:20px;
       }
       .help a{
-        margin-left:50px;
+        width:217px;
       }
       .care{
+        margin-left:0px;
+        border-left:3px solid;
+        border-color:white;
         width:300px;
       }
       .picture1,.picture2{

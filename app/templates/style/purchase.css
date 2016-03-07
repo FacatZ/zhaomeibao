@@ -10,6 +10,7 @@
   	width:1258px;
   	margin:0 auto;
   	padding:0px;
+    font-family:ownstyle;
   }
   .main{
   	width:1258px;
@@ -59,8 +60,15 @@
   	background-color:rgb(216,216,216);
   	float:left;
   }
+  .left-box{
+    margin:0px;
+    padding:0px;
+    height:200px;
+    width:650px;
+    float:left;
+  }
   .main-infor-lineone{
-    width:850px;
+    width:650px;
     height:30px;
     float:left;
   }
@@ -77,7 +85,7 @@
     font-family:ownstyle;
   }
   .main-infor-lineone p2{
-    width:100px;
+    width:120px;
     height:25px;
   	margin:0px;
     text-align:center;
@@ -99,12 +107,12 @@
     font-family:ownstyle;
   }
   .main-infor-linetwo{
-    width:850px;
-    height:60px;
+    margin-top:10px;
+    width:650px;
+    height:50px;
     float:left;
   }
   .main-infor-linetwo p4{
-  	padding-top:10px;
   	padding-left:50px;
   	font-size:36px;
   	font-weight:bold;
@@ -114,7 +122,6 @@
     height:50px;
   }
   .main-infor-linetwo p41{
-    padding-top:10px;
     padding-left:20px;
     font-size:36px;
     font-weight:bold;
@@ -124,7 +131,6 @@
     height:50px;
   }
   .main-infor-linetwo p42{
-    padding-top:10px;
     padding-left:10px;
     font-size:36px;
     font-weight:bold;
@@ -134,7 +140,6 @@
     height:50px;
   }
   .main-infor-linetwo p43{
-    padding-top:10px;
     padding-left:10px;
     font-size:36px;
     font-weight:bold;
@@ -143,18 +148,8 @@
     font-family:ownstyle;
     height:50px;
   }
-  .main-infor-linetwo p7{
-  	padding-top:10px;
-  	padding-left:300px;
-  	font-size:36px;
-  	font-weight:bold;
-  	color:EA5A2A;
-  	float:left;
-    font-family:ownstyle;
-    height:50px;
-  }
   .main-infor-linethree{
-    width:850px;
+    width:650px;
     height:50px;
     float:left;
   }
@@ -207,13 +202,13 @@
     font-family:ownstyle;
   }
   .main-infor-linethree a img{
-    margin-left:160px;
+    margin-left:20%;
     margin-top:0px;
     float:left;
   }
   .main-infor-linefour{
     float:left;
-    width:850px;
+    width:650px;
     height:55px;
   }
   .main-infor-linefour img{
@@ -249,7 +244,7 @@
   }
   .line{
   	margin:0px;
-  	margin-left:50px;
+  	margin-left:30px;
   	margin-top:12px;
   	padding:0px;
   	height:28px;
@@ -273,6 +268,26 @@
     margin-top:10px;
   	margin-left:20px;
   	float:left;
+  }
+  .right-box{
+    margin:0px;
+    width:200px;
+    height:200px;
+    float:left;
+  }
+  .right-box p7{
+    margin-top:30px;
+    margin-left:33px;
+    font-size:36px;
+    font-weight:bold;
+    color:EA5A2A;
+    float:left;
+    font-family:ownstyle;
+    height:50px;
+  }
+  .right-box img{
+    margin-top:10px;
+    float:left;
   }
   .entrust{
     background-color:rgb(216,216,216);
@@ -387,7 +402,8 @@
   }
   .trade-content p1{
     margin-top:20px;
-    margin-left:5px;
+    text-align:center;
+    width:60px;
     color:EA5A2A;
     font-size:15px;
     font-weight:bold;
@@ -397,14 +413,14 @@
     color:black;
     font-size:15px;
     margin-top:20px;
-    margin-left:20px;
+    text-align:center;
+    width:225px;
     float:left;
   }
   .trade-content p3{
     color:black;
     font-size:15px;
     margin-top:20px;
-    margin-left:15px;
     font-weight:bold;
     float:left;
   }
@@ -422,13 +438,10 @@
     float:left;
   }
   .stockButtons {
-  margin-left: 320px;
+  margin-left: 370px;
   margin-top: 30px;
   width: 700px;
   height: 30px;
-  }
-  .stockButtons div{
-  float: left;
   }
   .stockButton {
     color: #656666;
@@ -443,18 +456,19 @@
     background-position:center;
     background-repeat:no-repeat;
     line-height: 30px;
+    float:left;
   }
   .stockButtonPrePre {
-    background-image: url("../main/picture/stock12.png");
+    background-image: url("../purchase/picture/stock12.png");
   }
   .stockButtonPre {
-    background-image: url("../main/picture/stock11.png");
+    background-image: url("../purchase/picture/stock11.png");
   }
   .stockButtonNext {
-    background-image: url("../main/picture/stock9.png");
+    background-image: url("../purchase/picture/stock9.png");
   }
   .stockButtonNextNext {
-    background-image: url("../main/picture/stock13.png");
+    background-image: url("../purchase/picture/stock13.png");
   }
 </style>
 
