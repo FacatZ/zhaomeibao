@@ -2,11 +2,14 @@
   a{
 
   }
+  @font-face{
+    font-family:ownstyle;
+    src:url(../style/glyphicons-halflings-regular.woff);
+  }
   body{
   	width:1258px;
   	margin:0 auto;
   	padding:0px;
-    font-family:normal;
   }
   .main{
   	width:1258px;
@@ -26,9 +29,9 @@
   	padding-left:15px;
   	font-size:18px;
   	color:black;
-    font-family:"微软雅黑";
     font-weight:bold;
     float:left;
+    font-family:ownstyle;
   }
   .search input{
   	margin-top:14px;
@@ -58,82 +61,97 @@
   }
   .main-infor-lineone{
     width:850px;
-    height:20px;
+    height:30px;
     float:left;
   }
   .main-infor-lineone p1{
-    height:15px;
-  	margin-top:5px;
-  	margin-left:5px;
+    width:100px;
+    height:25px;
+    text-align:center;
+    font-weight:bold;
+    padding-top:5px;
+  	margin:0px;
   	font-size:15px;
-  	font-weight:bold;
   	color:black;
   	float:left;
+    font-family:ownstyle;
   }
   .main-infor-lineone p2{
-    width:90px;
-    height:15px;
-  	margin-top:5px;
-  	margin-left:5px;
-    margin-right:10px;
+    width:100px;
+    height:25px;
+  	margin:0px;
+    text-align:center;
+    padding-top:5px;
   	font-size:15px;
   	color:EA5A2A;
   	float:left;
+    font-family:ownstyle;
+    font-weight:bold;
   }
   .main-infor-lineone p3{
-    width:122.5px;
-    height:15px;
-  	margin-top:5px;
-  	margin-left:5px;
-  	margin-right:450px;
+    width:180px;
+    height:25px;
+  	padding-top:5px;
   	font-size:15px;
   	color:EA5A2A;
   	float:left;
+    font-weight:bold;
+    font-family:ownstyle;
   }
   .main-infor-linetwo{
     width:850px;
-    height:70px;
+    height:60px;
     float:left;
   }
   .main-infor-linetwo p4{
-  	margin-top:20px;
-  	margin-left:50px;
+  	padding-top:10px;
+  	padding-left:50px;
   	font-size:36px;
   	font-weight:bold;
   	color:3078BE;
   	float:left;
+    font-family:ownstyle;
+    height:50px;
   }
   .main-infor-linetwo p41{
-    margin-top:20px;
-    margin-left:20px;
+    padding-top:10px;
+    padding-left:20px;
     font-size:36px;
     font-weight:bold;
     color:3078BE;
     float:left;
+    font-family:ownstyle;
+    height:50px;
   }
   .main-infor-linetwo p42{
-    margin-top:20px;
-    margin-left:10px;
+    padding-top:10px;
+    padding-left:10px;
     font-size:36px;
     font-weight:bold;
     color:3078BE;
     float:left;
+    font-family:ownstyle;
+    height:50px;
   }
   .main-infor-linetwo p43{
-    margin-top:20px;
-    margin-left:10px;
+    padding-top:10px;
+    padding-left:10px;
     font-size:36px;
     font-weight:bold;
     color:3078BE;
     float:left;
+    font-family:ownstyle;
+    height:50px;
   }
   .main-infor-linetwo p7{
-  	margin-top:20px;
-  	margin-left:300px;
+  	padding-top:10px;
+  	padding-left:300px;
   	font-size:36px;
   	font-weight:bold;
   	color:EA5A2A;
   	float:left;
+    font-family:ownstyle;
+    height:50px;
   }
   .main-infor-linethree{
     width:850px;
@@ -141,49 +159,56 @@
     float:left;
   }
   .main-infor-linethree p5{
-  	margin-top:5px;
-  	margin-left:50px;
+  	padding-top:5px;
+  	padding-left:50px;
   	font-size:30px;
   	font-weight:bold;
   	color:EA5A2A;
   	float:left;
+    font-family:ownstyle;
+    height:45px;
   }
   .main-infor-linethree p6{
-  	margin-top:13px;
-  	margin-right:;
+  	padding-top:17px;
+    height:33px;
   	font-size:18px;
   	font-weight:bold;
   	color:black;
   	float:left;
+    font-family:ownstyle;
   }
   .main-infor-linethree p61{
-    margin-top:13px;
-    margin-left:10px;
+    padding-top:17px;
+    padding-left:10px;
+    height:33px;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
+    font-family:ownstyle;
   }
   .main-infor-linethree p62{
-    margin-top:13px;
-    margin-left:10px;
+    padding-top:17px;
+    height:33px;
+    padding-left:10px;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
+    font-family:ownstyle;
   }
   .main-infor-linethree p63{
-    margin-top:13px;
-    margin-right:;
+    padding-top:17px;
+    height:33px;
     font-size:18px;
     font-weight:bold;
     color:black;
     float:left;
+    font-family:ownstyle;
   }
   .main-infor-linethree a img{
     margin-left:160px;
     margin-top:0px;
-    margin-right:32px;
     float:left;
   }
   .main-infor-linefour{
@@ -203,6 +228,7 @@
   	color:black;
   	font-weight:bold;
   	float:left;
+    font-family:ownstyle;
   }
   .main-infor-linefour p81{
     margin-top:17px;
@@ -210,6 +236,7 @@
     color:black;
     font-weight:bold;
     float:left;
+    font-family:ownstyle;
   }
   .main-infor-linefour p9{
     margin-left:20px;
@@ -218,6 +245,7 @@
     color:black;
     font-weight:bold;
     float:left;
+    font-family:ownstyle;
   }
   .line{
   	margin:0px;
