@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    var a = $(".ui_asideMenu").offset().left;
+    var b = a+250;
+    $(".action-imformation").css("left",b);
+    $(".nosmoke-imformation").css("left",b);
+    $(".fire-imformation").css("left",b);
+
   $(".action").mouseover(function(){
     $(".action").css("background-image","url(../main/picture/change_cut_23.png)");
     $(".action-imformation").css("display","block");

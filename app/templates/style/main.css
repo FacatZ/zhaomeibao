@@ -2,9 +2,14 @@
       a{
 
       }
+      @font-face{
+        font-family:ownstyle;
+        src:url(../style/glyphicons-halflings-regular.woff);
+      }
       body{
         width:1258px;
         margin:0 auto;
+        font-family:ownstyle;
       }
       .ui-showcase{
         width:1258px;

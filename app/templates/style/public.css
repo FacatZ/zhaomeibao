@@ -47,18 +47,37 @@
     margin-left:500px;
     margin-top:18px;
   }
-  #shift{
+  .move-box{
+    float:left;
+    margin:0px;
     margin-left:5px;
-    margin-top:20px;
+    padding:0px;
+    height:50px;
+    width:100px;
+  }
+  #shift{
+    margin:0px;
+    padding-top:20px;
+    height:50px;
   }
   #shift-img{
+    margin:0px;
     cursor:pointer;
     margin-left:8px;
-    margin-top:27px;
+    padding-top:27px;
+  }
+  .help-box{
+    float:left;
+    margin:0px;
+    margin-left:8px;
+    padding:0px;
+    height:50px;
+    width:100px;
   }
   #help{
-    margin-left:8px;
-    margin-top:20px;
+    margin:0px;
+    padding-top:20px;
+    height:50px;
   }
   #help-img{
     cursor:pointer;
@@ -81,7 +100,7 @@
     position:absolute;
     height:100px;
     width:200px;
-    background-color:B8CEEB;
+    background-color:rgb(243,243,243);
     top:50px;
     left:820px;
     border-radius:0 0 10px 10px;
@@ -91,7 +110,7 @@
     position:absolute;
     height:100px;
     width:200px;
-    background-color:B8CEEB;
+    background-color:rgb(243,243,243);
     top:50px;
     left:930px;
     border-radius:0 0 10px 10px;
