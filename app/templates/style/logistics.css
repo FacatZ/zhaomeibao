@@ -1,0 +1,73 @@
+<style>
+	a{
+
+	}
+	@font-face{
+		font-family:ownstyle;
+		src:url(../style/glyphicons-halflings-regular.woff);
+	}
+	body{
+		margin:0px auto;
+		padding:0px;
+		width:1258px;
+	}
+	.main{
+		font-family:ownstyle;
+		width:1258px;
+		height:650px;
+		background-color:rgb(216,216,216);
+		float:left;
+	}
+	.entrust{
+		height:200px;
+		width:250px;
+		background-color:EF8448;
+		border-radius:5px;
+		float:left;
+	}
+	.order-record{
+		height:350px;
+		width:250px;
+		background-color:EEEDED;
+		float:left;
+	}
+	.order-record p{
+		width:250px;
+		height:30px;
+		margin:0px;
+		padding-top:10px;
+		font-size:21px;
+		text-align:center;
+		float:left;
+	}
+	.order-menu{
+		width:250px;
+		height:40px;
+		margin:0px;
+		padding:0px;
+		float:left;
+		font-size:16px;
+	}
+	.order-menu p1{
+		height:40px;
+		width:55px;
+		line-height:40px;
+		text-align:center;
+		float:left;
+	}
+	.order-menu p2{
+		height:40px;
+		width:130px;
+		line-height:40px;
+		text-align:center;
+		float:left;
+	}
+	.order-menu p3{
+		height:40px;
+		width:55px;
+		line-height:40px;
+		text-align:center;
+		float:left;
+	}
+</style>
+
