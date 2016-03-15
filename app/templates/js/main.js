@@ -198,7 +198,7 @@ $(document).ready(function(){
     $(".action-box-north").css("display","none");
   });
   
-
+  jQuery(".txtScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:3,trigger:"click"});
 
 
 
