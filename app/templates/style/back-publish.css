@@ -4,6 +4,9 @@
 		border-right:1px solid;
 		border-color:rgb(193,211,229);
 	}
+	.common-box a{
+		margin-top:28px !important;
+	}
 	.right-box{
 		margin:0px;
 		width:1057px;
@@ -156,8 +159,13 @@
 		border-right:none;
 	}
 	.left-big{
-		width:99px;
-		height:159px;
+		width:49px;
+		padding:0 25px;
+		padding-top:10px;
+		font-size:28px;
+		font-weight:bold;
+		line-height:35px;
+		height:149px;
 		float:left;
 		border:1px solid;
 		border-color:rgb(193,211,229);
@@ -238,6 +246,7 @@
 		color:E4A15D;
 	}
 	.last-table img{
+		/*margin-top:10px;*/
 		cursor:pointer;
 		margin-left:30px;
 	}
