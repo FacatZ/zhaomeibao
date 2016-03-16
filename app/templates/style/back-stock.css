@@ -251,7 +251,7 @@ body {
 	float: left;
 	width: 32px;
 	height: 32px;
-	background: url(../main/picture/stock4.png) center no-repeat;
+	background: url(../back-stocks/picture/stock4.png) center no-repeat;
 }
 
 .infoBoxGP span {
@@ -280,7 +280,7 @@ body {
 }
 
 .infoBoxL {
-	background: url(../main/picture/stock6.png) center no-repeat;
+	background: url(../back-stocks/picture/stock6.png) center no-repeat;
 	width: 30px;
 	float: right;
 	height: 30px;
@@ -289,7 +289,7 @@ body {
 }
 
 .infoBoxR {
-	background: url(../main/picture/stock7.png) center no-repeat;
+	background: url(../back-stocks/picture/stock7.png) center no-repeat;
 	width: 30px;
 	float: right;
 	height: 30px;
@@ -352,7 +352,7 @@ body {
 	width: 67px;
 	height: 33px;
 	cursor: pointer;
-	background: url(../main/picture/stock10.png) center no-repeat;
+	background: url(../back-stocks/picture/stock10.png) center no-repeat;
 }
 
 .infoInner {
@@ -399,17 +399,17 @@ body {
 }
 
 .stockButtonPrePre {
-	background-image: url("../main/picture/stock12.png");
+	background-image: url("../back-stocks/picture/stock12.png");
 }
 
 .stockButtonPre {
-	background-image: url("../main/picture/stock11.png");
+	background-image: url("../back-stocks/picture/stock11.png");
 }
 
 .stockButtonNext {
-	background-image: url("../main/picture/stock9.png");
+	background-image: url("../back-stocks/picture/stock9.png");
 }
 
 .stockButtonNextNext {
-	background-image: url("../main/picture/stock13.png");
+	background-image: url("../back-stocks/picture/stock13.png");
 }

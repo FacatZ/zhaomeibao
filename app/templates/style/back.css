@@ -1,7 +1,6 @@
 body {
 	width: 1258px;
 	margin: auto;
-	font-family: "Microsoft YaHei" ! important;
 	font-weight: bold;
 }
 
@@ -66,7 +65,19 @@ body {
 	float: left;
 	width: 1056px;
 	height: 1500px;
-	background-color: #EFEEEE;
+	background-color: #fdfdfd;
+	border:1px solid #6DA3D2;
+	border-top: none;
+	position: relative;
+}
+
+.backArticleName {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	width:300px;
+	color:rgb(109,163,210);
+	font-size:21px;
 }
 
 .backArticleMenuBox {
@@ -81,48 +92,48 @@ body {
 	width: 82px;
 	height: 32px;
 	display: block;
-	background-image: url(../main/picture/back21.png);
+	background-image: url(../pictures/back-add.png);
 }
 
 .backArticleMenuNew a:active {
 	display: block;
-	background-image: url(../main/picture/back-change21.png);
+	background-image: url(../pictures/back-add-change.png);
 }
 
 .backArticleMenuSave a:link {
 	width: 82px;
 	height: 32px;
 	display: block;
-	background-image: url(../main/picture/back23.png);
+	background-image: url(../pictures/back-save.png);
 }
 
 .backArticleMenuSave a:active {
 	display: block;
-	background-image: url(../main/picture/back-change23.png);
+	background-image: url(../pictures/back-save-change.png);
 }
 
 .backArticleMenuSee a:link {
 	width: 82px;
 	height: 32px;
 	display: block;
-	background-image: url(../main/picture/back25.png);
+	background-image: url(../pictures/back-review.png);
 }
 
 .backArticleMenuSee a:active {
 	display: block;
-	background-image: url(../main/picture/back-change25.png);
+	background-image: url(../pictures/back-review-change.png);
 }
 
 .backArticleMenuDelete a:link {
 	width: 82px;
 	height: 32px;
 	display: block;
-	background-image: url(../main/picture/back18.png);
+	background-image: url(../pictures/back-delete.png);
 }
 
 .backArticleMenuDelete a:active {
 	display: block;
-	background-image: url(../main/picture/back-change18.png);
+	background-image: url(../pictures/back-delete-change.png);
 }
 
 .backArticleMenuOptions {
@@ -217,21 +228,21 @@ body {
 	width: 72px;
 	height: 32px;
 	display: block;
-	background: url('../main/picture/back49.png');
+	background: url('../pictures/back-edit-edit.png');
 }
 
 .checkboxOptionCopy {
 	width: 72px;
 	height: 32px;
 	display: block;
-	background: url('../main/picture/back44.png');
+	background: url('../pictures/back-edit-copy.png');
 }
 
 .checkboxOptionDelete {
 	width: 72px;
 	height: 32px;
 	display: block;
-	background: url('../main/picture/back47.png');
+	background: url('../pictures/back-edit-delete.png');
 }
 
 .checkboxNormal {
@@ -244,7 +255,7 @@ body {
 	margin-left: 10px;
 	padding-left: 10px;
 	width: 990px;
-	background: #C8C9C9;
+	background: #eee;
 }
 
 .stockButtonBox {
@@ -278,22 +289,23 @@ body {
 }
 
 .stockButtonPrePre {
-	background-image: url("../main/picture/stock12.png");
+	background-image: url("../pictures/buttons-BB.png");
 }
 
 .stockButtonPre {
-	background-image: url("../main/picture/stock11.png");
+	background-image: url("../pictures/buttons-B.png");
 }
 
 .stockButtonNext {
-	background-image: url("../main/picture/stock9.png");
+	background-image: url("../pictures/buttons-F.png");
 }
 
 .stockButtonNextNext {
-	background-image: url("../main/picture/stock13.png");
+	background-image: url("../pictures/buttons-FF.png");
 }
 
 .backIssueName {
+	color: rgb(109,163,210);
 	font-size: 21px;
 	margin-top: 30px;
 	margin-left: 50px;
@@ -302,6 +314,10 @@ body {
 .backIssueTitle {
 	padding-left: 50px;
 	margin-top: 50px;
+}
+
+.form-control {
+	border:1px solid rgb(193,211,229) !important;
 }
 
 .backIssueOrigin {
@@ -337,11 +353,11 @@ body {
 .backIssue02 {
 	margin-left: 100px;
 	float: left;
-	background: url(../main/picture/backIssue02.png);
+	background: url(../back-issue/picture/backIssue02.png);
 }
 
 .backIssue01 {
 	margin-left: 35px;
 	float: left;
-	background: url(../main/picture/backIssue01.png);
+	background: url(../back-issue/picture/backIssue01.png);
 }
