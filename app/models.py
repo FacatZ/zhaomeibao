@@ -61,13 +61,14 @@ class User(Base, UserMixin):
         return self.can(Permission.ADMINISTER)
 
     def create_article(self, article):
-        artilce.author = self
+        article.author = self
         try:
             db_session.commit()
             return True
         except Exception, e:
             db_session.rollback()
             return False
+
 class AnonymousUser(AnonymousUserMixin):
     
     def can(self, permissions):
