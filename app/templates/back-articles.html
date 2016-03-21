@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表</title>
+    <link rel="stylesheet" href="/static/style/bootstrap.css">
+    <link rel="stylesheet" href="/static/style/back.css">
+    <link href="/static/style/back-common.css" rel="stylesheet">
+</head>
+<body>
+<div class="top">
+        <p1>找煤宝后台管理</p1>
+        <img src="/static/pictures/head_01.png" id="img-position1">
+        <img src="/static/pictures/head_02.png" id="img-position2">
+        <a href="#">收件箱</a>
+        <img src="/static/pictures/head_03.png" id="img-position3">
+        <a href="#">管理员</a>
+      </div>
+
+      {% include 'util/admin/left-box.html' %}
+	<div class="backArticleBox">
+    <div class="backArticleName">文章列表</div>
+		<table class="backArticleMenuBox" border="1">
+			<tr>
+				<td class="backArticleMenuNew"><a href="#"></a></td>
+				<td class="backArticleMenuSave"><a href="#"></a></td>
+				<td class="backArticleMenuSee"><a href="#"></a></td>
+				<td class="backArticleMenuDelete"><a href="#"></a></td>
+			</tr>
+		</table>
+		<div class="backArticleMenuOptions">
+			<select name="cars" class="form-control">
+				<option value="all">所有类别</option>
+				<option value="option1">类别1</option>
+				<option value="option2">类别2</option>
+				<option value="option3">类别3</option>
+			<div class="form-group">
+    			<input type="text" class="form-control" placeholder="搜索文章">
+    			<button class="btn btn-default">搜索</button>
+    		</div>
+		<div class="backArticleTable">
+    	<div class="checkboxNormal">
+      	<input type="checkbox">
+      	<div class="checkboxID">ID</div>
+      	<div class="checkboxTitle">标题</div>
+      	<div class="checkboxType">类别</div>
+      	<div class="checkboxOrigin">作者</div>
+      	<div class="checkboxDate">日期</div>
+      	<div class="checkboxOption">操作</div>
+    	</div>
+      {% for article in articles %}
+    	<div class="checkboxNormal">
+      	<input type="checkbox">
+      	<div class="checkboxID">{{article.id}}</div>
+      	<div class="checkboxTitle">{{article.title}}</div>
+      	<div class="checkboxType">{{article.category.name}}</div>
+      	<div class="checkboxOrigin">{{article.author.username}}</div>
+      	<div class="checkboxDate">{{format_datetime(article.rldate)}}</div>
+      	<div class="checkboxOption">
+      		<table border="1">
+      			<tr>
+      				<td><a class="checkboxOptionEdit" href="{{url_for('admin.modify_article', id=article.id)}}"></a></td>
+      				<td><a class="checkboxOptionCopy" href="#"></a></td>
+      				<td><a class="checkboxOptionDelete" href="#"></a></td>
+      			</tr>
+      		</table>
+      	</div>
+    	</div>
+      {% endfor %}
+    	<div class="stockButtonBox">
+			<div class="stockButtons">
+				<input type="button" class="stockButton stockButtonPrePre" value=" ">
+				<input type="button" class="stockButton stockButtonPre" value=" ">
+				<input type="button" class="stockButton" value="1">
+				<input type="button" class="stockButton" value="2">
+				<input type="button" class="stockButton" value="3">
+				<input type="button" class="stockButton" value="4">
+				<input type="button" class="stockButton" value="5">
+				<input type="button" class="stockButton" value="6">
+				<input type="button" class="stockButton" value="7">
+				<input type="button" class="stockButton" value="8">
+				<input type="button" class="stockButton" value="9">
+				<input type="button" class="stockButton" value="10">
+				<input type="button" class="stockButton" value="...">
+				<input type="button" class="stockButton stockButtonNext" value=" ">
+				<input type="button" class="stockButton stockButtonNextNext" value=" ">
+			</div>
+		</div>
+		</div>
+	</div>	
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+</body>
+</html>

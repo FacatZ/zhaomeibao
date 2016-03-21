@@ -1,0 +1,308 @@
+<style>
+	a{
+
+	}
+	@font-face{
+    font-family:ownstyle;
+    src:url(../style/glyphicons-halflings-regular.woff);
+    }
+    ul,li{
+    	margin:0px;
+    	padding:0px;
+    	list-style:none;
+    }
+	body{
+		width:1258px;
+		margin:0 auto;
+		font-family:ownstyle;
+	}
+	.main{
+		width:1258px;
+		background-color:rgb(239,239,239);
+		float:left;
+	}
+	.left-box{
+		width:850px;
+		height:1005px;
+		background-color:white;
+		border:1px solid;
+		border-color:5A5A59;
+		float:left;
+		margin-top:20px;
+		margin-left:20px;
+	}
+	.information-box{
+		width:850px;
+		height:945px;
+		float:left;
+		display:none;
+	}
+	.show-box{
+		display:block;
+	}
+	.top-class{
+		height:60px;
+		width:850px;
+		float:left;
+	}
+	.top-class ul{
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+	.top-class ul li{
+		height:40px;
+		width:130px;
+		float:left;
+		font-size:18px;
+		color:black;
+		font-weight:bold;
+		text-align:center;
+		padding-top:20px;
+		border-right:1px solid;
+		border-bottom:1px solid;
+		border-color:5A5A59;
+		cursor:pointer;
+		background-color:rgb(216,216,216);
+		list-style:none;
+	}
+	.active{
+		border-bottom:none !important;
+		background-color:white !important;
+
+	}
+	/*.meishi-quotation{
+		border-bottom:none;
+	}
+	.meishi-know{
+		background-color:rgb(216,216,216);
+	}
+	.meishi-storage{
+		background-color:rgb(216,216,216);
+	}
+	.meishi-index{
+		background-color:rgb(216,216,216);
+	}*/
+	.meishi-else{
+		height:60px;
+		width:326px;
+		border-bottom:1px solid;
+		border-color:5A5A59;
+		float:left;
+		background-color:rgb(216,216,216);
+	}
+	.line-one{
+		height:45px;
+		width:850px;
+		float:left;
+		border-bottom:1px solid;
+		border-color:5A5A59;
+	}
+	.line-one p1{
+		width:650px;
+		height:32px;
+		float:left;
+		font-size:18px;
+		font-weight:none;
+		padding-top:13px;
+		margin-left:20px;
+	}
+	.line-one p2{
+		height:32px;
+		float:left;
+		font-size:18px;
+		font-weight:none;
+		padding-top:13px;
+		text-align:center;
+		width:150px;
+	}
+	.line-content{
+		height:49px;
+	}
+	.right-top-box{
+		width:350px;
+		height:350px;
+		float:left;
+		margin-top:20px;
+		margin-left:20px;
+	}
+	.head-box{
+		background-color:B5B4B4;
+		width:350px;
+		height:40px;
+		float:left;
+		text-align:center;
+		font-size:21px;
+		padding-top:10px;
+	}
+	.content-box{
+		height:300px;
+		width:350px;
+		float:left;
+	}
+	.content-box img{
+		float:left;
+		cursor:pointer;
+	}
+	#img-one{
+		margin-left:20px;
+		margin-top:10px;
+	}
+	#img-two{
+		margin-top:10px;
+		margin-left:-5px;
+	}
+	#img-three{
+		margin-top:10px;
+		margin-left:-5px;
+	}
+	#img-four{
+		margin-top:6px;
+		margin-left:90px;
+	}
+	.content-box textarea{
+		margin-left:22px;
+	    margin-top:10px;
+ 	    height:200px;
+  	    width:300px;
+ 	    outline:none;
+   	    border:0px;
+        resize:none;
+        float:left;
+        color:black;
+        font-size:18px;
+	}
+	.nearnow{
+    	background-color:rgb(216,216,216);
+    	height:630px;
+    	width:350px;
+    	margin-left:20px;
+    	margin-top:;
+    	float:left;
+    	margin-top:26px;
+  	}
+  	.nearnow p{
+    	background-color:B5B4B4;
+    	width:350px;
+    	height:35px;
+    	margin:0px;
+    	padding:0px;
+    	padding-top:15px;
+    	font-family:"微软雅黑";
+    	font-size:24px;
+	    color:black;
+	    font-weight:bold;
+	    text-align:center;
+	    float:left;
+  	}
+    .menu{
+	    margin:0px;
+	    padding:0px;
+	    height:40px;
+	    width:350px;
+	    color:B5B4B4;
+	    font-size:20px;
+	    float:left;
+	    border-bottom:solid 1px;
+	    border-color:B5B4B4;
+  	}
+    .menu p1{
+	    margin-top:8px;
+	    margin-left:10px;
+	    float:left;
+    }
+    .menu p2{
+	    margin-top:8px;
+	    margin-left:70px;
+	    float:left;
+    }
+    .menu p3{
+	    margin-top:8px;
+	    margin-left:80px;
+	    float:left;
+    }
+    .trade-content{
+	    height:89px;
+	    width:348px;
+	    float:left;
+	    background-color:white;
+	    border:solid 1px;
+	    border-color:B5B4B4;
+	    border-top:none;
+    }
+    .trade-content p1{
+	    margin-top:20px;
+	    text-align:center;
+	    width:60px;
+	    color:EA5A2A;
+	    font-size:15px;
+	    font-weight:bold;
+	    float:left;
+    }
+    .trade-content p2{
+	    color:black;
+	    font-size:15px;
+	    margin-top:20px;
+	    text-align:center;
+	    width:225px;
+	    float:left;
+	}
+    .trade-content p3{
+	    color:black;
+	    font-size:15px;
+	    margin-top:20px;
+	    font-weight:bold;
+	    float:left;
+	    width:60px;
+	    overflow:hidden;
+    }
+    .trade-content p4{
+	    margin-top:10px;
+	    margin-left:90px;
+	    color:EA5A2A;
+	    font-size:18px;
+	    font-weight:bold;
+	    float:left;
+    }
+    .stockButtonBox{
+	    width:1258px;
+	    height:100px;
+	    float:left;
+    }
+    .stockButtons {
+	    margin-left: 370px;
+	  	margin-top: 30px;
+	  	width: 700px;
+	  	height: 30px;
+    }
+    .stockButton {
+	    color: #656666;
+	    font-size: 18px;
+	    padding: 0px;
+	    margin-right: 5px;
+	    width: 30px;
+	    height: 30px;
+	    border-style: solid;;
+	    border-width: 1px;
+	    background-color: white;
+	    background-position:center;
+	    background-repeat:no-repeat;
+	    line-height: 30px;
+	    float:left;
+    }
+    .stockButtonPrePre {
+       	background-image: url("../spot-quotation/picture/stock12.png");
+  	}
+  	.stockButtonPre {
+    	background-image: url("../spot-quotation/picture/stock11.png");
+  	}
+  	.stockButtonNext {
+	    background-image: url("../spot-quotation/picture/stock9.png");
+	}
+  	.stockButtonNextNext {
+    	background-image: url("../spot-quotation/picture/stock13.png");
+  	}
+</style>
+
+
+

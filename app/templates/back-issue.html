@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>发布文章</title>
+    <link rel="stylesheet" href="/static/style/bootstrap.css">
+    <link rel="stylesheet" href="/static/style/back.css">
+    <link rel="stylesheet" href="/static/style/back-common.css">
+</head>
+<body>
+      <div class="top">
+        <p1>找煤宝后台管理</p1>
+        <img src="/static/pictures/head_01.png" id="img-position1">
+        <img src="/static/pictures/head_02.png" id="img-position2">
+        <a href="#">收件箱</a>
+        <img src="/static/pictures/head_03.png" id="img-position3">
+        <a href="#">管理员</a>
+      </div>
+
+    {% include 'util/admin/left-box.html'%}
+	<div class="backArticleBox">
+		<div class="backIssueName">发布文章</div>
+		<form class="form-horizontal">
+  			<div class="form-group backIssueTitle">
+   				<label class="col-sm-1 control-label">文章标题</label>
+   				<div class="col-sm-6">
+      			<input type="text" class="form-control" placeholder="{{get_article_context_or_none(article.title)}}">
+    			</div>
+  			</div>
+  			<div class="form-group backIssueOrigin">
+   				<label class="col-sm-1 control-label">文章作者</label>
+   				<div class="col-sm-6">
+      			<input type="text" class="form-control"  placeholder="{{get_article_context_or_none(article.author.username)}}">
+    			</div>
+  			</div>
+  			<div class="form-group backIssueArea">
+   				<label class="col-sm-1 control-label">文章类别</label>
+   				<div class="col-sm-6">
+      			<input type="text" class="form-control" placeholder="{{get_article_context_or_none(article.category.name)}}">
+    			</div>
+  			</div>
+  			<div class="form-group backIssueInner">
+   				<label class="col-sm-1 control-label">正文内容</label>
+   				<div class="col-sm-8">
+      			<textarea rows="25" cols="100" class="form-control">
+            {{ get_article_context_or_none(article.body) }}   
+            </textarea>
+    			</div>
+  			</div>
+  			<div class="form-group backIssueButtons">
+      		<a href="#" class="backIssue02"></a>
+      		<a href="#" class="backIssue01"></a>
+  			</div>
+		</form>
+	</div>	
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+</body>
+</html>

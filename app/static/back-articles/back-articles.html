@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表</title>
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <link rel="stylesheet" href="../style/back.css">
+    <link href="../style/back-common.css" rel="stylesheet">
+</head>
+<body>
+<div class="top">
+        <p1>找煤宝后台管理</p1>
+        <img src="../pictures/head_01.png" id="img-position1">
+        <img src="../pictures/head_02.png" id="img-position2">
+        <a href="#">收件箱</a>
+        <img src="../pictures/head_03.png" id="img-position3">
+        <a href="#">管理员</a>
+      </div>
+
+      <div class="left-box">
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_01.png"></div><a href="#">首页</a></div>
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_02.png"></div><a href="#">产品列表</a></div>
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_03.png"></div><a href="#">产品发布</a></div>
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_02.png"></div><a href="#">文章列表</a></div>
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_04.png"></div><a href="#">文章发布</a></div>
+        <div class="common-box"><div class="img-box"><img src="../pictures/left_05.png"></div><a href="#">注销</a></div>
+      </div>
+	<div class="backArticleBox">
+    <div class="backArticleName">文章列表</div>
+		<table class="backArticleMenuBox" border="1">
+			<tr>
+				<td class="backArticleMenuNew"><a href="#"></a></td>
+				<td class="backArticleMenuSave"><a href="#"></a></td>
+				<td class="backArticleMenuSee"><a href="#"></a></td>
+				<td class="backArticleMenuDelete"><a href="#"></a></td>
+			</tr>
+		</table>
+		<div class="backArticleMenuOptions">
+			<select name="cars" class="form-control">
+				<option value="all">所有类别</option>
+				<option value="option1">类别1</option>
+				<option value="option2">类别2</option>
+				<option value="option3">类别3</option>
+			<div class="form-group">
+    			<input type="text" class="form-control" placeholder="搜索文章">
+    			<button class="btn btn-default">搜索</button>
+    		</div>
+		<div class="backArticleTable">
+    	<div class="checkboxNormal">
+      	<input type="checkbox">
+      	<div class="checkboxID">ID</div>
+      	<div class="checkboxTitle">标题</div>
+      	<div class="checkboxType">煤市行情</div>
+      	<div class="checkboxOrigin">类别</div>
+      	<div class="checkboxDate">作者</div>
+      	<div class="checkboxOption">操作</div>
+    	</div>
+      {% for article in articles %}
+    	<div class="checkboxNormal">
+      	<input type="checkbox">
+      	<div class="checkboxID">{{article.id}}</div>
+      	<div class="checkboxTitle">{{article.title}}</div>
+      	<div class="checkboxType">{{article.category.name}}</div>
+      	<div class="checkboxOrigin">{{article.author.username}}</div>
+      	<div class="checkboxDate">{{article.rldate}}</div>
+      	<div class="checkboxOption">
+      		<table border="1">
+      			<tr>
+      				<td><a class="checkboxOptionEdit" href="#"></a></td>
+      				<td><a class="checkboxOptionCopy" href="#"></a></td>
+      				<td><a class="checkboxOptionDelete" href="#"></a></td>
+      			</tr>
+      		</table>
+      	</div>
+    	</div>
+      {% endfor %}
+    	<div class="stockButtonBox">
+			<div class="stockButtons">
+				<input type="button" class="stockButton stockButtonPrePre" value=" ">
+				<input type="button" class="stockButton stockButtonPre" value=" ">
+				<input type="button" class="stockButton" value="1">
+				<input type="button" class="stockButton" value="2">
+				<input type="button" class="stockButton" value="3">
+				<input type="button" class="stockButton" value="4">
+				<input type="button" class="stockButton" value="5">
+				<input type="button" class="stockButton" value="6">
+				<input type="button" class="stockButton" value="7">
+				<input type="button" class="stockButton" value="8">
+				<input type="button" class="stockButton" value="9">
+				<input type="button" class="stockButton" value="10">
+				<input type="button" class="stockButton" value="...">
+				<input type="button" class="stockButton stockButtonNext" value=" ">
+				<input type="button" class="stockButton stockButtonNextNext" value=" ">
+			</div>
+		</div>
+		</div>
+	</div>	
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/jquery.SuperSlide.2.1.1.js"></script>
+</body>
+</html>
