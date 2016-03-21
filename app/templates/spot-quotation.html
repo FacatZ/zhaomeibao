@@ -2,11 +2,11 @@
 	<head>
 		<title>现货行情</title>
 		<meta charset="utf-8">
-		<link href="../style/spot-quotation.css" rel="stylesheet">
+		<link href="/static/style/spot-quotation.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="main">
-
+			{% include 'util/main/header.html' %}
 			<div class="left-box">
 				<div class="top-class">
 					<ul>
@@ -108,11 +108,11 @@
 					免费发布采购
 				</div>
 				<div class="content-box">
-					<img src="picture/cut_change_10.png" id="img-one">
-					<img src="picture/cut_07.png" id="img-two">
-					<img src="picture/cut_13.png" id="img-three">
+					<img src="/static/spot-quotation/picture/cut_change_10.png" id="img-one">
+					<img src="/static/spot-quotation/picture/cut_07.png" id="img-two">
+					<img src="/static/spot-quotation/picture/cut_13.png" id="img-three">
 					<textarea class="entrust"></textarea>
-					<img src="picture/cut_35.png" id="img-four">
+					<img src="/static/spot-quotation/picture/cut_35.png" id="img-four">
 				</div>
 			</div>
 
@@ -162,8 +162,8 @@
         		</div>
      		</div>
 		</div>
-
-		<script src="../js/jquery.js"></script>
-		<script src="../js/spot-quotation.js"></script>
+		{% include 'util/main/footer.html' %}
+		<script src="/static/js/jquery.js"></script>
+		<script src="/static/js/spot-quotation.js"></script>
 	</body>
 </html>

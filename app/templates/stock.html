@@ -3,14 +3,15 @@
 <head>
 	<title>现货资源</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../style/bootstrap.css">
-    <link rel="stylesheet" href="../style/back-stock.css">
-    <link href="../style/back-common.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style/bootstrap.css">
+    <link rel="stylesheet" href="/static/style/back-stock.css">
+    <link href="/static/style/back-common.css" rel="stylesheet">
 </head>
 <body>
+	{% include 'util/main/header.html' %}
 	<div class="Box">
 		<div class="chooseTableButtonBox">
-			<button class="chooseTableButton">收起筛选<img src="picture/stock1.png"></button>
+			<button class="chooseTableButton">收起筛选<img src="/static/purchase/picture/stock1.png"></button>
 		</div>
 		<table class="chooseTable" border="1">
 			<tr>
@@ -234,9 +235,10 @@
 			</div>
 		</div>
 	</div>
-  <script src="../js/jquery.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="../js/main.js"></script>
+		{% include '/util/main/footer.html' %}
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/static/js/main.js"></script>
 </body>
 </html>

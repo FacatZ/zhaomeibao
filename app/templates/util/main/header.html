@@ -37,11 +37,11 @@
       </div>
 
       <div class="nav-link">
-        <a href="#" id="main" class="active">首页</a>
-        <a href="#" id="resource">现货资源</a>
-        <a href="#" id="purchase">采购信息</a>
-        <a href="#" id="logistics">物流</a>
-        <a href="#" id="price">现货行情</a>
+        <a href="{{url_for('main.index')}}" id="main" {% if activeid == 0%}class="active" {% endif %}>首页</a>
+        <a href="{{url_for('main.stock')}}" id="resource"  {% if activeid == 1 %}class="active" {% endif %}>现货资源</a>
+        <a href="{{url_for('main.purchase')}}" id="purchase"  {% if activeid == 2%}class="active" {% endif %}>采购信息</a>
+        <a href="{{url_for('main.logistics')}}" id="logistics" {% if activeid == 3%}class="active" {% endif %}>物流</a>
+        <a href="{{url_for('main.spot_quotation')}}" id="price"  {% if activeid == 4 %}class="active" {% endif %}>现货行情</a>
         <div id="slide-act"></div>
       </div>
 
