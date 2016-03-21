@@ -18,13 +18,15 @@ $ source venv/bin/activate
 #等待安装完成
 
 #初始化数据库
-(venv)$ python manage shell
->>>init_db()
+(venv)$ python manage.py shell
+>>>init_db() #会创建一些文章数据（目前）
 >>>exit()
 #运行
-(venv)$ python manage runserver
+(venv)$ python manage.py runserver
  * Restarting with stat
  * Debugger is active!
  * Debugger pin code: 284-871-637
+
 浏览器输入：localhost:5000。
 退出：CTRL+C
+目前后台路由：localhost:5000/admin
