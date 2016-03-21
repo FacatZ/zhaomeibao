@@ -8,14 +8,7 @@
     <link href="/static/style/back-common.css" rel="stylesheet">
 </head>
 <body>
-<div class="top">
-        <p1>找煤宝后台管理</p1>
-        <img src="/static/pictures/head_01.png" id="img-position1">
-        <img src="/static/pictures/head_02.png" id="img-position2">
-        <a href="#">收件箱</a>
-        <img src="/static/pictures/head_03.png" id="img-position3">
-        <a href="#">管理员</a>
-      </div>
+      {% include 'util/admin/top.html' %}
 
       {% include 'util/admin/left-box.html' %}
 	<div class="backArticleBox">
@@ -68,23 +61,25 @@
     	</div>
       {% endfor %}
     	<div class="stockButtonBox">
-			<div class="stockButtons">
-				<input type="button" class="stockButton stockButtonPrePre" value=" ">
-				<input type="button" class="stockButton stockButtonPre" value=" ">
-				<input type="button" class="stockButton" value="1">
-				<input type="button" class="stockButton" value="2">
-				<input type="button" class="stockButton" value="3">
-				<input type="button" class="stockButton" value="4">
-				<input type="button" class="stockButton" value="5">
-				<input type="button" class="stockButton" value="6">
-				<input type="button" class="stockButton" value="7">
-				<input type="button" class="stockButton" value="8">
-				<input type="button" class="stockButton" value="9">
-				<input type="button" class="stockButton" value="10">
-				<input type="button" class="stockButton" value="...">
-				<input type="button" class="stockButton stockButtonNext" value=" ">
-				<input type="button" class="stockButton stockButtonNextNext" value=" ">
-			</div>
+			<ul class="stockButtons">
+				<li type="button" class="stockButton stockButtonPrePre" value=" ">
+				<li type="button" class="stockButton stockButtonPre" value=" ">
+				{% for p in pagination.iter_pages() %}
+          {% if p %}
+            {% if p == pagination.page %}
+            <li type="button" class="stockButton" ><a href="{{ url_for('admin.article_list', page=p, count=count) }}">{{p}}</a></li>
+            {% else %}
+            <li type="button" class="stockButton" ><a href="{{ url_for('admin.article_list', page=p, count=count) }}">{{p}}</a></li>
+            {% endif %}
+          {% else %}
+          <li type="button" class="stockButton" ><a href="#">&hellip;</a></li>
+          {% endif %}
+        {% endfor %}
+				<li type="button" class="stockButton" value="10">
+				<li type="button" class="stockButton" value="...">
+				<li type="button" class="stockButton stockButtonNext" value=" ">
+				<li type="button" class="stockButton stockButtonNextNext" value=" ">
+			</ul>
 		</div>
 		</div>
 	</div>	

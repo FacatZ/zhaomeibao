@@ -2,6 +2,33 @@ from app.models import User, ProductInformation, Category, IndustryIndex, Articl
 from sqlalchemy import and_
 from flask import request
 
+class Pagination(object):
+	def __init__(self, obj_query, page, per_page):
+		self.items = obj_query.offset((page-1)*per_page).limit(per_page)
+		self.query = obj_query
+		self.total = obj_query.count()
+		self.per_page = per_page
+		self.page = page
+		self.pages = int((self.total + self.per_page - 1)/self.per_page) 
+		self.has_prev = False if self.page == 1 else False
+		self.has_next = False if self.page == self.pages else False
+		self.prev_num = self.page - 1
+		self.next_num = self.pages - self.page
+	def iter_pages(self, left_edge=2, left_current=2, right_current=5, right_edge=2):
+		last = 0
+		for num in xrange(1, self.pages + 1):
+			if num <= left_edge or \
+				(num > self.page - left_current - 1 and \
+				num < self.page + right_current) or \
+				num > self.pages - right_edge:
+				if last + 1 != num:
+					yield None
+				yield num
+				last = num
+
+		
+
+
 def getProductInformationByArea(areaId, num=10):
 	return ProductInformation.query.filter_by(areaid=areaId).limit(num)
 
