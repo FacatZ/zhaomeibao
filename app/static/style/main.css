@@ -1,6 +1,6 @@
 <style>
       a{
-
+        text-decoration:none;
       }
       @font-face{
         font-family:ownstyle;
@@ -16,6 +16,7 @@
         height:500px;
         margin:0px;
         padding:0px;
+        float:left;
       }
       .ui_asideMenu{
         width:250px;
@@ -194,20 +195,20 @@
         background-color:rgb(231,231,231);
       }
       .carousel-indicators li {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        margin: 1px;
-        cursor: pointer;
-        background-color:#fff;
-        border: 1px solid 5A5A59;
-        border-radius: 12px;      
+        display: inline-block !important;
+        width: 24px !important;
+        height: 24px !important;
+        margin: 1px !important;
+        cursor: pointer !important;
+        background-color:#fff !important;
+        border: 1px solid 5A5A59 !important;
+        border-radius: 12px !important;     
       }
       .carousel-indicators .active {
-        width: 24px;
-        height: 24px;
-        border: 1px solid 5A5A59;
-        background-color:5A5A59;
+        width: 24px !important;
+        height: 24px !important;
+        border: 1px solid 5A5A59 !important;
+        background-color:5A5A59 !important;
       }
       .leading{
         position:absolute;
@@ -303,6 +304,7 @@
         width:1215px;
         border:3px solid;
         border-color:B5B4B4;
+        float:left;
       }
       .wharf-content{
         margin-top:13px;
@@ -416,6 +418,7 @@
         height:800px;
         width:1258px;
         background-color:E8E7E7;
+        float:left;
       }
       .action-img{
         height:280px;
@@ -681,6 +684,7 @@
         width:1258px;
         height:500px;
         background-color:E8E7E7;
+        float:left;
       }
       .nosmoke-img{
         height:280px;
@@ -915,6 +919,7 @@
         height:250px;
         width:1258px;
         background-color:B5B4B4;
+        float:left;
       }
       .the-box{
         height:250px;

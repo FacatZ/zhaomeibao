@@ -254,7 +254,7 @@
   	background-color:black;
   	float:left;
   }
-  .line-two{
+  .line-two-purchase{
   	margin:0px;
   	margin-left:20px;
   	margin-top:12px;
@@ -302,10 +302,10 @@
   .entrust p{
     background-color:B5B4B4;
     width:350px;
-    height:35px;
+    height:50px;
     margin:0px;
     padding:0px;
-    padding-top:15px;
+    line-height:50px;
     font-family:"微软雅黑";
     font-size:24px;
     color:black;
@@ -356,10 +356,10 @@
   .nearnow p{
     background-color:B5B4B4;
     width:350px;
-    height:35px;
+    height:50px;
     margin:0px;
     padding:0px;
-    padding-top:15px;
+    line-height:50px;
     font-family:"微软雅黑";
     font-size:24px;
     color:black;
@@ -394,8 +394,8 @@
     float:left;
   }
   .trade-content{
-    height:89px;
-    width:348px;
+    height:90px;
+    width:350px;
     float:left;
     background-color:white;
     border:solid 1px;

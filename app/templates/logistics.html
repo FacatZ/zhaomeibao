@@ -5,8 +5,9 @@
 		<link href="/static/style/logistics.css" rel="stylesheet">
 	</head>
 	<body>
+		{% include 'util/main/header.html' %}
 		<div class="main">
-			{% include 'util/main/header.html' %}
+			
 			<div class="map">
 
 
@@ -26,7 +27,7 @@
 						<input type="text" id="linkman">
 						<p>地区</p>
 						<input type="text" id="area">
-					<img id="submit" src="picture/btn_01.png">
+					<img id="submit" src="/static/logistics/picture/btn_01.png">
 				</div>
 			</div>
 
@@ -39,7 +40,8 @@
 					<p1>11:11</p1><p2>熊老师</p2><p3>130kg</p3>
 				</div>
 			</div>
-
+			
 		</div>
+		{% include 'util/main/footer.html' %}
 	</body>
 </html>

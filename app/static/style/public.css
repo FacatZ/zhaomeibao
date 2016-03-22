@@ -1,6 +1,6 @@
 <style>
   a{
-
+    text-decoration:none;
   }
   body{
     width:1258px;
@@ -11,6 +11,7 @@
     padding:0px;
     height:200px;
     width:1258px;
+    background-color:white;
     float:left;
   }
   .top{
@@ -122,7 +123,7 @@
     float:left;
   }
   .nav-link{
-    margin-top:85px;
+    margin-top:95px;
     margin-left:395px;
     height:50px;
     width:681px;

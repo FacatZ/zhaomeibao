@@ -27,6 +27,7 @@
 		background-color:white;
 		border:1px solid;
 		border-color:5A5A59;
+		border-bottom:none;
 		float:left;
 		margin-top:20px;
 		margin-left:20px;
@@ -51,7 +52,7 @@
 		float:left;
 	}
 	.top-class ul li{
-		height:40px;
+		height:60px;
 		width:130px;
 		float:left;
 		font-size:18px;
@@ -85,20 +86,20 @@
 	}*/
 	.meishi-else{
 		height:60px;
-		width:326px;
+		width:328px;
 		border-bottom:1px solid;
 		border-color:5A5A59;
 		float:left;
 		background-color:rgb(216,216,216);
 	}
-	.line-one{
+	.line-one-spot{
 		height:45px;
-		width:850px;
+		width:849px;
 		float:left;
 		border-bottom:1px solid;
 		border-color:5A5A59;
 	}
-	.line-one p1{
+	.line-one-spot p1{
 		width:650px;
 		height:32px;
 		float:left;
@@ -107,7 +108,7 @@
 		padding-top:13px;
 		margin-left:20px;
 	}
-	.line-one p2{
+	.line-one-spot p2{
 		height:32px;
 		float:left;
 		font-size:18px;
@@ -117,7 +118,7 @@
 		width:150px;
 	}
 	.line-content{
-		height:49px;
+		height:50px;
 	}
 	.right-top-box{
 		width:350px;
@@ -125,15 +126,17 @@
 		float:left;
 		margin-top:20px;
 		margin-left:20px;
+		background-color:rgb(216,216,216);
 	}
 	.head-box{
 		background-color:B5B4B4;
 		width:350px;
-		height:40px;
+		height:50px;
 		float:left;
 		text-align:center;
 		font-size:21px;
-		padding-top:10px;
+		line-height:50px;
+		font-weight:bold;
 	}
 	.content-box{
 		height:300px;
@@ -184,11 +187,10 @@
   	.nearnow p{
     	background-color:B5B4B4;
     	width:350px;
-    	height:35px;
+    	height:50px;
     	margin:0px;
     	padding:0px;
-    	padding-top:15px;
-    	font-family:"微软雅黑";
+    	line-height:50px;
     	font-size:24px;
 	    color:black;
 	    font-weight:bold;
@@ -222,8 +224,8 @@
 	    float:left;
     }
     .trade-content{
-	    height:89px;
-	    width:348px;
+	    height:90px;
+	    width:350px;
 	    float:left;
 	    background-color:white;
 	    border:solid 1px;
