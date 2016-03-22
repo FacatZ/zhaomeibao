@@ -7,6 +7,7 @@ from flask.ext.login import current_user, login_required
 from ..decorators import admin_required
 from ..models import ArticleCategory, Article
 from ..util import data 
+from ..database import db_session
 
 @api.route('/<coalType>/<int:areaid>')
 def get_coal_type_by_area_id(coalType, areaid):
@@ -32,23 +33,25 @@ def get_coal_type_by_area_id(coalType, areaid):
 		return jsonify({'statecode': 404})
 
 #api below belong to admin account
-@api.route('/admin/create/article')
+@api.route('/admin/create/article', methods=['POST'])
 @login_required
 @admin_required
 def admin_create_article():
-	title = request.form.get('title')
-	body = request.form.get('body')
-	ctgid = request.form.get('ctgid')
-	ctgid = int(ctgid)
+	# print request.form
+	# return jsonify({'statecode': 200})
+	title = request.form.get('title', '', type=str)
+	body = request.form.get('body', '', type=str)
+	ctgid = request.form.get('ctgid', 1, type=int)
+	# ctgid = int(ctgid)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
 		return jsonify({'statecode': 406})
 	a = Article(title=title, body=body, category=ac)
-	db_sesstion.add(a)
+	db_session.add(a)
 	try:
-		db_sesstion.commit()
+		db_session.commit()
 	except Exception, e:
-		db_sesstion.rollback()
+		db_session.rollback()
 		return jsonify({'statecode': 406})
 	return jsonify({'statecode': 200})
 
@@ -59,12 +62,12 @@ def admin_delete_article(id):
 	article = Article.query.filter_by(id=id).first()
 	if not article:
 		return jsonify({'statecode': 404})
-	db_sesstion.delete(article)
+	db_session.delete(article)
 	try:
-		db_sesstion.commit()
+		db_session.commit()
 		return jsonify({'statecode': 200})
 	except Exception, e:
-		db_sesstion.rollback()
+		db_session.rollback()
 		return jsonify({'statecode': 406})
 
 @api.route('/admin/publish/product')
@@ -79,12 +82,12 @@ def admin_publish_product():
 	productInfo.user = user
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
-	db_sesstion.add_all([indIndex, productInfo])
+	db_session.add_all([indIndex, productInfo])
 	try:
-		db_sesstion.commit()
+		db_session.commit()
 		return jsonify({'statecode': 200})
 	except Exception, e:
-		db_sesstion.rollback()
+		db_session.rollback()
 		return jsonify({'statecode': 406})
 
 @api.route('/admin/delete/product/<int:id>')
@@ -93,13 +96,13 @@ def admin_publish_product():
 def admin_delete_product(id):
 	productInfo = ProductInformation.query.filter_by(id=id).first()
 	indIndex = productInfo.industryIndex
-	db_sesstion.delete(productInfo)
-	db_sesstion.delete(indIndex)
+	db_session.delete(productInfo)
+	db_session.delete(indIndex)
 	try:
-		db_sesstion.commit()
+		db_session.commit()
 		return jsonify({'statecode': 200})
 	except Exception, e:
-		db_sesstion.rollback()
+		db_session.rollback()
 		return jsonify({'statecode': 406})
 
 @api.route('/admin/modify/product/<int:id>')
@@ -112,10 +115,10 @@ def admin_modify_product(id):
 	res = data.processingModifyProductInformation(product)
 	if res:
 		try:
-			db_sesstion.commit()
+			db_session.commit()
 			return jsonify({'statecode': 200})
 		except Exception, e:
-			db_sesstion.rollback()
+			db_session.rollback()
 	return jsonify({'statecode': 406})
 # @api.route('/admin/get/article/list'):
 # @login_required
