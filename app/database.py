@@ -10,6 +10,27 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 Base.query = db_session.query_property()
 
+def generate_fake_articles():
+	import models
+	admin = models.User.query.filter_by(username='admin').first()
+	if not admin:
+		print 'no admin'
+		return 
+
+	titlelist = [u'标题1',u'标题2',u'标题3',u'标题4']
+	bodylist = [u'内容1',u'内容2',u'内容3',u'内容4',]
+	for title, body in zip(titlelist, bodylist):
+		a = models.Article(title=title, body=body)
+		res = admin.create_article(a)
+
+		from random import randint
+		acId = randint(0, 4)
+		articleCategory = models.ArticleCategory.query.filter_by(id=acId).first()
+		a.category = articleCategory
+		db_session.commit()
+		if not res:
+			print 'init articles %s failed' %(title)
+	
 def init_db():
 	import models
 	Base.metadata.create_all(engine)
@@ -39,8 +60,4 @@ def init_db():
 	except Exception, e:
 		db_session.rollback()
 		print 'create admin count failed'
-
-def generate_fake_articles():
-	import models
-	admin = models.User.query.filter_by(admin='admin')
-	
+	generate_fake_articles()

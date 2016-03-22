@@ -5,9 +5,15 @@ from flask.ext.script import Manager, Shell
 from app.database import db_session, init_db, generate_fake_articles
 from app.util import resources
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article
+from flask.ext.login import login_user
 
 app = create_app('development')
 manager = Manager(app)
+
+@app.before_first_request
+def first_request_processor():
+	admin = User.query.filter_by(username='admin').first()
+	login_user(admin)
 
 @app.teardown_appcontext
 def teardown_database(exception=None):
