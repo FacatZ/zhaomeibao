@@ -35,46 +35,33 @@
     	<div class="checkboxNormal">
       	<input type="checkbox">
       	<div class="checkboxID">ID</div>
-      	<div class="checkboxTitle">标题</div>
-      	<div class="checkboxType">煤市行情</div>
-      	<div class="checkboxOrigin">类别</div>
-      	<div class="checkboxDate">作者</div>
+      	<div class="checkboxTitle">订单号</div>
+      	<div class="checkboxType">类别</div>
+      	<div class="checkboxOrigin">发布者</div>
+      	<div class="checkboxDate">时间</div>
       	<div class="checkboxOption">操作</div>
     	</div>
-    	<div class="checkboxDark">
-      	<input type="checkbox">
-      	<div class="checkboxID">1111</div>
-      	<div class="checkboxTitle">12月煤炭业持续低迷</div>
-      	<div class="checkboxType">煤市行情</div>
-      	<div class="checkboxOrigin">XXX</div>
-      	<div class="checkboxDate">2015-12-05 7:50:30</div>
-      	<div class="checkboxOption">
-      		<table border="1">
-      			<tr>
-      				<td><a class="checkboxOptionEdit" href="#"></a></td>
-      				<td><a class="checkboxOptionCopy" href="#"></a></td>
-      				<td><a class="checkboxOptionDelete" href="#"></a></td>
-      			</tr>
-      		</table>
-      	</div>
-    	</div>
-    	<div class="checkboxNormal">
-      	<input type="checkbox">
-      	<div class="checkboxID">1111</div>
-      	<div class="checkboxTitle">12月煤炭业持续低迷</div>
-      	<div class="checkboxType">煤市行情</div>
-      	<div class="checkboxOrigin">XXX</div>
-      	<div class="checkboxDate">2015-12-05 7:50:30</div>
-      	<div class="checkboxOption">
-      		<table border="1">
-      			<tr>
-      				<td><a class="checkboxOptionEdit" href="#"></a></td>
-      				<td><a class="checkboxOptionCopy" href="#"></a></td>
-      				<td><a class="checkboxOptionDelete" href="#"></a></td>
-      			</tr>
-      		</table>
-      	</div>
-    	</div>
+      {% for p in product %}
+      <div class="{% if p.id%2 == 1 %}checkboxDark{% else %}checkboxNormal{%endif%}">
+        <input type="checkbox">
+        <div class="checkboxID">{{p.id}}</div>
+        <div class="checkboxTitle">{{p.ordnum}}</div>
+        <div class="checkboxType">{{p.category.name}}</div>
+        <div class="checkboxOrigin">{{p.user.username}}</div>
+        <div class="checkboxDate">{{format_datetime(p.rldate)}}</div>
+        <div class="checkboxOption">
+          <table border="1">
+            <tr>
+              <td><a class="checkboxOptionEdit" href="#"></a></td>
+              <td><a class="checkboxOptionCopy" href="#"></a></td>
+              <td><a class="checkboxOptionDelete" href="#"></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>   
+      {% endfor %}
+    
+    	
     	<div class="stockButtonBox">
 			<div class="stockButtons">
 				<input type="button" class="stockButton stockButtonPrePre" value=" ">

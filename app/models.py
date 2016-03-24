@@ -124,6 +124,7 @@ class ProductInformation(Base):
     dpaddr = Column(String(256)) #地址信息
 
     pdtype = Column(String(64)) #产品类型
+    paytype = Column(String(64))
     remark = Column(String(256)) #备注
     onsale = Column(Boolean, default=False) #是否特价产品，默认为否
 
@@ -201,7 +202,7 @@ class IndustryIndex(Base):
     def from_dict(dictionary):
         indindex = IndustryIndex()
         for key in dictionary:
-            setattr(indindex, key, indindex[key])
+            setattr(indindex, key, dictionary[key])
         return indindex
 
 

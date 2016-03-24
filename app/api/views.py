@@ -46,7 +46,8 @@ def admin_create_article():
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
 		return jsonify({'statecode': 406})
-	a = Article(title=title, body=body, category=ac)
+	user = current_user._get_current_object()
+	a = Article(title=title, body=body, category=ac, author=user)
 	db_session.add(a)
 	try:
 		db_session.commit()
@@ -70,19 +71,23 @@ def admin_delete_article(id):
 		db_session.rollback()
 		return jsonify({'statecode': 406})
 
-@api.route('/admin/publish/product')
+@api.route('/admin/publish/product', methods=['POST'])
 @login_required
 @admin_required
 def admin_publish_product():
-	indIndex = data.processingIndutrialIndex()
+	# print request.form
+	indIndex = data.processingIndustrialIndex()
 	user = current_user._get_current_object()
 	productInfo = data.processingProductInformation()
 	category = data.processingCategory()
-	
+	# print category
+	# print indIndex
+	# print productInfo
 	productInfo.user = user
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
 	db_session.add_all([indIndex, productInfo])
+	# return jsonify({'statecode': 200})
 	try:
 		db_session.commit()
 		return jsonify({'statecode': 200})

@@ -43,7 +43,7 @@ def init_db():
 		db_session.rollback()
 		print 'init articles category failed'
 
-	for coalname in [u'煤炭1', u'煤炭2', u'煤炭3']:
+	for coalname in [u'动力煤', u'炼焦煤', u'无烟煤', u'焦炭/兰炭', u'生物质碳']:
 		m = models.Category(name=coalname)
 		db_session.add(m)
 	try:

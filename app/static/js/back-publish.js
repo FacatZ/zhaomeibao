@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$("#btn-publish").click(function(){
-		$.post('',{
+		$.post('/api/admin/publish/product',{
 			ctgid : $("#ctgid").val(),
 			pdpid : $("#pdpid").val(),
 			name  : $("#name").val(),
