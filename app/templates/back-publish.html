@@ -13,34 +13,37 @@
 			<div class="right-box">
 				<p1>发布产品</p1>
 				<div class="table-one">
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
-					<p1>1</p1><p2>2</p2><p1>1</p1><p2>2</p2>
+					<p1>分类</p1><p2><select name="ctgid" id="ctgid"><option>one</option><option>two</option></select></p2><p1>产地</p1><p2><input type="text" name="pdpid" id="pdpid"></p2>
+					<p1>品名</p1><p2><input type="text" name="name" id="name"></p2><p1>库存</p1><p2><input type="text" name="stock" id="stock"><span>吨</span></p2>
+					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2><input type="text" name="dppid" id="dppid"></p2>
+					<p1>价格.类型</p1><p2><select name="prtype" id="prtype>"><option>one</option><option>two</option></select></p2><p1>结算方式</p1><p2><input type="radio" name="style" id="style" value="spot_exchange"><span>现汇</span><input type="radio" name="style" id="style" value="accept"><span>承兑</span><input type="radio" name="style" id="style" value="LC"><span>信用证</span></p2>
+					<p1>价格</p1><p2><input type="text" name="price" id="price"><span>元/吨</span></p2><p1>公开价格</p1><p2><input type="radio" name="open_price" id="open-price" value="yes"><span>是</span><input type="radio" name="open_price" id="open-price" value="no"><span>否</span></p2>
+					<p1>供货类型</p1><p2><select name="pdtype" id="pdtype>"><option>one</option><option>two</option></select></p2><p1>价格补充</p1><p2><input type="text" name="prsr" id="prsr"></p2>
+					<p1>备注</p1><p3><input type="text" name="remark" id="remark"></p3>
 				</div>
 
 				<div class="table-two">
-					<p1 class="line-top">优惠名</p1><p2 class="line-top"></p2><p1 class="line-top"></p1><p3 class="line-top"></p3><p4 class="line-top"></p4>
-					<p1></p1><p2></p2><p1></p1><p3></p3><p4><img src="/static/back-publish/picture/btn_04.png" id="btn-add"><img src="/static/back-publish/picture/btn_03.png" id="btn-delete"></p4>
+					<p1 class="line-top">优惠名</p1><p2 class="line-top">重量区间</p2><p1 class="line-top">单价</p1><p3 class="line-top">优惠说明</p3><p4 class="line-top">操作</p4>
+					<p1><input type="text" name="fpname" id="fpname"></p1><p2><input type="text" name="minprice" id="minprice"><span>-</span><input type="text" name="maxprice" id="maxprice"><span>吨</span></p2><p1><input type="text" name="unitprice" id="unitprice"><span>元/吨</span></p1><p3><input type="text" name="fpexplain" id="fpexplain"></p3><p4><img src="/static/back-publish/picture/btn_04.png" id="btn-add"><img src="/static/back-publish/picture/btn_03.png" id="btn-delete"></p4>
 				</div>
 
 				<div class="table-three">
-					<div class="first-blue"></div>
-					<div class="left-big"></div>
-					<p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<div class="first-blue"></div>
-					<p2></p2><p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p2></p2><p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p2></p2><p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<p2></p2><p1></p1><p2></p2><p1></p1><p2></p2><p1></p1>
-					<div class="first-blue"></div>
-					<p2></p2><div class="last-box"><img src="/static/back-publish/picture/btn_01.png" id="btn-send"></div>
+					<div class="first-blue">工业分析指标</div>
+					<div class="left-big-one">水份:</div>
+					<p1><span>全水份(Mt)</span><input type="text" name="mt" id="mt"><span>%</span></p1><p2>灰份(A):</p2><p1><span>收到基(ar)</span><input type="text" name="aar" id="aar"><span>%</span></p1><p2>全硫份(St):</p2><p1><span>收到基(ar)</span><input type="text" name="star" id="star"><span>%</span></p1>
+					<p1><span>内水(Mad)</span><input type="text" name="mad" id="mad"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="text" name="aad" id="aad"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="text" name="stad" id="stad"><span>%</span></p1>
+					<div class="left-big-two">挥发份(V):</div>
+					<p1><span>收到基(ar)</span><input type="text" name="varr" id="varr"><span>%</span></p1><p2>固定碳(FC):</p2><p1><span>收到基(ar)</span><input type="text" name="fcar" id="fcar"><span>%</span></p1><p2>低位发热量(Qnet):</p2><p1><span>收到基(ar)</span><input type="text" name="qnetar" id="qnetar"><span>大卡</span></p1>
+					<p1><span>空干基(ad)</span><input type="text" name="vad" id="vad"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="text" name="fcad" id="fcad"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="text" name="qnetad" id="qnetad"><span>大卡</span></p1>
+					<p3><span>干燥无灰基(daf)</span><input type="text" name="vdaf" id="vdaf"><span>%</span></p3><p2>颗度(Size)</p2><p4><input type="text" name="sizemin" id="sizemin"><span>-</span><input type="text" name="sizemax" id="sizemax"><span>mm 占比</span><input type="text" name="sizehold" id=""><span>%</span></p4>
+					<div class="first-blue">工艺分析指标</div>
+					<p2>灰熔点(ST)</p2><p1><input type="text" name="st" id="st"><span>℃</span></p1><p2 class="extend">哈式可磨指数(HGI)</p2><p1><input type="text" name="hgi" id="hgi"></p1><p2 class="extend">焦渣特征(CRC)</p2><p1><input type="text" name="crc" id="crc"></p1>
+					<p2>粘结指数(G)</p2><p1><input type="text" name="g" id="g"></p1><p2 class="extend">胶质层厚度(Y)</p2><p1><input type="text" name="y" id="y"></p1><p2 class="extend">坩埚/自由膨胀序数</p2><p1><input type="text" name="CSN_FSI" id="CSN_FSI"></p1>
+					<p2>三氧化二铝</p2><p1><input type="text" name="al2o3" id="al2o3"><span>%</span></p1><p2></p2><p1></p1><p2></p2><p1></p1>
+					<div class="first-blue">焦炭工艺分析指标</div>
+					<p2>磷份(P)</p2><p1><input type="text" name="p" id="p"><span>%</span></p1><p2 class="extend">焦炭反应性(CRI)</p2><p1><input type="text" name="cri" id="cri"></p1><p2 class="extend">反应后强度(CSR)</p2><p1><input type="text" name="csr" id="csr"></p1>
+					<p2 class="extend">抗碎强度(M40)</p2><p1><input type="text" name="m40" id="m40"><span>%</span></p1><p2 class="extend">抗碎强度(M25)</p2><p1><input type="text" name="m25" id="m25"><span>%</span></p1><p2 class="extend">耐磨强度(M10)</p2><p1><input type="text" name="M10" id="M10"><span>%</span></p1>
+					<p2>指标补充</p2><div class="last-box"><input type="text" name="indexm" id="indexm"></div>
 				</div>
 
 				<div class="last-table">
@@ -49,6 +52,9 @@
 				</div>
 			</div>
 		</div>
+
+		<script src="/static/js/jquery.js"></script>
+		<script src="/static/js/back-publish.js"></script>
 	</body>
 
 </html>

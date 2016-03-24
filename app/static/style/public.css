@@ -153,4 +153,7 @@
   .active{
     color:21A3DE !important;
   }
+  a{
+    text-decoration:none !important;
+  }
 </style>

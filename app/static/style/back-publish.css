@@ -1,3 +1,24 @@
+	select{
+		width:70px;
+		float:left;
+		margin-left:10px;
+		margin-top:5px;
+	}
+	input{
+		width:100px;
+		height:30px;
+		float:left;
+		margin-left:10px;
+		border-radius:5px;
+		background-image:none;
+		font-size:18px;
+		color:black;
+		outline:none;
+		border:1px solid black;
+	}
+	span{
+		float:left;
+	}
 	.main{
 		width:1258px;
 		float:left;
@@ -60,9 +81,30 @@
 		margin:0px;
 		padding:0px;
 		float:left;
-		text-align:center;
+		/*text-align:center;*/
 		padding-top:5px;
 		color:black;
+
+	}
+	.table-one p3{
+		width:799px;
+		height:34px;
+		border:1px solid;
+		border-color:rgb(193,211,229);
+		border-bottom:none;
+		border-right:none;
+		margin:0px;
+		padding:0px;
+		float:left;
+		/*text-align:center;*/
+		padding-top:5px;
+		color:black;
+	}
+	#age{
+		width:100px;
+		height:40px;
+		float:left;
+
 	}
 	.table-two{
 		margin-top:30px;
@@ -137,7 +179,7 @@
 	}
 	.table-three{
 		width:900px;
-		height:480px;
+		height:560px;
 		text-align:center;
 		color:black;
 		border:1px solid;
@@ -148,24 +190,42 @@
 		margin-top:30px;
 		margin-left:20px;
 	}
+	.table-three input{
+		width:60px !important;
+	}
+	.noborder{
+		border-top:none !important;
+	}
 	.first-blue{
-		width:899px;
+		width:889px;
 		height:39px;
 		float:left;
+		color:white;
+		text-align:left;
+		padding-left:10px;
+		line-height:39px;
 		background-color:rgb(106,164,210);
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
 		border-right:none;
 	}
-	.left-big{
-		width:49px;
-		padding:0 25px;
+	.left-big-one{
+		width:99px;
 		padding-top:10px;
 		font-size:28px;
-		font-weight:bold;
-		line-height:35px;
-		height:149px;
+		height:69px;
+		float:left;
+		border:1px solid;
+		border-color:rgb(193,211,229);
+		border-bottom:none;
+		border-right:none;
+	}
+	.left-big-two{
+		width:99px;
+		padding-top:10px;
+		font-size:28px;
+		height:104px;
 		float:left;
 		border:1px solid;
 		border-color:rgb(193,211,229);
@@ -184,7 +244,9 @@
 		float:left;
 		text-align:center;
 		padding-top:5px;
+		line-height:30px;
 		color:black;
+		font-size:16px;
 	}
 	.table-three p2{
 		width:99px;
@@ -197,8 +259,42 @@
 		padding:0px;
 		float:left;
 		text-align:center;
+		line-height:30px;
 		padding-top:5px;
 		color:black;
+		font-size:16px;
+	}
+	.table-three p3{
+		width:299px;
+		height:34px;
+		border:1px solid;
+		border-color:rgb(193,211,229);
+		border-bottom:none;
+		border-right:none;
+		margin:0px;
+		padding:0px;
+		float:left;
+		text-align:center;
+		padding-top:5px;
+		color:black;
+		font-size:16px;
+		line-height:30px;
+	}
+	.table-three p4{
+		width:399px;
+		height:34px;
+		border:1px solid;
+		border-color:rgb(193,211,229);
+		border-bottom:none;
+		border-right:none;
+		margin:0px;
+		padding:0px;
+		float:left;
+		text-align:center;
+		padding-top:5px;
+		color:black;
+		font-size:16px;
+		line-height:30px;
 	}
 	.last-box{
 		width:799px;
@@ -249,4 +345,66 @@
 		/*margin-top:10px;*/
 		cursor:pointer;
 		margin-left:30px;
+	}
+	#vldterm{
+		font-size:14px;
+		width:180px;
+	}
+	#style{
+		margin-top:0px;
+		margin-right:0px;
+		width:30px;
+	}
+	#stock{
+		margin-right:10px;
+	}
+	#pdpid{
+		width:150px;
+	}
+	#dppid{
+		width:200px;
+	}
+	#price{
+		margin-right:10px;
+	}
+	#open-price{
+		margin-top:0px;
+		margin-right:0px;
+		width:30px;
+	}
+	#minprice{
+		margin-right:10px;
+		width:60px;
+	}
+	#maxprice{
+		margin-right:10px;
+		width:60px;
+	}
+	#remark{
+		width:700px;
+	}
+	#unitprice{
+		margin-right:10px;
+		width:60px;
+	}
+	#prsr{
+		width:250px;
+	}
+	#fpexplain{
+		width:320px;
+	}
+	#fpname{
+		width:125px;
+	}
+	#aar , #star,#varr,#fcar,#qnetar{
+		margin-left:15px;
+	}
+	#sizemin,#sizemax{
+		margin-right:10px;
+	}
+	.extend{
+		height:39px !important;
+		padding:0px !important;
+		line-height:20px !important;
+
 	}
