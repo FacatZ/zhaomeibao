@@ -7,14 +7,14 @@ $(document).ready(function(){
 		$(this).css("background-color","rgb(216,216,216)");
 	});
 
-	$(".top-class li").each(function(index){
-		$(this).click(function(){
-			$("li").removeClass("active");
-			$(this).addClass("active");
-			$(".information-box").removeClass("show-box");
-			$(".information-box").eq(index).addClass("show-box");
-		});
-	});
+	// $(".top-class li").each(function(index){
+	// 	$(this).click(function(){
+	// 		$("li").removeClass("active");
+	// 		$(this).addClass("active");
+	// 		$(".information-box").removeClass("show-box");
+	// 		$(".information-box").eq(index).addClass("show-box");
+	// 	});
+	// });
 	
 	$("#img-one").click(function(){
 		$("#img-one").attr("src","../spot-quotation/picture/cut_change_10.png");
