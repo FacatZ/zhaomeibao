@@ -37,12 +37,9 @@ def get_coal_type_by_area_id(coalType, areaid):
 @login_required
 @admin_required
 def admin_create_article():
-	# print request.form
-	# return jsonify({'statecode': 200})
 	title = request.form.get('title', '', type=str)
 	body = request.form.get('body', '', type=str)
 	ctgid = request.form.get('ctgid', 1, type=int)
-	# ctgid = int(ctgid)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
 		return jsonify({'statecode': 406})
@@ -55,6 +52,23 @@ def admin_create_article():
 		db_session.rollback()
 		return jsonify({'statecode': 406})
 	return jsonify({'statecode': 200})
+
+@api.route('/admin/modify/article/<int:id>', methods=['POST'])
+@login_required
+@admin_required
+def admin_modify_article(id):
+	article = Article.query.filter_by(id=id).first()
+	if not article:
+		return jsonify({'statecode': 404})
+	article_params_dict = data.preprocessingArticleDict()
+	article.modify_from_dict(article_params_dict)
+	db_session.add(article)
+	try:
+		db_session.commit()
+		return jsonify({'statecode': 200})
+	except Exception, e:
+		db_session.rollback()
+		return jsonify({'statecode': 406})
 
 @api.route('/admin/delete/article/<int:id>')
 @login_required
