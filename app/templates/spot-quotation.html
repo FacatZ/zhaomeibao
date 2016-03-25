@@ -11,96 +11,18 @@
 			<div class="left-box">
 				<div class="top-class">
 					<ul>
-						<li class="active">煤市行情</li>
-						<li>媒市资讯</li>
-						<li>物流仓储</li>
-						<li>指数及价格</li>
+						{% for c in categorylist %}
+						<li {% if actgid == c.id%} class="active" {% endif %}><a href="{{url_for('main.spot_quotation', type=c.id)}}">{{c.name}}</a></li>
+						{% endfor %}
+						
 					</ul>
 					<div class="meishi-else"></div>
 				</div>
 				<ul class="information-box show-box">
-					<div class="line-one-spot"><p1>12月煤炭业持续低迷 煤企面临转型抉择</p1><p2>2015-12-09</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市1</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-				</ul>
-				<ul class="information-box">
-					<div class="line-one-spot"><p1>12月煤炭业持续低迷 煤企面临转型抉择</p1><p2>2015-12-09</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市2</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-				</ul>
-				<ul class="information-box">
-					<div class="line-one-spot"><p1>12月煤炭业持续低迷 煤企面临转型抉择</p1><p2>2015-12-09</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市3</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-				</ul>
-				<ul class="information-box">
-					<div class="line-one-spot"><p1>12月煤炭业持续低迷 煤企面临转型抉择</p1><p2>2015-12-09</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市4</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
-					<div class="line-one-spot line-content"><p1>熊老师买断了煤市</p1><p2>2016-2-14</p2></div>
+				{% for a in articles %}
+					<div class="line-one-spot"><p1>{{a.title}}</p1><p2>{{format_datetime(a.rldate)}}</p2></div>
+				{% endfor %}
+					
 				</ul>
 			</div>
 
@@ -108,7 +30,7 @@
 				<div class="head-box">
 					免费发布采购
 				</div>
-				<div class="content-box">
+				<div class="content-box ">
 					<img src="/static/spot-quotation/picture/cut_change_10.png" id="img-one">
 					<img src="/static/spot-quotation/picture/cut_07.png" id="img-two">
 					<img src="/static/spot-quotation/picture/cut_13.png" id="img-three">

@@ -1,5 +1,6 @@
 from . import main
-from flask import render_template
+from flask import render_template, request
+from ..models import ArticleCategory, Article
 
 @main.route('/')
 def index():
@@ -25,4 +26,11 @@ def logistics():
 @main.route('/spot_quotation')
 def spot_quotation():
 	activeid = 4
-	return render_template('spot-quotation.html', activeid=activeid)
+	actgid = request.args.get('type', 1, type=int)
+	categorylist = ArticleCategory.query.all()
+	category = ArticleCategory.query.filter_by(id=actgid).first()
+	articles = category.articles.all()
+	print actgid
+	for a in articles:
+		print a.title
+	return render_template('spot-quotation.html', categorylist=categorylist, actgid=actgid, articles=articles, activeid=activeid)
