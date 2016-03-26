@@ -236,3 +236,14 @@ class Article(Base):
     #最近一次修改时间
     lastmodifed = Column(DateTime, default=datetime.now)
     
+    def modify_from_dict(self, dictionary):
+        for key in dictionary:
+            setattr(self, key, dictionary[key])
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'ctgid': self.ctgid,
+            'title': self.title,
+            'body': self.body
+        }

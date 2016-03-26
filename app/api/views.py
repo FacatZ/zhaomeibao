@@ -33,6 +33,18 @@ def get_coal_type_by_area_id(coalType, areaid):
 		return jsonify({'statecode': 404})
 
 #api below belong to admin account
+@api.route('/admin/get/article/<int:id>')
+@login_required
+@admin_required
+def admin_get_article(id):
+	article = Article.query.filter_by(id=id).first()
+	if not article:
+		return jsonify({'statecode': 404})
+	return jsonify({
+		'statecode': 200,
+		'data': article.to_json()
+		})
+
 @api.route('/admin/create/article', methods=['POST'])
 @login_required
 @admin_required
