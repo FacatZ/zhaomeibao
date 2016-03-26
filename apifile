@@ -1,0 +1,33 @@
+1.api通用设定：向api请求后，返回中一定包含一对 'statcode': code。其中code为整型。若code为200说明请求成功，并附带相应数据；非200说明请求失败，不附带数据。
+2.在api的url中，带尖括号的说明需要填写的内容
+3.详细api内容可查看app/api/views.py
+
+-------后台文章相关api------
+通用要求：均要求用户登陆及具有管理员权限。前端用ajax发送数据，均用表单form来传递。后台收到的表单数据以字典呈现，以input或textarea标签中的name作为键值。
+
+1.请求文章(GET)
+url: /api/admin/get/article/<int:id>
+返回结果（成功）:
+	{
+		'statecode': 200,
+		'data': {
+		            'id': self.id,
+		            'ctgid': self.ctgid,
+		            'title': self.title,
+		            'body': self.body
+	        	}
+	}
+
+2.创建文章(POST)
+url: /api/admin/create/article
+form中的name：title(标题), body（正文内容）, ctgid(文章类型的数据库id)
+返回结果（成功）:{'statecode': 200}
+
+3.修改文章(POST)
+url: /api/admin/modify/article/<int:id>
+form中的name：title(标题), body（正文内容）, ctgid(文章类型的数据库id)
+返回结果（成功）:{'statecode': 200}
+
+4.删除文章(GET)
+url: /api/admin/delete/article/<int:id>
+返回结果（成功）:{'statecode': 200}
