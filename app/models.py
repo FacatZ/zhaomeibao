@@ -138,15 +138,43 @@ class ProductInformation(Base):
     def to_brief_json(self):
         indindex = self.industryIndex
         brief_json_dict = {
-            u'分类': self.category.name,
-            u'品名': '...',
-            u'热值': indindex.qnetar if indindex else None,
-            u'全硫份': indindex.star if indindex else None,
-            u'库存': self.stock,
-            u'交割地': profile.get_jiaogedi_name_by_id(self.dpareaid),
-            u'价格': self.price
+            u'category': self.category.name,
+            u'coal': '...',
+            u'qnetar': indindex.qnetar if indindex else None,
+            u'star': indindex.star if indindex else None,
+            u'stock': self.stock,
+            u'dpareaid': profile.get_jiaogedi_name_by_id(self.dpareaid),
+            u'price': self.price
         }
         return brief_json_dict
+
+    def to_json(self):
+        json_dict = {
+            'areaid': self.areaid,
+            'ctgid': self.ctgid,
+            'ctgname': self.category.name,
+            'uid': self.uid,
+            'ordnum': self.ordnum,
+            'pdpid': self.pdpid,
+            'pdcid': self.pdcid,
+            'coal': self.coal,
+            'stock': self.stock,
+            'price': self.price,
+            'prtype': self.prtype,
+            'prpid': self.prpid,
+            'prcid': self.prcid,
+            'vldterm': self.vldterm,
+            'rldate': self.rldate,
+            'dpareaid': self.dpareaid,
+            'dppid': self.dppid,
+            'dpcid': self.dpcid,
+            'dpaddr': self.dpaddr,
+            'pdtype': self.pdtype,
+            'paytype': self.paytype,
+            'remark': self.remark,
+            'onsale': self.onsale
+        }
+        return json_dict
 
 class Category(Base):
     '''
@@ -204,6 +232,28 @@ class IndustryIndex(Base):
         for key in dictionary:
             setattr(indindex, key, dictionary[key])
         return indindex
+
+    def to_json(self):
+        json_dict = {
+            'mt':self.mt,
+            'mad': self.mad,
+            'var': self.var,
+            'vad': self.vad,
+            'vdaf': self.vdaf,
+            'aar': self.aar,
+            'aad': self.aad,
+            'fcar': self.fcar,
+            'fcad': self.fcad,
+            'star': self.star,
+            'stad': self.stad,
+            'qnetar': self.qnetar,
+            'qnetad': self.qnetad,
+            'szuplm': self.szuplm,
+            'szlowlm': self.szlowlm,
+            'szppt': self.szppt
+        }
+        return json_dict
+
 
 
 class ArticleCategory(Base):

@@ -163,4 +163,19 @@ def admin_modify_product(id):
 # def admin_get_product_list():
 # 	return jsonify({'statecode': 200})
 
-
+@api.route('/admin/get/product/<int:id>')
+@login_required
+@admin_required
+def admin_get_product(id):
+	product = ProductInformation.query.filter_by(id=id).first()
+	indid = product.industryIndex
+	if not product:
+		return jsonify({'statecode': 404})
+	return jsonify({
+		'statecode': 200,
+		'data': 
+			{
+				'product': product.to_json(),
+				'industryIndex': indid.to_json()
+			}
+		})
