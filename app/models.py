@@ -244,6 +244,7 @@ class Article(Base):
         return {
             'id': self.id,
             'ctgid': self.ctgid,
+            'ctgname':self.category.name,
             'title': self.title,
             'body': self.body
         }
