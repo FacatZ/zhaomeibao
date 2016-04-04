@@ -135,6 +135,10 @@ class ProductInformation(Base):
             setattr(productInfo, key, dictionary[key])
         return productInfo
 
+    def modify_from_dict(self, dictionary):
+        for key in dictionary:
+            setattr(self, key, dictionary[key])
+
     def to_brief_json(self):
         indindex = self.industryIndex
         brief_json_dict = {
@@ -254,6 +258,9 @@ class IndustryIndex(Base):
         }
         return json_dict
 
+    def modify_from_dict(self, dictionary):
+        for key in dictionary:
+            setattr(self, key, dictionary[key])
 
 
 class ArticleCategory(Base):

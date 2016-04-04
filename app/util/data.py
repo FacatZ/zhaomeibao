@@ -95,6 +95,7 @@ def processingCategory():
 	cid = request.form.get('ctgid', 1, type=int)
 	return Category.query.filter_by(id=cid).first()
 
-def processingModifyProductInformation(product):
-	
-	return True
+# def processingModifyProductInformation(product):
+# 	product_dict = preprocessingProductInformationDict()
+# 	product.modify_from_dict()
+# 	return True

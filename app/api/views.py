@@ -143,25 +143,17 @@ def admin_modify_product(id):
 	product = ProductInformation.query.filter_by(id=id).first()
 	if not product:
 		return jsonify({'statecode': 404})
-	res = data.processingModifyProductInformation(product)
-	if res:
-		try:
-			db_session.commit()
-			return jsonify({'statecode': 200})
-		except Exception, e:
-			db_session.rollback()
-	return jsonify({'statecode': 406})
-# @api.route('/admin/get/article/list'):
-# @login_required
-# @admin_required
-# def admin_get_article_list():
-# 	return jsonify({'statecode': 200})
 
-# @api.route('/admin/get/product/list')
-# @login_required
-# @admin_required
-# def admin_get_product_list():
-# 	return jsonify({'statecode': 200})
+	product_dict = data.preprocessingProductInformationDict()
+	product.modify_from_dict(product_dict)
+	db_session.add(product)
+	try:
+		db_session.commit()
+		return jsonify({'statecode': 200})
+	except Exception, e:
+		db_session.rollback()
+	return jsonify({'statecode': 406})
+
 
 @api.route('/admin/get/product/<int:id>')
 @login_required
@@ -179,3 +171,56 @@ def admin_get_product(id):
 				'industryIndex': indid.to_json()
 			}
 		})
+
+@api.route('/admin/create/product')
+@login_required
+@admin_required
+def admin_create_product():
+	product_dict = data.preprocessingProductInformationDict()
+	indid_dict = data.preprocessingIndutrialIndex()
+
+	product = ProductInformation.from_dict(product_dict)
+	indid = industryIndex.from_dict()
+
+	product.industryIndex = indid
+	db_session.add_all([product, indid])
+	try:
+		db_session.commit()
+		return jsonify({
+			'statecode': 200
+			})
+	except:
+		db_session.rollback()
+		return jsonify({
+			'statecode': 406
+			})
+
+# @api.route('/admin/modify/product/<int:id>')
+# @login_required
+# @admin_required
+# def admin_modify_product(id):
+# 	product_dict = data.preprocessingProductInformationDict()
+# 	indid_dict = data.preprocessingIndutrialIndex()
+
+# 	product = ProductInformation.query.filter_by(id=id).first()
+# 	if not product:
+# 		return jsonify({
+# 			'statecode': 404
+# 			})
+
+# 	indid = product.industryIndex
+
+# 	product.modify_from_dict(product_dict)
+# 	indid.modify_from_dict(indid_dict)
+# 	# product.industryIndex = indid
+# 	# db_session.add_all([product, indid])
+# 	try:
+# 		db_session.commit()
+# 		return jsonify({
+# 			'statecode': 200
+# 			})
+# 	except:
+# 		db_session.rollback()
+# 		return jsonify({
+# 			'statecode': 406
+# 			})
