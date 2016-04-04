@@ -126,89 +126,22 @@
 					<div class="stockOperation">操作</div>
 				</td>
 			</tr>
+			{% for p in product %}
 			<tr class="infoInner">
 				<td>
-					<div class="stockClassification">动力煤</div>
+					<div class="stockClassification">{{ p.category.name }}</div>
 					<div class="stockName">珠店电25</div>
 					<div class="stockCompany">广州珠江电力燃料有限公司</div>
-					<div class="stockKAL">4,400Kcal</div>
-					<div class="stockQuantity">10,000</div>
-					<div class="stockPrice">340</div>
+					<div class="stockKAL">{{p.industryIndex.qnetar}}Kcal</div>
+					<div class="stockQuantity">{{p.stock}}</div>
+					<div class="stockPrice">{{p.price}}</div>
 					<div class="stockPlace">珠电码头</div>
 					<div class="stockDate">2015/12/5</div>
 					<div class="stockOperationButton"></div>
 				</td>
 			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
-			<tr class="infoInner">
-				<td>
-					
-				</td>
-			</tr>
+			{% endfor %}
+			
 			<tr class="infoInner">
 				<td>
 					
