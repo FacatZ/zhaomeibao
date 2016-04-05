@@ -32,3 +32,78 @@ form中的name：title(标题), body（正文内容）, ctgid(文章类型的数
 4.删除文章(GET)
 url: /api/admin/delete/article/<int:id>
 返回结果（成功）:{'statecode': 200}
+
+   ---产品api---
+   详细key-value的含义，参看tower上的合同（已上传）
+5.请求产品(GET)
+url: /api/admin/get/article/<int:id>
+返回结果（成功）:
+	{
+		'statecode': 200,
+		'data': {
+					'product':#产品信息
+					{
+			            'ctgid': self.ctgid,#煤炭分类id（详见下面的煤炭分类）
+			            'ordnum': self.ordnum,
+			            'pdpid': self.pdpid,
+			            'pdcid': self.pdcid,
+			            'coal': self.coal,
+			            'stock': self.stock,
+			            'price': self.price,
+			            'prtype': self.prtype,
+			            'prpid': self.prpid,
+			            'prcid': self.prcid,
+			            'vldterm': self.vldterm,
+			            'rldate': self.rldate,
+			            'dpareaid': self.dpareaid,
+			            'dppid': self.dppid,
+			            'dpcid': self.dpcid,
+			            'dpaddr': self.dpaddr,
+			            'pdtype': self.pdtype,
+			            'paytype': self.paytype,
+			            'remark': self.remark,
+			            'onsale': self.onsale
+			        }，
+			        'industryIndex': #工业指标
+			        {
+			            'mt':self.mt,
+			            'mad': self.mad,
+			            'var': self.var,
+			            'vad': self.vad,
+			            'vdaf': self.vdaf,
+			            'aar': self.aar,
+			            'aad': self.aad,
+			            'fcar': self.fcar,
+			            'fcad': self.fcad,
+			            'star': self.star,
+			            'stad': self.stad,
+			            'qnetar': self.qnetar,
+			            'qnetad': self.qnetad,
+			            'szuplm': self.szuplm,
+			            'szlowlm': self.szlowlm,
+			            'szppt': self.szppt
+			        }
+	        	}
+	}
+
+6.创建产品(POST)
+url: /api/admin/create/article
+form中的name（需和工业指标一起提交）：
+	---产品name---
+	'typeid'， 'pdpid'， 'pdcid', 'coal'， 'count'
+	'price'， 'prtype'， 'prpid'， 'prcid'， 'vldterm'
+	'dppid'， 'dpcid'， 'dpaddr'， 'paytype'， 'remark'
+	----工业指标name----
+	'mt'， 'mad'， 'var'， 'vad'， 'vdaf'， 'aar'
+	'aad'， 'fcar'， 'fcad'， 'star'， 'stad'
+	'qnetar'， 'qnetad'， 'szuplm'， 'szlowlm'， 'szppt'
+返回结果（成功）:{'statecode': 200}
+
+7.修改产品(POST)
+url: /api/admin/modify/article/<int:id>
+form中的name：同上6的产品name,不用提交工业指标
+返回结果（成功）:{'statecode': 200}
+
+8.删除产品(GET)
+url: /api/admin/delete/article/<int:id>
+返回结果（成功）:{'statecode': 200}
