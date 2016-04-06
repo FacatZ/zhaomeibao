@@ -5,13 +5,14 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="/static/style/bootstrap.css">
     <link rel="stylesheet" href="/static/style/back-stock.css">
-    <link href="/static/style/back-common.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style/main.css">
 </head>
 <body>
+	<div class="main">
 	{% include 'util/main/header.html' %}
 	<div class="Box">
 		<div class="chooseTableButtonBox">
-			<button class="chooseTableButton">收起筛选<img src="/static/purchase/picture/stock1.png"></button>
+			<button class="chooseTableButton">收起筛选<img src="../static/back-stocks/picture/stock1.png"></button>
 		</div>
 		<table class="chooseTable" border="1">
 			<tr>
@@ -169,9 +170,18 @@
 		</div>
 	</div>
 		{% include '/util/main/footer.html' %}
+	</div>
+	  <script type="text/javascript">
+
+	  $('.chooseTableButton').click(function(){
+  	  	$('.chooseTable, .chooseTableButtonBox').fadeOut(200);
+	});
+	$('.More').click(function(){
+		$('.chooseTable, .chooseTableButtonBox').fadeIn(200);
+	});
+  </script>
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/static/js/main.js"></script>
 </body>
 </html>

@@ -86,5 +86,21 @@
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script>
+    $('.checkboxOptionDelete').click(function(){
+      var pdtID = $(this).parents('.checkboxOption').siblings('.checkboxID').text();
+      $.ajax({
+        type:'get',
+        url : '/api/admin/delete/product/' + pdtID,
+        success : function(data) {
+          alert('删除成功');
+          window.location.reload();
+        },
+        error : function(){
+          alert('通信出问题了'); 
+        }
+      });
+    });
+  </script>
 </body>
 </html>

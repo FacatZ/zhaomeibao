@@ -233,3 +233,52 @@ body{
 	border-bottom:1px dotted;
 	border-color:black;
 }
+
+.article-titleBox {
+	width: 90%;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.article-title {
+	text-align: center;
+	width: 100%;
+	float: none !important;
+	font-size: 25px !important;
+}
+
+.article-info {
+	height: 40px;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.article-info p {
+	width: 30% !important;
+	text-align: center;
+	font-size: 15px;
+}
+
+.article-origin {
+	margin-left: 0 !important;
+}
+
+.article-date {
+	margin-left: 5% !important;
+}
+
+.article-kind {
+	margin-left: 5% !important;
+}
+
+.article-titleBox hr {
+	margin-top: 10px;
+	width: 87%;
+}
+
+.article-body {
+	width: 80%;
+	margin: auto;
+	line-height: 25px;
+}
