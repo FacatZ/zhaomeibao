@@ -31,7 +31,7 @@
 	.right-box{
 		margin:0px;
 		width:1057px;
-		height:1200px;
+		height:800px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-top:none;
@@ -54,7 +54,7 @@
 		border-top:none;
 		border-color:rgb(193,211,229);
 		float:left;
-		height:280px;
+		height:320px;
 		width:900px;
 	}
 	.table-one p1{
@@ -106,80 +106,9 @@
 		float:left;
 
 	}
-	.table-two{
-		margin-top:30px;
-		margin-left:20px;
-		border:1px solid;
-		border-left:none;
-		border-top:none;
-		border-color:rgb(193,211,229);
-		float:left;
-		height:80px;
-		width:900px;
-	}
-	.table-two p1{
-		width:149px;
-		height:34px;
-		border:1px solid;
-		border-color:rgb(193,211,229);
-		border-bottom:none;
-		border-right:none;
-		margin:0px;
-		padding:0px;
-		float:left;
-		text-align:center;
-		padding-top:5px;
-		color:black;
-	}
-	.table-two p2{
-		width:199px;
-		height:34px;
-		border:1px solid;
-		border-color:rgb(193,211,229);
-		border-bottom:none;
-		border-right:none;
-		margin:0px;
-		padding:0px;
-		float:left;
-		text-align:center;
-		padding-top:5px;
-		color:black;
-	}
-	.table-two p3{
-		width:339px;
-		height:34px;
-		border:1px solid;
-		border-color:rgb(193,211,229);
-		border-bottom:none;
-		border-right:none;
-		margin:0px;
-		padding:0px;
-		float:left;
-		text-align:center;
-		padding-top:5px;
-		color:black;
-	}
-	.table-two p4{
-		width:59px;
-		height:34px;
-		border:1px solid;
-		border-color:rgb(193,211,229);
-		border-bottom:none;
-		border-right:none;
-		margin:0px;
-		padding:0px;
-		float:left;
-		text-align:center;
-		padding-top:5px;
-		color:black;
-	}
-	.line-top{
-		background-color:rgb(106,164,210) !important;
-		color:white !important;
-	}
 	.table-three{
 		width:900px;
-		height:560px;
+		height:240px;
 		text-align:center;
 		color:black;
 		border:1px solid;
@@ -225,7 +154,7 @@
 		width:99px;
 		padding-top:10px;
 		font-size:28px;
-		height:104px;
+		height:109px;
 		float:left;
 		border:1px solid;
 		border-color:rgb(193,211,229);
@@ -350,15 +279,15 @@
 		font-size:14px;
 		width:180px;
 	}
-	#style{
-		margin-top:0px;
-		margin-right:0px;
-		width:30px;
+	#style,#infor_ctgid0,#infor_ctgid1,#paytype0,#paytype1,#paytype2,#pdtype0,#pdtype1,#onsale0,#onsale1{
+		margin-top:0px !important;
+		margin-right:0px !important;
+		width:30px !important;
 	}
 	#stock{
 		margin-right:10px;
 	}
-	#pdpid{
+	#indid{
 		width:150px;
 	}
 	#dppid{
@@ -399,7 +328,7 @@
 	#aar , #star,#varr,#fcar,#qnetar{
 		margin-left:15px;
 	}
-	#sizemin,#sizemax{
+	#szuplm,#szppt{
 		margin-right:10px;
 	}
 	.extend{
@@ -407,4 +336,18 @@
 		padding:0px !important;
 		line-height:20px !important;
 
+	}
+	#pdtype0,#pdtype1,#stock{
+		float:left;
+		display:none;
+	}
+	.txt_pdtype{
+		float:left !important;
+		display:none;
+	}
+	#loc_province,#loc_city{
+		font-family:'微软雅黑',Arial, Helvetica, sans-serif;
+	}
+	.if_onsale{
+		display:none;
 	}

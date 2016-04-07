@@ -1,24 +1,84 @@
 $(document).ready(function(){
+	var infor_ctgid = "0";
+	var paytype = "0";
+	var pdtype = "0";
+	var onsale = "0";
+	$("#infor_ctgid0").click(function(){
+		$(".txt_type").html("支付类型");
+		$("#paytype0").css("display","block");
+		$("#paytype1").css("display","block");
+		$("#paytype2").css("display","block");
+		$(".txt_paytype").css("display","block");
+		$("#pdtype0").css("display","none");
+		$("#pdtype1").css("display","none");
+		$(".txt_pdtype").css("display","none");
+		$(".if_onsale").css("display","none");
+		$("#if_onsale").html("");
+		$("#if_count").html("数量");
+		$("#count").css("display","block");
+		$("#stock").css("display","none");
+		infor_ctgid = "0";
+	});
+	$("#infor_ctgid1").click(function(){
+		$(".txt_type").html("供货类型");
+		$("#paytype0").css("display","none");
+		$("#paytype1").css("display","none");
+		$("#paytype2").css("display","none");
+		$(".txt_paytype").css("display","none");
+		$("#pdtype0").css("display","block");
+		$("#pdtype1").css("display","block");
+		$(".txt_pdtype").css("display","block");
+		$(".if_onsale").css("display","block");
+		$("#if_onsale").html("特价");
+		$("#if_count").html("库存");
+		$("#count").css("display","none");
+		$("#stock").css("display","block");
+		infor_ctgid = "1";
+	});
+
+	$("#paytype0").click(function(){
+		paytype = "0";
+	});
+	$("#paytype1").click(function(){
+		paytype = "1";
+	});
+	$("#paytype2").click(function(){
+		paytype = "2";
+	});
+	$("#pdtype0").click(function(){
+		pdtype = "0";
+	});
+	$("#pdtype1").click(function(){
+		pdtype = "1";
+	});
+	$("#onsale0").click(function(){
+		onsale = "0";
+	});
+	$("#onsale1").click(function(){
+		onsale = "1";
+	});
+
 	$("#btn-publish").click(function(){
 		$.post('/api/admin/publish/product',{
+			'infor_ctgid' : infor_ctgid,
+			'paytype' : paytype,
+			'pdtype' : pdtype,
+			'onsale' : onsale,
 			ctgid : $("#ctgid").val(),
-			pdpid : $("#pdpid").val(),
-			name  : $("#name").val(),
+			indid : $("#indid").val(),
 			stock : $("#stock").val(),
 			vldterm : $("#vldterm").val(),
 			dppid : $("#dppid").val(),
+			dpcid : $("#dpcid").val(),
+			pdpid : $("#pdpid").val(),
+			pdcid : $("#pdcid").val(),
 			prtype : $("#prtype").val(),
-			style : $("#style").val(),
+			prpid : $("#prpid").val(),
+			prcid : $("#prcid").val(),
+			coal : $("#coal").val(),
+			count : $("#count").val(),
 			price : $("#price").val(),
-			open_price : $("#open-price").val(),
-			pdtype : $("#pdtype").val(),
-			prsr : $("#prsr").val(),
 			remark : $("#remark").val(),
-			fpname : $("#fpname").val(),
-			minprice : $("#minprice").val(),
-			maxprice : $("maxprice").val(),
-			unitprice : $("#unitprice").val(),
-			fpexplain : $("#fpexplain").val(),
 			mt : $("#mt").val(),
 			aar : $("#aar").val(),
 			star : $("#star").val(),
@@ -32,25 +92,11 @@ $(document).ready(function(){
 			fcad : $("#fcad").val(),
 			qnetad : $("#qnetad").val(),
 			vdaf : $("#vdaf").val(),
-			sizemin : $("#sizemin").val(),
-			sizemax : $("#sizemax").val(),
-			sizehold : $("#sizehold").val(),
-			st : $("#st").val(),
-			hgi : $("#hgi").val(),
-			crc : $("#crc").val(),
-			g : $("#g").val(),
-			y : $("#y").val(),
-			CSN_FSI : $("#CSN_FSI").val(),
-		    al2o3 : $("#al2o3").val(),
-		    p : $("#p").val(),
-		    cri : $("#cri").val(),
-		    csr : $("#csr").val(),
-		    m40 : $("#m40").val(),
-		    m25 : $("#m25").val(),
-		    m10 : $("#m10").val(),
-		    indexm : $("#indexm").val()
+			szuplm : $("#szuplm").val(),
+			szlowlm : $("#szlowlm").val(),
+			szppt : $("#szppt").val(),
 		},function(result){
-			alert(result);
+			console.log(result);
 		});
 	});
 });

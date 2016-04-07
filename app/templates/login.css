@@ -1,0 +1,11 @@
+body{
+	width:1258px;
+	margin:0 auto;
+}
+.main{
+	height:400px;
+	width:600px;
+	border:1px solid black;
+	float:left;
+	margin-left:329px;
+}
