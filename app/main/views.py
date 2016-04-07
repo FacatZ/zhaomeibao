@@ -2,6 +2,7 @@ from . import main
 from flask import render_template, request
 from ..models import ArticleCategory, Article, ProductInformation
 from sqlalchemy import and_
+from ..util import data
 
 @main.route('/')
 def index():
@@ -14,7 +15,18 @@ def stock():
 	page = request.args.get('page', 1, type=int)
 	count = request.args.get('count', 10, type=int)
 	product = ProductInformation.query.filter_by(typeid = 0).offset((page-1)*count).limit(count);
-	return render_template('stock.html', activeid=activeid, product=product)
+	producingArea = data.getStockProducingArea()
+	jiaogeArea = data.getStockJiaogeArea()
+
+	Qnet = data.getStockQnet()
+	St = data.getStockSt()
+	V = data.getStockV()
+	Mt = data.getStockMt()
+	
+	return render_template('stock.html', activeid=activeid, 
+		product=product, producingArea=producingArea, 
+		jiaogeArea=jiaogeArea, Qnet=Qnet, St=St,
+		V=V, Mt=Mt)
 
 @main.route('/purchase')
 def purchase():

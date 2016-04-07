@@ -30,11 +30,24 @@
 				<td class="tableTittle">产地</td>
 				<td class="tableBody">
 					<div class="tableBox">不限</div>
+					{% for key in producingArea %}
+					<div class="tableBox" id="{{key}}">
+					{{producingArea[key].getName()}}
+					</div>
+
+					{% endfor %}
 				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">交割地</td>
-				<td class="tableBody"></td>
+				<td class="tableBody">
+					<div class="tableBox">不限</div>
+					{% for key in jiaogeArea %}
+					<div class="tableBox" id="{{key}}">
+					{{jiaogeArea[key]}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr class="tableHigh">
 				<td class="tableTittle">名企</td>
@@ -70,19 +83,47 @@
 			</tr>
 			<tr>
 				<td class="tableTittle">低位发热量</td>
-				<td class="tableBody"></td>
+				<td class="tableBody">
+					<div class="tableBox">不限</div>
+					{% for key in Qnet %}
+					<div class="tableBox" id="{{key}}">
+					{{Qnet[key].getName()}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">全硫份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody">
+					<div class="tableBox">不限</div>
+					{% for key in St %}
+					<div class="tableBox" id="{{key}}">
+					{{St[key].getName()}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">挥发份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody">
+					<div class="tableBox">不限</div>
+					{% for key in V %}
+					<div class="tableBox" id="{{key}}">
+					{{V[key].getName()}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">全水份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody">
+					<div class="tableBox">不限</div>
+					{% for key in Mt %}
+					<div class="tableBox" id="{{key}}">
+					{{Mt[key].getName()}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 		</table>
 		<div class="More">更多</div>
@@ -172,7 +213,7 @@
 		{% include '/util/main/footer.html' %}
 	</div>
 	  <script type="text/javascript">
-
+	  	$('.chooseTable, .chooseTableButtonBox').fadeIn(200);
 	  $('.chooseTableButton').click(function(){
   	  	$('.chooseTable, .chooseTableButtonBox').fadeOut(200);
 	});

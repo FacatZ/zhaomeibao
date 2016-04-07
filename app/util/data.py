@@ -1,6 +1,7 @@
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article
 from sqlalchemy import and_
 from flask import request
+import profile
 
 class Pagination(object):
 	def __init__(self, obj_query, page, per_page):
@@ -95,6 +96,23 @@ def processingCategory():
 	cid = request.form.get('ctgid', 1, type=int)
 	return Category.query.filter_by(id=cid).first()
 
+def getStockProducingArea():
+	return profile.ChandiSettingDictionary
+
+def getStockJiaogeArea():
+	return profile.JiaogeGroupName
+
+def getStockQnet():
+	return profile.QnetSettingDictionary
+
+def getStockSt():
+	return profile.StSettingDictionary
+
+def getStockV():
+	return profile.VSettingDictionary
+
+def getStockMt():
+	return profile.MtSettingDictionary
 # def processingModifyProductInformation(product):
 # 	product_dict = preprocessingProductInformationDict()
 # 	product.modify_from_dict()

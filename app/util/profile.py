@@ -2,11 +2,40 @@
 
 ChandiSettingDictionary = {}
 JiaogeSettingDictionary = {}
+QnetSettingDictionary = {}
+StSettingDictionary = {}
+VSettingDictionary = {}
+MtSettingDictionary = {}
+
+JiaogeGroupDictionary = {}
+#1--华东，2--华北，3--西北，4--西南
+#5--华中，6--东北，7--华南，8--外国地，-1--未分组
+
+JiaogeGroupName = {
+	1: u'华东',
+	2: u'华北',
+	3: u'西北',
+	4: u'西南',
+	5: u'华中',
+	6: u'东北',
+	7: u'华南',
+	8: u'外国地'
+}
+
+GroupNameDictionary = {
+	u'交割地': JiaogeGroupName
+}
 
 SettingDictionary = {
 	u'产地': ChandiSettingDictionary,
-	u'交割地': JiaogeSettingDictionary
+	u'交割地': JiaogeSettingDictionary,
+	u'Qnet': QnetSettingDictionary,
+	u'St': StSettingDictionary,
+	u'V': VSettingDictionary,
+	u'Mt': MtSettingDictionary
 }
+
+
 
 IdList = []
 SettingList = []
@@ -17,6 +46,11 @@ class Setting(object):
 		self.id = id
 		self.name = name
 		self.group = group
+		global JiaogeGroupDictionary
+		if group != -1:
+			if not JiaogeGroupDictionary.has_key(group):
+				JiaogeGroupDictionary[group] = []
+			JiaogeGroupDictionary[group].append(self)
 		self.category = category
 		global SettingDictionary
 		SettingDictionary[category][id] = self
@@ -28,6 +62,12 @@ class Setting(object):
 	
 	def getName(self):
 		return self.name
+
+	def getGroupName(self):
+		if self.group == -1:
+			return None
+		global GroupNameDictionary
+		return GroupNameDictionary[self.category][self.group]
 
 
 Setting(id=20, name=u'内蒙古', category=u'产地')
@@ -161,6 +201,35 @@ Setting(id=476, name=u'南非', category=u'交割地', group=8)
 Setting(id=479, name=u'澳大利亚', category=u'交割地', group=8)
 Setting(id=482, name=u'印度尼西亚', category=u'交割地', group=8)
 Setting(id=488, name=u'美国', category=u'交割地', group=8)
+
+#Qnet
+Setting(id=5001, name='1500-3500', category=u'Qnet')
+Setting(id=5002, name='3500-4500', category=u'Qnet')
+Setting(id=5003, name='4500-5000', category=u'Qnet')
+Setting(id=5004, name='5000-5500', category=u'Qnet')
+Setting(id=5005, name='5500-6000', category=u'Qnet')
+Setting(id=5006, name='6000-7000', category=u'Qnet')
+Setting(id=5007, name='7000-*', category=u'Qnet')
+
+#St
+Setting(id=5011, name='0-0.5', category=u'St')
+Setting(id=5012, name='0.5-0.8', category=u'St')
+Setting(id=5013, name='0.8-1.0', category=u'St')
+Setting(id=5014, name='1-*', category=u'St')
+
+#V
+Setting(id=5021, name='0-10', category=u'V')
+Setting(id=5022, name='10-20', category=u'V')
+Setting(id=5023, name='20-30', category=u'V')
+Setting(id=5024, name='30-*', category=u'V')
+
+#Mt
+Setting(id=5031, name='0-10', category=u'Mt')
+Setting(id=5032, name='10-20', category=u'Mt')
+Setting(id=5033, name='20-30', category=u'Mt')
+Setting(id=5034, name='30-*', category=u'Mt')
+
+
 
 def generate_unique_serial_number():
 	import random
