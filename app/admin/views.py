@@ -1,7 +1,7 @@
 from . import admin
 from ..decorators import admin_required
 from flask import render_template, redirect, request
-from ..models import Article, User, ProductInformation, ArticleCategory
+from ..models import Article, User, ProductInformation, ArticleCategory, Category
 from flask.ext.login import login_required
 from ..util import data
 
@@ -20,7 +20,10 @@ def product_list():
 @login_required
 @admin_required
 def create_product():
-	return render_template('back-publish.html')
+
+	category = Category.query.all()
+
+	return render_template('back-publish.html', category=category)
 
 @admin.route('/article/list')
 @login_required
@@ -50,3 +53,4 @@ def modify_article(id):
 	if not article:
 		return redirect('admin.article_list')
 	return render_template('back-issue-modify.html', categorylist=categorylist, article=article)
+

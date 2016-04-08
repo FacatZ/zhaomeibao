@@ -1,5 +1,5 @@
 from . import api
-from flask import render_template, request, url_for, jsonify
+from flask import render_template, request, url_for, jsonify, redirect
 from ..models import User, ProductInformation, Category
 from sqlalchemy import and_, or_
 from sqlalchemy.exc import IntegrityError
@@ -102,20 +102,24 @@ def admin_delete_article(id):
 @login_required
 @admin_required
 def admin_publish_product():
-	print request.form
+
 	indIndex = data.processingIndustrialIndex()
-	user = current_user._get_current_object()
 	productInfo = data.processingProductInformation()
+	if not indIndex or not productInfo:
+		return jsonify({'statecode': 406})
+	user = current_user._get_current_object()
 	category = data.processingCategory()
 	# print category
 	# print indIndex
 	# print productInfo
 	productInfo.user = user
+	print 'list:'
+	print request.form
+	print 'pdinfo typeid:', productInfo.typeid
 	productInfo.ordnum = data.generate_unique_serial_number(productInfo.typeid)
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
 	db_session.add_all([indIndex, productInfo])
-	# return jsonify({'statecode': 200})
 	try:
 		db_session.commit()
 		return jsonify({'statecode': 200})

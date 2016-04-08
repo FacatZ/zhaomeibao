@@ -85,7 +85,7 @@ class ProductInformation(Base):
 
     id = Column(Integer, primary_key=True) #primary key
     
-    typeid = Column(Integer, default=0) #0 for supply. 1 for demand
+    typeid = Column(Integer, default=0) #1 for supply. 0 for demand
     
     #区分地区
     areaid = Column(Integer, default=0) 
@@ -123,8 +123,9 @@ class ProductInformation(Base):
     dpcid  = Column(Integer) #城市
     dpaddr = Column(String(256)) #地址信息
 
-    pdtype = Column(String(64)) #产品类型
-    paytype = Column(String(64))
+    pdtype = Column(String(64), default=0) #产品类型 供货 0期货1现货
+    paytype = Column(String(64), default=0) #需求 1现货2支票3电汇  
+
     remark = Column(String(256)) #备注
     onsale = Column(Boolean, default=False) #是否特价产品，默认为否
 
@@ -133,6 +134,7 @@ class ProductInformation(Base):
         productInfo = ProductInformation()
         for key in dictionary:
             setattr(productInfo, key, dictionary[key])
+            print getattr(productInfo, key)
         return productInfo
 
     def modify_from_dict(self, dictionary):

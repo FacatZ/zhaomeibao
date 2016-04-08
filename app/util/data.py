@@ -35,14 +35,15 @@ def getProductInformationByArea(areaId, num=10):
 	return ProductInformation.query.filter_by(areaid=areaId).limit(num)
 
 def preprocessingArticleDict():
-	return {
+	d = {
 		'title': request.form.get('title', '', type=str),
 		'body': request.form.get('body', '', type=str),
 		'ctgid': request.form.get('ctgid', 1, type=int)
 	}
+	return d
 
 def preprocessingProductInformationDict():
-	return {
+	d = { 
 		'typeid': request.form.get('typeid', 0, type=int),
 		'pdpid': request.form.get('pdpid', 1, type=int),
 		'pdcid': request.form.get('pdcid', 1, type=int),
@@ -63,9 +64,10 @@ def preprocessingProductInformationDict():
 		'paytype': request.form.get('paytype', '', type=str),
 		'remark': request.form.get('remark', '', type=str)
 	}
+	return d
 
 def preprocessingIndutrialIndex():
-	return {
+	d = {
 		'mt': request.form.get('mt', 0.0, type=float),
 		'mad': request.form.get('mad', 0.0, type=float),
 		'var': request.form.get('var', 0.0, type=float),
@@ -83,7 +85,7 @@ def preprocessingIndutrialIndex():
 		'szlowlm': request.form.get('szlowlm', 0, type=int),
 		'szppt': request.form.get('szppt', 0, type=int)
 	}
-
+	return d
 
 
 def processingIndustrialIndex():
@@ -140,7 +142,7 @@ def generate_unique_serial_number(pdtype=0):
 	import datetime
 
 	print '-----pdtype:',pdtype
-	ordernum = 'GH' if pdtype == 0 else 'XQ'
+	ordernum = 'GH' if pdtype == 1 else 'XQ'
 	ghorder = OrderNumberRecord.query.filter_by(pdtype=pdtype).first()
 
 	if not ghorder:

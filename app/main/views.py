@@ -17,7 +17,7 @@ def stock():
 	count = request.args.get('count', 20, type=int)
 	
 	category = Category.query.all()
-	product = ProductInformation.query.filter_by(typeid = 0).offset((page-1)*count).limit(count);
+	product = ProductInformation.query.filter_by(typeid = 1).offset((page-1)*count).limit(count);
 	producingArea = data.getStockProducingArea()
 	jiaogeArea = data.getStockJiaogeArea()
 
@@ -60,4 +60,4 @@ def detail(id):
 	product = ProductInformation.query.filter_by(id=id).first()
 	if not product:
 		return redirect(request.args.get('next') or url_for('main.index'))
-	return render_template('details.html')
+	return render_template('details.html', pd=product)

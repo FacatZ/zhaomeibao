@@ -7,9 +7,30 @@ from app.database import db_session, init_db, generate_fake_articles
 from app.util import resources
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
 from flask.ext.login import login_user
+from app.util.location import location
 
 app = create_app('development')
 manager = Manager(app)
+
+@app.template_filter('province_filter')
+def province_filter(id):
+	return location['0'][int(id)] if id else u'暂无'
+
+@app.template_filter('pdtype_filter')
+def pdtype_filter(id):
+	dd = {
+		'0': u'期货',
+		'1': u'现货'
+	}
+	return dd[id]
+
+@app.template_filter('prtype_filter')
+def prtype_filter(s):
+	return u'暂无价格类型' if not s or s == '' else s
+
+@app.template_filter('string_filter')
+def string_filter(s):
+	return u'暂无' if not s or s == '' else s
 
 @app.template_filter('dict_sorted')
 def dict_sorted(s):

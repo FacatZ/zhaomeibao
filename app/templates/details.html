@@ -2,19 +2,20 @@
 	<head>
 		<title>货源详情</title>
 		<meta charset="utf-8">
-		<link href="details.css" rel="stylesheet">
+		<link href="/static/purchase/details.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="main">
+		{% include 'util/main/header.html' %}
 			<p>您当前位置： <span>首页-现货资源详情</span></p>
 			<div class="details_box">
 				<div class="left_box">
-					<p1>动力煤<span>颗粒煤</span><p2>江苏苏龙能源有限公司</p2></p1>
-					<p3>¥ 495 元<span>/吨</span><span>平仓价</span><p5>交割地： 江苏省无锡市江阴港</p5><p6>供货单号: GH16040102296</p6></p3>
-					<div class="details_bottom"><span>2016-04-11</span><p4>有效期</p4></div>
+					<p1>{{pd.category.name}}<span></span><p2>江苏苏龙能源有限公司</p2></p1>
+					<p3>¥ {{pd.price}} 元<span>/吨</span><span>{{pd.prtype|prtype_filter}}</span><p5>交割地： {{pd.pdaddr|string_filter}}</p5><p6>供货单号: {{pd.ordnum}}</p6></p3>
+					<div class="details_bottom"><span>{{pd.vldterm|string_filter}}</span><p4>有效期</p4></div>
 					<div class="details_bottom"><span>2,000 吨</span><p4>库存</p4></div>
-					<div class="details_bottom"><span>现货</span><p4>货物类型</p4></div>
-					<div class="details_bottom"><span>熊老师市</span><p4>产地</p4></div>
+					<div class="details_bottom"><span>{{pd.pdtype|pdtype_filter}}</span><p4>货物类型</p4></div>
+					<div class="details_bottom"><span>{{pd.pdpid|province_filter}}</span><p4>产地</p4></div>
 					<a href="#">在线联系</a>
 					<p7><a href="#">委托我们</a></p7>
 				</div>
@@ -47,6 +48,7 @@
 				<sp2>密度(DE)</sp2><sp3>-</sp3>
 				<sp1 id="add_border">备注:</sp1>
 			</div>
+		{% include '/util/main/footer.html' %}
 		</div>
 
 	</body>

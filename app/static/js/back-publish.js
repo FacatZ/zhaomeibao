@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 	$("#btn-publish").click(function(){
 		$.post('/api/admin/publish/product',{
-			'infor_ctgid' : infor_ctgid,
+			'typeid' : infor_ctgid,
 			'paytype' : paytype,
 			'pdtype' : pdtype,
 			'onsale' : onsale,
@@ -72,6 +72,7 @@ $(document).ready(function(){
 			dpcid : $("#dpcid").val(),
 			pdpid : $("#pdpid").val(),
 			pdcid : $("#pdcid").val(),
+			pdaddr : $("#pdaddr").val(),
 			prtype : $("#prtype").val(),
 			prpid : $("#prpid").val(),
 			prcid : $("#prcid").val(),
