@@ -100,7 +100,7 @@ class ProductInformation(Base):
     indid = Column(Integer, ForeignKey('industryIndex.id'))
 
     #订单号
-    ordnum = Column(String(64), default=profile.generate_unique_serial_number())
+    ordnum = Column(String(64))
     
     #产地
     pdpid = Column(Integer, default=0) #省份id
@@ -305,3 +305,12 @@ class Article(Base):
             'title': self.title,
             'body': self.body
         }
+
+
+class OrderNumberRecord(Base):
+    __tablename__ = 'ordernumberrecords'
+
+    id = Column(Integer, primary_key=True)
+    last_date = Column(DateTime)
+    count = Column(Integer)
+    pdtype = Column(Integer)

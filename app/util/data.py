@@ -1,6 +1,9 @@
-from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article
+from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
 from sqlalchemy import and_
 from flask import request
+from ..database import db_session
+import bleach
+import profile
 
 class Pagination(object):
 	def __init__(self, obj_query, page, per_page):
@@ -95,7 +98,68 @@ def processingCategory():
 	cid = request.form.get('ctgid', 1, type=int)
 	return Category.query.filter_by(id=cid).first()
 
+
+
+def processingCategory():
+	cid = request.form.get('ctgid', 1, type=int)
+	return Category.query.filter_by(id=cid).first()
+
+def getStockProducingArea():
+	return profile.ChandiSettingDictionary
+
+def getStockJiaogeArea():
+	return profile.JiaogeGroupName
+
+def getStockQnet():
+	return profile.QnetSettingDictionary
+
+def getStockSt():
+	return profile.StSettingDictionary
+
+def getStockV():
+	return profile.VSettingDictionary
+
+def getStockMt():
+	return profile.MtSettingDictionary
 # def processingModifyProductInformation(product):
 # 	product_dict = preprocessingProductInformationDict()
 # 	product.modify_from_dict()
 # 	return True
+
+# def processingModifyProductInformation(product):
+# 	product_dict = preprocessingProductInformationDict()
+# 	product.modify_from_dict()
+# 	return True
+def filterUserInput(value):
+	allowed_tags = profile.allowed_tags
+	return bleach.linkify(bleach.clean(value, tags=allowed_tags, strip=True))
+
+
+
+def generate_unique_serial_number(pdtype=0):
+	import datetime
+
+	print '-----pdtype:',pdtype
+	ordernum = 'GH' if pdtype == 0 else 'XQ'
+	ghorder = OrderNumberRecord.query.filter_by(pdtype=pdtype).first()
+
+	if not ghorder:
+		return None
+
+	last_date = ghorder.last_date
+	count = ghorder.count
+
+	today = datetime.date.today()
+	if str(today) > str(last_date).split(' ')[0]:
+		last_date = today
+		ghorder.last_date = today
+		count = 0
+	else:
+		count = count + 1
+	ghorder.count = count
+	db_session.add(ghorder)
+	db_session.commit()
+
+	ordernum = ordernum + ''.join(str(today).split(' ')[0].split('-')) + '{count:06}'.format(count=count)
+	print ordernum
+	return ordernum

@@ -43,6 +43,24 @@ def init_db():
 		db_session.rollback()
 		print 'init articles category failed'
 
+	import datetime
+	for i in range(0,2):
+		today = datetime.date.today()
+		count = 0
+		order = models.OrderNumberRecord.query.filter_by(pdtype=i).first()
+		if not order:
+			order = models.OrderNumberRecord()
+		order.last_date = today
+		order.count = count
+		order.pdtype = i
+		db_session.add(order)
+		try:
+			db_session.commit()
+		except:
+			db_session.rollback()
+			print 'init OrderNumberRecord type %d table error' %(i)
+
+
 	for coalname in [u'动力煤', u'炼焦煤', u'无烟煤', u'焦炭/兰炭', u'生物质碳']:
 		m = models.Category(name=coalname)
 		db_session.add(m)

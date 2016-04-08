@@ -51,6 +51,7 @@ def admin_get_article(id):
 def admin_create_article():
 	title = request.form.get('title', '', type=str)
 	body = request.form.get('body', '', type=str)
+	body = data.filterUserInput(body)
 	ctgid = request.form.get('ctgid', 1, type=int)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
@@ -101,7 +102,7 @@ def admin_delete_article(id):
 @login_required
 @admin_required
 def admin_publish_product():
-	# print request.form
+	print request.form
 	indIndex = data.processingIndustrialIndex()
 	user = current_user._get_current_object()
 	productInfo = data.processingProductInformation()
@@ -110,6 +111,7 @@ def admin_publish_product():
 	# print indIndex
 	# print productInfo
 	productInfo.user = user
+	productInfo.ordnum = data.generate_unique_serial_number(productInfo.typeid)
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
 	db_session.add_all([indIndex, productInfo])

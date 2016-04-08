@@ -5,40 +5,53 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="/static/style/bootstrap.css">
     <link rel="stylesheet" href="/static/style/back-stock.css">
-    <link href="/static/style/back-common.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style/main.css">
+
 </head>
 <body>
+	<div class="main">
 	{% include 'util/main/header.html' %}
 	<div class="Box">
 		<div class="chooseTableButtonBox">
-			<button class="chooseTableButton">收起筛选<img src="/static/purchase/picture/stock1.png"></button>
+			<button class="chooseTableButton">收起筛选<img src="../static/back-stocks/picture/stock1.png"></button>
 		</div>
 		<table class="chooseTable" border="1">
 			<tr>
 				<td class="tableTittle">分类</td>
-				<td class="tableBody">
+				<td class="tableBody" name="fenlei">
 					<div class="tableBox">不限</div>
-					<div class="tableBox">动力煤</div>
-					<div class="tableBox">焦炼煤</div>
-					<div class="tableBox">无烟煤</div>
-					<div class="tableBox">焦炭/兰炭</div>
-					<div class="tableBox">生物质燃料</div>	
+					{% for c in category %}
+					<div class="tableBox" id="{{c.id}}">{{c.name}}</div>
+					{% endfor %}
 				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">产地</td>
-				<td class="tableBody">
+				<td class="tableBody" name="chandi">
 					<div class="tableBox">不限</div>
+					{% for key in producingArea %}
+					<div class="tableBox" id="{{key}}">
+					{{producingArea[key].getName()}}
+					</div>
+
+					{% endfor %}
 				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">交割地</td>
-				<td class="tableBody"></td>
+				<td class="tableBody" name="jiaogedi">
+					<div class="tableBox">不限</div>
+					{% for key in jiaogeArea %}
+					<div class="tableBox" id="{{key}}">
+					{{jiaogeArea[key]}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr class="tableHigh">
 				<td class="tableTittle">名企</td>
-				<td class="tableBody">
-					<div class="tableBox darkBackground">不限</div>
+				<td class="tableBody" name="mingqi">
+					<div class="tableBox">不限</div>
 					<table border="1" class="tableBoxLogos">
 						<tr>
 							<td>LOGO</td>
@@ -69,19 +82,47 @@
 			</tr>
 			<tr>
 				<td class="tableTittle">低位发热量</td>
-				<td class="tableBody"></td>
+				<td class="tableBody" name="Qnet">
+					<div class="tableBox">不限</div>
+					{% for key in Qnet | dict_sorted %}
+					<div class="tableBox" id="{{key}}">
+					{{Qnet[key].getName()|setting_format}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">全硫份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody" name="St">
+					<div class="tableBox">不限</div>
+					{% for key in St | dict_sorted %}
+					<div class="tableBox" id="{{key}}">
+					{{St[key].getName()|setting_format}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">挥发份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody" name="V">
+					<div class="tableBox">不限</div>
+					{% for key in V | dict_sorted %}
+					<div class="tableBox" id="{{key}}">
+					{{V[key].getName()|setting_format}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 			<tr>
 				<td class="tableTittle">全水份</td>
-				<td class="tableBody"></td>
+				<td class="tableBody" name="Mt">
+					<div class="tableBox">不限</div>
+					{% for key in Mt | dict_sorted %}
+					<div class="tableBox" id="{{key}}">
+					{{Mt[key].getName()|setting_format}}
+					</div>
+					{% endfor %}
+				</td>
 			</tr>
 		</table>
 		<div class="More">更多</div>
@@ -169,9 +210,19 @@
 		</div>
 	</div>
 		{% include '/util/main/footer.html' %}
+	</div>
+	  <script type="text/javascript">
+	  	$('.chooseTable, .chooseTableButtonBox').fadeIn(200);
+	  $('.chooseTableButton').click(function(){
+  	  	$('.chooseTable, .chooseTableButtonBox').fadeOut(200);
+	});
+	$('.More').click(function(){
+		$('.chooseTable, .chooseTableButtonBox').fadeIn(200);
+	});
+  </script>
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/static/js/main.js"></script>
+  <script type="text/javascript" src="/static/js/productselect.js"></script>
 </body>
 </html>
