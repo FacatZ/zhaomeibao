@@ -8,6 +8,9 @@ body {
 }
 
 .Box {
+	width: 1258px;
+	overflow-x: hidden;
+	float: left;
 	background-color: #D2D2D2;
 }
 
@@ -27,7 +30,7 @@ body {
 }
 
 .chooseTableButton img {
-	margin-top: 5px;
+	margin-top: -3px;
 }
 
 .chooseTable {

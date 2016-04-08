@@ -3,8 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>产品列表</title>
+    <script src="/static/js/vue.min.js"></script>
     <link rel="stylesheet" href="/static/style/bootstrap.css">
     <link rel="stylesheet" href="/static/style/back.css">
+    <link href="/static/style/back-production.css" rel="stylesheet">
     <link href="/static/style/back-common.css" rel="stylesheet">
 </head>
 <body>
@@ -45,7 +47,7 @@
       <div class="{% if p.id%2 == 1 %}checkboxDark{% else %}checkboxNormal{%endif%}">
         <input type="checkbox">
         <div class="checkboxID">{{p.id}}</div>
-        <div class="checkboxTitle">{{p.ordnum}}</div>
+        <div class="checkboxTitle checkboxShowModal">{{p.ordnum}}</div>
         <div class="checkboxType">{{p.category.name}}</div>
         <div class="checkboxOrigin">{{p.user.username}}</div>
         <div class="checkboxDate">{{format_datetime(p.rldate)}}</div>
@@ -83,8 +85,147 @@
 		</div>
 		</div>
 	</div>	
+
+
+  <div class="modal fade ModalToShow">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">产品详情</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tr class="row">
+              <td class="col-xs-2">信息分类</td>
+              <td class="col-xs-4" v-text="product.ctgid"></td>
+              <td class="col-xs-2">支付类型</td>
+              <td class="col-xs-4" v-text="product.paytype"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">分类</td>
+              <td class="col-xs-4" v-text="product.ctgid"></td>
+              <td class="col-xs-2">煤种</td>
+              <td class="col-xs-4" v-text="product.coal"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">订单号</td>
+              <td class="col-xs-4" v-text="product.stock | test"></td>
+              <td class="col-xs-2">产地</td>
+              <td class="col-xs-4" v-text=""></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">有效期</td>
+              <td class="col-xs-4" v-text="product.vldterm"></td>
+              <td class="col-xs-2">交割地</td>
+              <td class="col-xs-4" v-text=""></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">价格</td>
+              <td class="col-xs-4" v-text="product.price"></td>
+              <td class="col-xs-2">价格地</td>
+              <td class="col-xs-4" v-text=""></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">数量</td>
+              <td class="col-xs-4" v-text="product.count"></td>
+              <td class="col-xs-2">价格补充</td>
+              <td class="col-xs-4" v-text=""></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-2">备注</td>
+              <td class="col-xs-10" colspan="3" v-text="product.remark"></td>
+            </tr>
+          </table>
+
+          <table class="table table-bordered">
+            <tr class="row">
+              <td class="col-xs-12 blue" colspan="6">工业分析指标</td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-1" rowspan="2">水分</td>
+              <td class="col-xs-3" v-text="'全水分（Mt）：' + industryIndex.mt + '%'"></td>
+              <td class="col-xs-1" rowspan="2">灰份（A）</td>
+              <td class="col-xs-3" v-text="'收到基（ar）' + industryIndex.aar + '%'"></td>
+              <td class="col-xs-1" rowspan="2">全硫份（st）</td>
+              <td class="col-xs-3" v-text="'收到基（ar）' + industryIndex.star + '%'"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-3" v-text="'内水（Mad）' + industryIndex.mad + '%'"></td>
+              <td class="col-xs-3" v-text="'空干基（ad）' + industryIndex.aad + '%'"></td>
+              <td class="col-xs-3" v-text="'空干基（ad）' + industryIndex.stad + '%'"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-1" rowspan="3">挥发份（V）</td>
+              <td class="col-xs-3" v-text="'收到基（ar）' + industryIndex.varr + '%'"></td>
+              <td class="col-xs-1" rowspan="2">固定碳（FC）</td>
+              <td class="col-xs-3" v-text="'收到基（ar）' + industryIndex.fcar + '%'"></td>
+              <td class="col-xs-1" rowspan="2">低位发热量（Qnet）</td>
+              <td class="col-xs-3" v-text="'收到基（ar）' + industryIndex.qnetar + '大卡'"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-3" v-text="'空干基（ad）' + industryIndex.vard + '%'"></td>
+              <td class="col-xs-3" v-text="'空干基（ad）' + industryIndex.fcad + '%'"></td>
+              <td class="col-xs-3" v-text="'空干基（ad）' + industryIndex.qnetad + '大卡'"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-xs-4" colspan="2" v-text="'干燥无灰基（daf）' + industryIndex.vdaf + '%'"></td>
+              <td class="col-xs-1">颗度（Size）</td>
+              <td class="col-xs-6" colspan="2" v-text="industryIndex.szuplm + ' - ' + industryIndex.szlowlm + ' mm    占比' + industryIndex.szppt + '%'"></td>
+            </tr>
+          </table>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.ModalToShow').find('input').attr('readonly','readonly');
+    });
+
+    var vm = new Vue({
+      el: '.ModalToShow',
+      filters: {
+        test: function(data){
+          return 333333;
+        }
+      }
+    });
+
+    $('.checkboxShowModal').click(function(){
+      var pdtID = $(this).siblings('.checkboxID').text();
+        $.ajax({  
+          type:'get',  
+          url : '/api/admin/get/product/' + pdtID,   
+          success  : function(data) {  
+            $('.ModalToShow').modal({ "show": true, backdrop: true });
+
+            vm.$data = data.data;
+            console.log(vm.$data);
+          },  
+          error : function() {  
+              alert('通信出问题了');  
+          }  
+        });            
+    });
+
+    $('.checkboxOptionDelete').click(function(){
+      var pdtID = $(this).parents('.checkboxOption').siblings('.checkboxID').text();
+      $.ajax({
+        type:'get',
+        url : '/api/admin/delete/product/' + pdtID,
+        success : function(data) {
+          alert('删除成功');
+          window.location.reload();
+        },
+        error : function(){
+          alert('通信出问题了'); 
+        }
+      });
+    });
+  </script>
 </body>
 </html>

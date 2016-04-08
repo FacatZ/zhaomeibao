@@ -15,6 +15,7 @@ $ cd zhaomeibao/
 $ virtualenv venv   
 $ source venv/bin/activate
 (venv)$ pip install -r requirement.txt
+pip install bleach
 #等待安装完成
 
 #初始化数据库

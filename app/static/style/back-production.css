@@ -1,0 +1,26 @@
+.modal-head {
+	height: 100px;
+}
+.modal-body {
+	height: 550px;
+}
+.modal-dialog {
+	width: 1005px;
+}
+
+.ModalToShow *{
+	text-align: center;
+}
+
+.ModalToShow table {
+	border: none;
+}
+
+.ModalToShow td {
+	border: 1px solid rgb(193,211,229) !important;
+}
+
+.blue {
+	text-align: left;
+	background: rgb(106,164,210);
+}

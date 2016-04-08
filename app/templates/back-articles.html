@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>文章列表</title>
-    <link rel="stylesheet" href="/static/style/bootstrap.css">
-    <link rel="stylesheet" href="/static/style/back.css">
-    <link href="/static/style/back-common.css" rel="stylesheet">
+  <script src="/static/js/vue.min.js"></script>
+  <link rel="stylesheet" href="/static/style/bootstrap.css">
+  <link rel="stylesheet" href="/static/style/back.css">
+  <link href="/static/style/back-common.css" rel="stylesheet">
 </head>
 <body>
       {% include 'util/admin/top.html' %}
@@ -45,7 +46,7 @@
     	<div class="checkboxNormal">
       	<input type="checkbox">
       	<div class="checkboxID">{{article.id}}</div>
-      	<div class="checkboxTitle">{{article.title}}</div>
+      	<div class="checkboxTitle checkboxShowModal">{{article.title}}</div>
       	<div class="checkboxType">{{article.category.name}}</div>
       	<div class="checkboxOrigin">{{article.author.username}}</div>
       	<div class="checkboxDate">{{format_datetime(article.rldate)}}</div>
@@ -83,8 +84,66 @@
 		</div>
 		</div>
 	</div>	
+
+
+  <div class="modal fade ModalToShow">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" v-text="title"></h4>
+        <h6 v-text="ctgname"></h6>
+      </div>
+      <div class="modal-body">
+        <p v-text="body"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script>
+      var vm = new Vue({
+        el: '.ModalToShow'
+      });
+
+    $('.checkboxShowModal').click(function(){
+      var issueID = $(this).siblings('.checkboxID').text();
+        $.ajax({  
+          type:'get',  
+          url : '/api/admin/get/article/' + issueID,   
+          success  : function(data) {  
+            $('.ModalToShow').modal({ "show": true, backdrop: true });
+
+            vm.$data = data.data;
+            console.log(vm.$data);
+          },  
+          error : function() {  
+              alert('通信出问题了');  
+          }  
+        });            
+    });
+
+    $('.checkboxOptionDelete').click(function(){
+      var issueID = $(this).parents('.checkboxOption').siblings('.checkboxID').text();
+      $.ajax({
+        type:'get',
+        url : '/api/admin/delete/article/' + issueID,
+        success : function(data) {
+          alert('删除成功');
+          window.location.reload();
+        },
+        error : function(){
+          alert('通信出问题了'); 
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
