@@ -69,7 +69,7 @@ def admin_get_article(id):
 def admin_create_article():
 	title = request.form.get('title', '', type=unicode)
 	body = request.form.get('body', '', type=unicode)
-	body = data.filterUserInput(body)
+	#body = data.filterUserInput(body)
 	ctgid = request.form.get('ctgid', 1, type=int)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
