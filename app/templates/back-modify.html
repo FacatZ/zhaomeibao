@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>发布产品</title>
+		<title>修改产品</title>
 		<meta charset="utf-8">
 		<link href="/static/style/back-common.css" rel="stylesheet">
 		<link href="/static/style/select2.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 
 			{% include 'util/admin/left-box.html' %}
 			<div class="right-box">
-				<p1>发布产品</p1>
+				<p1>修改产品</p1>
 				<div class="table-one">
 					<p1>信息分类</p1><p2><input type="radio" name="infor_ctgid" id="infor_ctgid0" value="0" disabled {% if product.typeid == 0%}datachecked="true" checked{% endif %}><span>需求</span><input type="radio" name="infor_ctgid" id="infor_ctgid1" value="1" disabled {% if product.typeid == 1%}datachecked="true" checked{% endif %}><span>供货</span></p2><p1 class="txt_type">支付类型</p1><p2><input type="radio" name="paytype" id="paytype0" value="1" checked><span class="txt_paytype">现汇</span><input type="radio" name="paytype" id="paytype1" value="2"><span class="txt_paytype">支票</span><input type="radio" name="paytype" id="paytype2" value="3"><span class="txt_paytype">电汇</span>
 					<input type="radio" name="pdtype" id="pdtype0" value="0" checked><span class="txt_pdtype">期货</span><input type="radio" name="pdtype" id="pdtype1" value="1"><span class="txt_pdtype">现货</span></p2>
@@ -69,6 +69,7 @@
 		<script type="text/javascript" src="/static/js/select2_locale_zh-CN.js"></script>
 		<script type="text/javascript">
 			$("#prtype").val("{{product.prtype}}");
+			$("#ctgid").val("{{product.ctgid}}");
 			$("#vldterm").val("{{format_datetime(product.vldterm)}}");
 			$("#pdpid").val("{{product.pdpid}}");
 			$("#pdcid").val("{{product.pdcid}}");

@@ -61,30 +61,28 @@
     	</div>
       {% endfor %}
     	<div class="stockButtonBox">
-			<ul class="stockButtons">
-				<li type="button" class="stockButton stockButtonPrePre" value=" ">
-				<li type="button" class="stockButton stockButtonPre" value=" ">
-				{% for p in pagination.iter_pages() %}
+            <div class="stockButtons">
+        <input type="button" class="stockButton stockButtonPre" {% if pagination.has_prev %}url="{{url_for('admin.article_list', page=pagination.page-1, count=count)}}"{% endif %}>
+        {% for p in pagination.iter_pages() %}
           {% if p %}
             {% if p == pagination.page %}
-            <li type="button" class="stockButton" ><a href="{{ url_for('admin.article_list', page=p, count=count) }}">{{p}}</a></li>
+            <input type="button" class="stockButton" disabled="disabled" url="{{url_for('admin.article_list', page=p,count=count)}}" value="{{p}}">
             {% else %}
-            <li type="button" class="stockButton" ><a href="{{ url_for('admin.article_list', page=p, count=count) }}">{{p}}</a></li>
+            <input type="button" class="stockButton" url="{{ url_for('admin.article_list', page=p, count=count)}}" value="{{p}}">
             {% endif %}
+            
           {% else %}
-          <li type="button" class="stockButton" ><a href="#">&hellip;</a></li>
+            <input type="button" class="stockButton" value="...">
           {% endif %}
         {% endfor %}
-				<li type="button" class="stockButton" value="10">
-				<li type="button" class="stockButton" value="...">
-				<li type="button" class="stockButton stockButtonNext" value=" ">
-				<li type="button" class="stockButton stockButtonNextNext" value=" ">
-			</ul>
+        <input type="button" class="stockButton stockButtonNext" {% if pagination.has_next %}url="{{url_for('admin.article_list', page=pagination.page+1,count=count)}}"{% endif %} value=" ">
+            </div>
 		</div>
 		</div>
 	</div>	
   <script src="/static/js/jquery.js"></script>
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script type="text/javascript" src="/static/js/paginationbutton.js"></script>
 </body>
 </html>

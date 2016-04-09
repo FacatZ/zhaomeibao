@@ -148,7 +148,7 @@
 							今日挂牌总量:<span>123,456</span>吨
 						</div>
 						<div class="infoBoxTotal">共找到23,456条商品</div>
-						<div class="infoBoxNow">1/99</div>
+						<div class="infoBoxNow">{{pagination.page}}/{{pagination.total}}</div>
 					</div>
 					<button class="infoBoxR"></button>
 					<button class="infoBoxL"></button>
@@ -172,9 +172,9 @@
 				<td>
 					<div class="stockClassification">{{ p.category.name | string_filter}}</div>
 					<div class="stockName">{{p.coal | string_filter}}</div>
-					<div class="stockCompany">广州珠江电力燃料有限公司</div>
-					<div class="stockKAL">{{p.industryIndex.qnetar}}Kcal</div>
-					<div class="stockQuantity">{{p.stock|string_filter}}</div>
+					<div class="stockCompany">某公司名</div>
+					<div class="stockKAL">{{p.industryIndex.qnetar|Qnet_filter}}Kcal</div>
+					<div class="stockQuantity">{{p.stock|Qnet_filter}}</div>
 					<div class="stockPrice">{{p.price}}</div>
 					<div class="stockPlace">{{p.dpaddr|string_filter}}</div>
 					<div class="stockDate">{{p.vldterm|string_filter}}</div>
@@ -191,21 +191,21 @@
 		</table>
 		<div class="stockButtonBox">
 			<div class="stockButtons">
-				<input type="button" class="stockButton stockButtonPrePre" value=" ">
-				<input type="button" class="stockButton stockButtonPre" value=" ">
-				<input type="button" class="stockButton" value="1">
-				<input type="button" class="stockButton" value="2">
-				<input type="button" class="stockButton" value="3">
-				<input type="button" class="stockButton" value="4">
-				<input type="button" class="stockButton" value="5">
-				<input type="button" class="stockButton" value="6">
-				<input type="button" class="stockButton" value="7">
-				<input type="button" class="stockButton" value="8">
-				<input type="button" class="stockButton" value="9">
-				<input type="button" class="stockButton" value="10">
-				<input type="button" class="stockButton" value="...">
-				<input type="button" class="stockButton stockButtonNext" value=" ">
-				<input type="button" class="stockButton stockButtonNextNext" value=" ">
+				<input type="button" class="stockButton stockButtonPre" {% if pagination.has_prev %}url="{{url_for('main.stock', page=pagination.page-1, count=count,fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}"{% endif %}>
+				{% for p in pagination.iter_pages() %}
+					{% if p %}
+						{% if p == pagination.page %}
+						<input type="button" class="stockButton" disabled="disabled" url="{{url_for('main.stock', page=p,count=count, fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}" value="{{p}}">
+						{% else %}
+						<input type="button" class="stockButton" url="{{ url_for('main.stock', page=p, count=count,fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}" value="{{p}}">
+						{% endif %}
+						
+					{% else %}
+						<input type="button" class="stockButton" value="...">
+					{% endif %}
+				{% endfor %}
+				<input type="button" class="stockButton stockButtonNext" {% if pagination.has_next %}url="{{url_for('main.stock', page=pagination.page+1,count=count, fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}"{% endif %} value=" ">
+				
 			</div>
 		</div>
 	</div>
@@ -224,5 +224,6 @@
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
   <script type="text/javascript" src="/static/js/productselect.js"></script>
+  <script type="text/javascript" src="/static/js/paginationbutton.js"></script>
 </body>
 </html>

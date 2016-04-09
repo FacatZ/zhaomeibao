@@ -34,14 +34,14 @@ def IndustryIndex_float_filter(n):
 
 @app.template_filter('Qnet_filter')
 def Qnet_filter(qnet):
-	print 'qnet filter:', qnet
 	l = []
 	qnet = int(qnet)
+	if qnet == 0:
+		return qnet
 	while qnet > 0:
 		l.append(qnet % 1000)
 		qnet /= 1000
 	l = l[::-1]
-	print (','.join([str(n) for n in l]))
 	return u'0' if qnet is None or qnet == '' else (','.join([str(n) for n in l]))
 
 @app.template_filter('rldate_filter')
@@ -50,11 +50,19 @@ def rldate_filter(rldate):
 
 @app.template_filter('stock_filter')
 def stock_filter(stock):
+	l = []
+	stock = int(stock)
+	while stock > 0:
+		l.append(stock % 1000)
+		stock /= 1000
+	l = l[::-1]
+	print (','.join([str(n) for n in l]))
 	return u'0' if not stock or stock == '' else stock
 
 @app.template_filter('province_filter')
 def province_filter(id):
-	return location['0'][int(id)] if id else u'暂无'
+	id = int(id)
+	return location['0'][id] if id and location['0'].has_key(id) and id != -1 else u'暂无'
 
 @app.template_filter('pdtype_filter')
 def pdtype_filter(id):
@@ -94,8 +102,11 @@ def teardown_database(exception=None):
 def city_filter_processor():
 	def city_filter(pid, cid):
 		pstring = '0'
+		if int(pid) < 0:
+			return u'暂无'
 		pstring = ','.join([pstring, str(pid)])
-		if not location[pstring].has_key(cid):
+		cid = int(cid)
+		if not location[pstring].has_key(cid) or cid == -1:
 			return u'暂无'
 		return location[pstring][cid]
 	return dict(city_filter=city_filter)

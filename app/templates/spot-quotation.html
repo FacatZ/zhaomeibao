@@ -67,26 +67,26 @@
 
       		<div class="stockButtonBox">
         		<div class="stockButtons">
-            		<input type="button" class="stockButton stockButtonPrePre" value=" ">
-            		<input type="button" class="stockButton stockButtonPre" value=" ">
-		            <input type="button" class="stockButton" value="1">
-		            <input type="button" class="stockButton" value="2">
-		            <input type="button" class="stockButton" value="3">
-		            <input type="button" class="stockButton" value="4">
-		            <input type="button" class="stockButton" value="5">
-		            <input type="button" class="stockButton" value="6">
-		            <input type="button" class="stockButton" value="7">
-		            <input type="button" class="stockButton" value="8">
-		            <input type="button" class="stockButton" value="9">
-		            <input type="button" class="stockButton" value="10">
-		            <input type="button" class="stockButton" value="...">
-		            <input type="button" class="stockButton stockButtonNext" value=" ">
-		            <input type="button" class="stockButton stockButtonNextNext" value=" ">
+				<input type="button" class="stockButton stockButtonPre" {% if pagination.has_prev %}url="{{url_for('main.spot_quotation', page=pagination.page-1, count=count,type=type)}}"{% endif %}>
+				{% for p in pagination.iter_pages() %}
+					{% if p %}
+						{% if p == pagination.page %}
+						<input type="button" class="stockButton" disabled="disabled" url="{{url_for('main.spot_quotation', page=p,count=count, type=type)}}" value="{{p}}">
+						{% else %}
+						<input type="button" class="stockButton" url="{{ url_for('main.spot_quotation', page=p, count=count,type=type)}}" value="{{p}}">
+						{% endif %}
+						
+					{% else %}
+						<input type="button" class="stockButton" value="...">
+					{% endif %}
+				{% endfor %}
+				<input type="button" class="stockButton stockButtonNext" {% if pagination.has_next %}url="{{url_for('main.spot_quotation', page=pagination.page+1,count=count, type=type)}}"{% endif %} value=" ">
         		</div>
      		</div>
 		</div>
 		{% include 'util/main/footer.html' %}
 		<script src="/static/js/jquery.js"></script>
 		<script src="/static/js/spot-quotation.js"></script>
+		<script type="text/javascript" src="/static/js/paginationbutton.js"></script>
 	</body>
 </html>

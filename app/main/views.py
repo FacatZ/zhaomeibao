@@ -1,7 +1,7 @@
 from . import main
 from flask import render_template, request, redirect, url_for
-from ..models import ArticleCategory, Article, ProductInformation, Category
-from sqlalchemy import and_
+from ..models import ArticleCategory, Article, ProductInformation, Category, IndustryIndex
+from sqlalchemy import and_, or_
 from ..util import data
 from ..database import db_session
 
@@ -19,7 +19,80 @@ def stock():
 	
 	category = Category.query.all()
 	product = ProductInformation.query.filter_by(typeid = 1).order_by(ProductInformation.rldate.desc()).all()
-	# product = ProductInformation.query.filter_by(typeid = 1).offset((page-1)*count).limit(count);
+
+	product_raw_all_filter = [ProductInformation.typeid == 1]
+	#fen lei filter
+	fenlei_query_string = request.args.get('fenlei', '', type=str)
+	if fenlei_query_string != '':
+		fenlei_list = fenlei_query_string.split(',')
+		fenlei_filter = reduce(or_, [ProductInformation.ctgid == int(i) for i in fenlei_list])
+		product_raw_all_filter.append(fenlei_filter)
+	else:
+		fenlei_query_string = None
+
+	#chan di filter
+	chandi_query_string = request.args.get('chandi', '', type=str)
+	if chandi_query_string != '':
+		chandi_list = chandi_query_string.split(',')
+		chandi_filter = reduce(or_, [ProductInformation.pdpid == int(i) for i in chandi_list])
+		product_raw_all_filter.append(chandi_filter)
+	else:
+		chandi_query_string = None
+
+	#jiaogedi filter
+	jiaogedi_query_string = request.args.get('jiaogedi', '', type=str)
+	if jiaogedi_query_string != '':
+		jiaogedi_list = jiaogedi_query_string.split(',')
+		jiaogedi_filter = reduce(or_, [ProductInformation.dpareaid == int(i) for i in jiaogedi_list])
+		product_raw_all_filter.append(jiaogedi_filter)
+	else:
+		jiaogedi_query_string = None
+
+	#join query
+	industryIndex_raw_all_filter = [ProductInformation.indid == IndustryIndex.id]
+	#Qnet filter
+	Qnet_query_string = request.args.get('Qnet', '', type=str)
+	if Qnet_query_string != '':
+		Qnet_list = Qnet_query_string.split(',')
+		Qnet_filter = reduce(or_, [data.Qnet_filter(int(id)) for id in Qnet_list])
+		industryIndex_raw_all_filter.append(Qnet_filter)
+	else:
+		Qnet_query_string = None
+
+	#St filter
+	St_query_string = request.args.get('St', '', type=str)
+	if St_query_string != '':
+		St_list = St_query_string.split(',')
+		St_filter = reduce(or_, [data.St_filter(int(id)) for id in St_list])
+		industryIndex_raw_all_filter.append(St_filter)
+	else:
+		St_query_string = None
+
+	#V filter
+	V_query_string = request.args.get('V', '', type=str)
+	if V_query_string != '':
+		V_list = V_query_string.split(',')
+		V_filter = reduce(or_, [data.V_filter(int(id)) for id in V_list])
+		industryIndex_raw_all_filter.append(V_filter)
+	else:
+		V_query_string = None
+
+	#Mt filter
+	Mt_query_string = request.args.get('Mt', '', type=str)
+	if Mt_query_string != '':
+		Mt_list = Mt_query_string.split(',')
+		Mt_filter = reduce(or_, [data.Mt_filter(int(id)) for id in Mt_list])
+		industryIndex_raw_all_filter.append(Mt_filter)
+	else:
+		Mt_query_string = None
+
+	product_all_filter = reduce(and_, product_raw_all_filter)
+	industryIndex_all_filter = reduce(and_, industryIndex_raw_all_filter)
+
+	pagination = data.Pagination(ProductInformation.query.join(IndustryIndex, industryIndex_all_filter).filter(product_all_filter).order_by(ProductInformation.rldate.desc()),\
+				page, count)
+	product = pagination.items
+
 	producingArea = data.getStockProducingArea()
 	jiaogeArea = data.getStockJiaogeArea()
 
@@ -31,14 +104,20 @@ def stock():
 	return render_template('stock.html', activeid=activeid, category=category,
 		product=product, producingArea=producingArea, 
 		jiaogeArea=jiaogeArea, Qnet=Qnet, St=St,
-		V=V, Mt=Mt)
+		V=V, Mt=Mt, pagination=pagination, count=count, fenlei_query_string=fenlei_query_string, chandi_query_string=chandi_query_string,
+		jiaogedi_query_string=jiaogedi_query_string, Qnet_query_string=Qnet_query_string,
+		St_query_string=St_query_string, V_query_string=V_query_string, Mt_query_string=Mt_query_string)
 
 	
 @main.route('/purchase')
 def purchase():
 	activeid = 2
-	product = ProductInformation.query.filter_by( typeid = 0 ).all()
-	return render_template('purchase.html', activeid=activeid, product=product)
+	page = request.args.get('page', 1, type=int)
+	count = request.args.get('count', 6, type=int)
+	pagination = data.Pagination(ProductInformation.query.filter_by( typeid = 0).order_by(ProductInformation.rldate.desc()), page, count)
+	product = pagination.items
+	return render_template('purchase.html', activeid=activeid, product=product,
+				 count=count, pagination=pagination)
 
 
 @main.route('/logistics')
@@ -50,13 +129,18 @@ def logistics():
 def spot_quotation():
 	activeid = 4
 	actgid = request.args.get('type', 1, type=int)
+
+	page = request.args.get('page', 1, type=int)
+	count = request.args.get('count', 20, type=int)
+
 	categorylist = ArticleCategory.query.all()
 	category = ArticleCategory.query.filter_by(id=actgid).first()
-	articles = category.articles.all()
-	print actgid
-	for a in articles:
-		print a.title
-	return render_template('spot-quotation.html', categorylist=categorylist, actgid=actgid, articles=articles, activeid=activeid)
+
+	pagination = data.Pagination(Article.query.filter_by(ctgid=actgid).order_by(Article.rldate.desc()), page, count)
+	articles = pagination.items
+	
+	return render_template('spot-quotation.html', categorylist=categorylist, type=actgid, 
+				articles=articles, activeid=activeid, pagination=pagination, count=count)
 
 @main.route('/detail/<int:id>')
 def detail(id):

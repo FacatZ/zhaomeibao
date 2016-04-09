@@ -11,10 +11,11 @@ from ..util import data
 @admin_required
 def product_list():
 	page = request.args.get('page', 1, type=int)
-	count = request.args.get('count', 30, type=int)
+	count = request.args.get('count', 15, type=int)
 	pagination = data.Pagination(ProductInformation.query, page, count)
 	product = pagination.items
-	return render_template('back-production.html', product=product)#, pagination=pagination)
+	return render_template('back-production.html', product=product, 
+		page=page,count=count, pagination=pagination)
 
 @admin.route('/create/product')
 @login_required
@@ -54,7 +55,8 @@ def article_list():
 	articles = pagination.items
 	# articles = Article.query.offset((page-1)*count).limit(count)
 	# total = Article.query.count()
-	return render_template('back-articles.html', count=count,articles=articles, pagination=pagination)
+	return render_template('back-articles.html', page=page, 
+		count=count,articles=articles, pagination=pagination)
 
 @admin.route('/create/article')
 @login_required

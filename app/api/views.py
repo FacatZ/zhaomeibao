@@ -170,16 +170,31 @@ def admin_modify_product(id):
 		return jsonify({'statecode': 404})
 
 	print 'after'
-	print 'pdpid:',request.form.get('pdpid')
-	return jsonify({'statecode': 200})
+
+	print 'pdpid:',request.form.get('pdpid', -1, type=int)
+	print 'pdcid:',request.form.get('pdcid', -1, type=int)
+
+	print 'dppid:',request.form.get('dppid', -1, type=int)
+	print 'dpcid:',request.form.get('dpcid', -1, type=int)
+
+	print 'prpid:',request.form.get('prpid', -1, type=int)
+	print 'prcid:',request.form.get('prcid', -1, type=int)
+
+	print 'ctgid', request.form.get('ctgid')
+
 	product_dict = data.preprocessingProductInformationModifyDict()
+	print sorted(product_dict.iteritems())
 	product.modify_from_dict(product_dict)
 	industry_dict = data.preprocessingIndutrialIndex()
-	product.industryIndex.modify_from_dict(industry_dict)
+	print industry_dict
+	industryIndex = product.industryIndex
+	industryIndex.modify_from_dict(industry_dict)
 
-	db_session.add(product)
+	# return jsonify({'statecode': 200})
+	db_session.add_all([product, industryIndex])
 	try:
 		db_session.commit()
+		print 'after modify ctgid:', product.ctgid
 		return jsonify({'statecode': 200})
 	except Exception, e:
 		db_session.rollback()

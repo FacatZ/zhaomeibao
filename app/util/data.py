@@ -1,6 +1,6 @@
 #coding=utf-8
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
-from sqlalchemy import and_
+from sqlalchemy import and_, or_
 from flask import request
 from ..database import db_session
 import bleach
@@ -14,10 +14,11 @@ class Pagination(object):
 		self.per_page = per_page
 		self.page = page
 		self.pages = int((self.total + self.per_page - 1)/self.per_page) 
-		self.has_prev = False if self.page == 1 else False
-		self.has_next = False if self.page == self.pages else False
+		self.has_prev = False if self.page == 1 else True
+		self.has_next = False if self.page == self.pages else True
 		self.prev_num = self.page - 1
 		self.next_num = self.pages - self.page
+		
 	def iter_pages(self, left_edge=2, left_current=2, right_current=5, right_edge=2):
 		last = 0
 		for num in xrange(1, self.pages + 1):
@@ -46,20 +47,20 @@ def preprocessingArticleDict():
 def preprocessingProductInformationDict():
 	d = { 
 		'typeid': request.form.get('typeid', 0, type=int),
-		'pdpid': request.form.get('pdpid', 1, type=int),
-		'pdcid': request.form.get('pdcid', 1, type=int),
+		'pdpid': request.form.get('pdpid', -2, type=int),
+		'pdcid': request.form.get('pdcid', -2, type=int),
 		'coal': request.form.get('coal', '', type=unicode),
 		'count': request.form.get('count', 0, type=int),
 		'price': request.form.get('price', 0, type=int),
 		'stock': request.form.get('stock', 0, type=int),
 		'prtype': request.form.get('prtype', '', type=unicode),
-		'prpid': request.form.get('prpid', 1, type=int),
-		'prcid': request.form.get('prcid', 1, type=int),
+		'prpid': request.form.get('prpid', -2, type=int),
+		'prcid': request.form.get('prcid', -2, type=int),
 		
 		'vldterm': request.form.get('vldterm', '', type=unicode),
 
-		'dppid': request.form.get('prpid', 1, type=int),
-		'dpcid': request.form.get('prcid', 1, type=int),
+		'dppid': request.form.get('prpid', -2, type=int),
+		'dpcid': request.form.get('prcid', -2, type=int),
 		'dpaddr': request.form.get('dpaddr', '', type=unicode),
 
 		'prtype': request.form.get('prtype', '', type=unicode),
@@ -93,9 +94,11 @@ def preprocessingIndutrialIndex():
 def preprocessingProductInformationModifyDict():
 	olddict = preprocessingProductInformationDict()
 	newdict = {}
+	newdict['ctgid'] = request.form.get('ctgid', 0, type=int)
 	not_allowed_key = ['typeid']
+	filter_area_key = ['pdpid', 'pdcid', 'dppid', 'dpcid', 'prpid', 'prcid']
 	for k,v in olddict.iteritems():
-		if k in not_allowed_key:
+		if (k in not_allowed_key) or (k in filter_area_key and k == -2):
 			continue
 		newdict[k] = v
 	return newdict
@@ -179,3 +182,63 @@ def generate_unique_serial_number(pdtype=0):
 	ordernum = ordernum + ''.join(str(today).split(' ')[0].split('-')) + '{count:06}'.format(count=count)
 	print ordernum
 	return ordernum
+
+def Qnet_filter(id):
+	if id == 5001:
+		return and_(IndustryIndex.qnetar >=1500, IndustryIndex.qnetar <= 3500)
+	if id == 5002:
+		return and_(IndustryIndex.qnetar >=3500, IndustryIndex.qnetar <= 4500)
+
+	if id == 5003:
+		return and_(IndustryIndex.qnetar >=4500, IndustryIndex.qnetar <= 5000)
+
+	if id == 5004:
+		return and_(IndustryIndex.qnetar >=5000, IndustryIndex.qnetar <= 5500)
+
+	if id == 5005:
+		return and_(IndustryIndex.qnetar >=5500, IndustryIndex.qnetar <= 6000)
+
+	if id == 5006:
+		return and_(IndustryIndex.qnetar >=6000, IndustryIndex.qnetar <= 7000)
+
+	if id == 5007:
+		return and_(IndustryIndex.qnetar >= 7000)
+
+def St_filter(id):
+	if id == 5011:
+		return and_(IndustryIndex.star >= 0.0, IndustryIndex.star <= 0.5)
+
+	if id == 5012:
+		return and_(IndustryIndex.star >= 0.5, IndustryIndex.star <= 0.8)
+
+	if id == 5013:
+		return and_(IndustryIndex.star >= 0.8, IndustryIndex.star <= 1.0)
+
+	if id == 5014:
+		return and_(IndustryIndex.star >= 1.0)
+
+def V_filter(id):
+	if id == 5021:
+		return and_(IndustryIndex.var >= 0.0, IndustryIndex.var <= 10.0)
+
+	if id == 5022:
+		return and_(IndustryIndex.var >= 10.0, IndustryIndex.var <= 20.0)
+
+	if id == 5023:
+		return and_(IndustryIndex.var >= 20.0, IndustryIndex.var <= 30.0)
+
+	if id == 5024:
+		return and_(IndustryIndex.var >= 30.0)
+
+def Mt_filter(id):
+	if id == 5031:
+		return and_(IndustryIndex.mt >= 0.0, IndustryIndex.mt <= 10.0)
+
+	if id == 5032:
+		return and_(IndustryIndex.mt >= 10.0, IndustryIndex.mt <= 20.0)
+
+	if id == 5033:
+		return and_(IndustryIndex.mt >= 20.0, IndustryIndex.mt <= 30.0)
+
+	if id == 5034:
+		return and_(IndustryIndex.mt >= 30.0)
