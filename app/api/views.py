@@ -126,6 +126,7 @@ def admin_publish_product():
 		db_session.rollback()
 		return jsonify({'statecode': 406})
 
+
 @api.route('/admin/delete/product/<int:id>')
 @login_required
 @admin_required
@@ -149,8 +150,11 @@ def admin_modify_product(id):
 	if not product:
 		return jsonify({'statecode': 404})
 
-	product_dict = data.preprocessingProductInformationDict()
+	product_dict = data.preprocessingProductInformationModifyDict()
 	product.modify_from_dict(product_dict)
+	industry_dict = data.preprocessingIndutrialIndex()
+	product.industryIndex.modify_from_dict(industry_dict)
+
 	db_session.add(product)
 	try:
 		db_session.commit()

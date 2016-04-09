@@ -90,6 +90,15 @@ def preprocessingIndutrialIndex():
 	}
 	return d
 
+def preprocessingProductInformationModifyDict():
+	olddict = preprocessingProductInformationDict()
+	newdict = {}
+	not_allowed_key = ['typeid']
+	for k,v in olddict.iteritems():
+		if k in not_allowed_key:
+			continue
+		newdict[k] = v
+	return newdict
 
 def processingIndustrialIndex():
 	ii_dict = preprocessingIndutrialIndex()
