@@ -16,7 +16,7 @@ body{
 }
 .main{
 	width:1258px;
-	height:830px;
+	height:1030px;
 	background-color:E8E7E7;
 	float:left;
 }
@@ -130,7 +130,6 @@ body{
 	font-size:15px;
 	float:left;
 	color:E4A15D;
-	margin-top:10px;
 	margin-left:40px;
 }
 .main .details_box .left_box a:hover{
@@ -138,6 +137,7 @@ body{
 	background-color:E4A15D;
 }
 .main .details_box .left_box p7 a{
+	margin-top:10px;
 	border-color:3078BE;
 	color:3078BE;
 }
