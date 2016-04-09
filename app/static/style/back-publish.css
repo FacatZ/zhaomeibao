@@ -84,7 +84,6 @@
 		/*text-align:center;*/
 		padding-top:5px;
 		color:black;
-
 	}
 	.table-one p3{
 		width:799px;
@@ -280,9 +279,10 @@
 		width:180px;
 	}
 	#style,#infor_ctgid0,#infor_ctgid1,#paytype0,#paytype1,#paytype2,#pdtype0,#pdtype1,#onsale0,#onsale1{
-		margin-top:0px !important;
-		margin-right:0px !important;
-		width:30px !important;
+		margin-top:7px !important;
+		margin-right:10px !important;
+		width:20px !important;
+		height:20px !important;
 	}
 	#stock{
 		margin-right:10px;
@@ -369,4 +369,21 @@
 	#hide1,#hide2,#hide3{
 		display:none;
 		float:left;
+	}
+	#ctgid,#prtype{
+		margin-top:0px;
+		border: solid 1px #000;
+  		border-color:#AAA9A8;
+    	appearance:none;
+    	-moz-appearance:none;
+    	-webkit-appearance:none;
+    	background-color:#F9FAFA;
+    	padding-right;
+
+    	background: url("../back-publish/picture/down_cut.png") no-repeat scroll right transparent;
+    	width:130px;
+    	height:30px;
+  		padding-left:10px;
+  		outline:none;
+  		font-size:18px;
 	}
