@@ -1,4 +1,5 @@
 #coding=utf-8
+from flask import url_for
 from .database import Base, db_session
 from sqlalchemy import Column, String, Text, Integer, Float, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import backref, relationship
@@ -146,12 +147,13 @@ class ProductInformation(Base):
         indindex = self.industryIndex
         brief_json_dict = {
             u'category': self.category.name,
-            u'coal': '...',
+            u'coal': self.coal,
             u'qnetar': indindex.qnetar if indindex else None,
             u'star': indindex.star if indindex else None,
             u'stock': self.stock,
-            u'dpareaid': profile.get_jiaogedi_name_by_id(self.dpareaid),
-            u'price': self.price
+            u'dpareaid': self.dpaddr,
+            u'price': self.price,
+            u'url': url_for('main.detail', id=self.id) if self.typeid == 1 else url_for('main.purchase')
         }
         return brief_json_dict
 

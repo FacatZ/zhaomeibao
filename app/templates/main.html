@@ -201,7 +201,7 @@
            <a><img src="/static/main/picture/cut2_20.png" class="north-area"></a>
            <a><img src="/static/main/picture/cut2_22.png" class="south-area"></a>
            <a><img src="/static/main/picture/cut2_24.png" class="else-area"></a>
-           <a href="#" class="more">更多</a>
+           <a href="{{url_for('main.stock')}}" class="more">更多</a>
          </div>
          <div class="action-box-east">
 
@@ -215,92 +215,18 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           
-           
-           
-           
-           
-           
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
+           {% for p in dongli_huadong %}
            <div class="action-content-all action-content-last">
              <p1>动力煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_33.png"></a>
            </div>
+           {% endfor %}
          </div>
 
          <div class="action-box-north">
@@ -314,146 +240,18 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
+           {% for p in dongli_huabei %}
            <div class="action-content-all action-content-last">
-             <p1>动力煤1</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
+             <p1>动力煤</p1>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_33.png"></a>
            </div>
+           {% endfor %}
          </div>
 
          <div class="action-box-south">
@@ -467,146 +265,18 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
+           {% for p in dongli_huanan %}
            <div class="action-content-all action-content-last">
-             <p1>动力煤2</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
+             <p1>动力煤</p1>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_33.png"></a>
            </div>
+           {% endfor %}
          </div>
 
          <div class="action-box-else">
@@ -620,153 +290,25 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
-           <div class="action-content-all">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
-           </div>
+           {% for p in dongli_other %}
            <div class="action-content-all action-content-last">
-             <p1>动力煤3</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_33.png"></a>
+             <p1>动力煤</p1>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_33.png"></a>
            </div>
+           {% endfor %}
          </div>
 
        </div>
        <div class="new-purchase">
          <div class="purchase-head">
            <p>最新采购需求</p>
-           <a href="#">更多</a>
+           <a href="{{url_for('main.stock')}}">更多</a>
          </div>
          <div class="purchase-content">
            <p1>动力煤</p1><p2>0000大卡</p2><p3>价格</p3><p4>0000吨</p4><p5>地点(最多八个字)</p5>
@@ -807,7 +349,7 @@
        <div class="nosmoke-content">
          <div class="link-container">
            <a><img src="/static/main/picture/cut2_41.png"></a>
-           <a href="#" class="nosmoke-more">更多</a>
+           <a href="{{url_for('main.stock')}}" class="nosmoke-more">更多</a>
          </div>
          <div class="nosmoke-box">
            <div class="nosmoke-menu">
@@ -934,7 +476,7 @@
        <div class="nosmoke-content">
          <div class="link-container">
            <a><img src="/static/main/picture/cut2_52.png"></a>
-           <a href="#" class="nosmoke-more">更多</a>
+           <a href="{{url_for('main.stock')}}" class="nosmoke-more">更多</a>
          </div>
          <div class="nosmoke-box">
            <div class="nosmoke-menu fire-menu">
@@ -947,86 +489,18 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="nosmoke-content-all fire-all">
+           {% for p in lianjiao_all %}
+          <div class="nosmoke-content-all nosmoke-content-last fire-all">
              <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_56.png"></a>
            </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
-           <div class="nosmoke-content-all nosmoke-content-last fire-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_56.png"></a>
-           </div>
+           {% endfor %}
          </div>
        </div>
        <div class="purchase-nosmoke">

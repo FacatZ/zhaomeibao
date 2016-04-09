@@ -8,7 +8,39 @@ from ..database import db_session
 @main.route('/')
 def index():
 	activeid = 0
-	return render_template('main.html', activeid=activeid)
+
+	categorylist = Category.query.limit(3)
+
+	c = categorylist[0]
+	dongli_huadong = c.productInformation.filter_by(dpareaid=1).order_by(ProductInformation.rldate.desc()).limit(15)
+	dongli_huadong = [p.to_brief_json() for p in dongli_huadong]
+
+	c = categorylist[0]
+	dongli_huabei = c.productInformation.filter_by(dpareaid=2).order_by(ProductInformation.rldate.desc()).limit(15)
+	dongli_huabei = [p.to_brief_json() for p in dongli_huabei]
+
+	c = categorylist[0]
+	dongli_huanan = c.productInformation.filter_by(dpareaid=7).order_by(ProductInformation.rldate.desc()).limit(15)
+	dongli_huanan = [p.to_brief_json() for p in dongli_huanan]
+
+	c = categorylist[0]
+	dplist = [3, 4, 5, 6, 8]
+	filter_result = reduce(or_, [ProductInformation.dpareaid == i for i in dplist])
+
+	dongli_other = c.productInformation.filter(filter_result).order_by(ProductInformation.rldate.desc()).limit(15)
+	dongli_other = [p.to_brief_json() for p in dongli_other]
+
+	c = categorylist[1]
+	wuyan_all = c.productInformation.order_by(ProductInformation.rldate.desc()).limit(15)
+	wuyan_all = [p.to_brief_json() for p in wuyan_all]
+
+	c = categorylist[2]
+	lianjiao_all = c.productInformation.order_by(ProductInformation.rldate.desc()).limit(15)
+	lianjiao_all = [p.to_brief_json() for p in lianjiao_all]
+
+	return render_template('main.html', activeid=activeid, dongli_huadong=dongli_huadong,
+				dongli_huabei=dongli_huabei, dongli_huanan=dongli_huanan, dongli_other=dongli_other,
+				wuyan_all=wuyan_all, lianjiao_all=lianjiao_all)
 
 @main.route('/stock')
 def stock():

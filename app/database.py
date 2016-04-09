@@ -78,4 +78,4 @@ def init_db():
 	except Exception, e:
 		db_session.rollback()
 		print 'create admin count failed'
-	generate_fake_articles()
+	#generate_fake_articles()
