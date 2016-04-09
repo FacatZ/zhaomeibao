@@ -48,10 +48,10 @@ function showLocation1(province , city , town) {
 $(function(){
 		showLocation1();
 		$('#btnval').click(function(){
-			alert($('#pdpid').val() + ' - ' + $('#ppcid').val() + ' - ' +  $('#loc_town').val()) 
+			alert($('#pdpid').val() + ' - ' + $('#pdcid').val() + ' - ' +  $('#loc_town').val()) 
 		})
 		$('#btntext').click(function(){
-			alert($('#pdpid').select2('data').text + ' - ' + $('#ppcid').select2('data').text + ' - ' +  $('#loc_town').select2('data').text) 
+			alert($('#pdpid').select2('data').text + ' - ' + $('#pdcid').select2('data').text + ' - ' +  $('#loc_town').select2('data').text) 
 		})
 	})
 
@@ -112,7 +112,7 @@ $(function(){
 		})
 	})
 
-function showLocation3(province , city , town) {
+function showLocation(province , city , town) {
 	
 	var loc	= new Location();
 	var title	= ['省份' , '地级市' , '市、县、区'];
@@ -120,22 +120,22 @@ function showLocation3(province , city , town) {
 		title[k]	= '<option value="">'+v+'</option>';
 	})
 	
-	$('#pppid').append(title[0]);
-	$('#ppcid').append(title[1]);
+	$('#dppid').append(title[0]);
+	$('#dpcid').append(title[1]);
 	$('#loc_town').append(title[2]);
 	
-	$("#pppid,#ppcid,#loc_town").select2()
-	$('#pppid').change(function() {
-		$('#ppcid').empty();
-		$('#ppcid').append(title[1]);
-		loc.fillOption('ppcid' , '0,'+$('#pppid').val());
-		$('#ppcid').change()
+	$("#dppid,#dpcid,#loc_town").select2()
+	$('#dppid').change(function() {
+		$('#dpcid').empty();
+		$('#dpcid').append(title[1]);
+		loc.fillOption('dpcid' , '0,'+$('#dppid').val());
+		$('#dpcid').change()
 	})
 	
-	$('#ppcid').change(function() {
+	$('#dpcid').change(function() {
 		$('#loc_town').empty();
 		$('#loc_town').append(title[2]);
-		loc.fillOption('loc_town' , '0,' + $('#pppid').val() + ',' + $('#ppcid').val());
+		loc.fillOption('loc_town' , '0,' + $('#dppid').val() + ',' + $('#dpcid').val());
 	})
 	
 	$('#loc_town').change(function() {
@@ -143,10 +143,10 @@ function showLocation3(province , city , town) {
 	})
 	
 	if (province) {
-		loc.fillOption('pppid' , '0' , province);
+		loc.fillOption('dppid' , '0' , province);
 		
 		if (city) {
-			loc.fillOption('ppcid' , '0,'+province , city);
+			loc.fillOption('dpcid' , '0,'+province , city);
 			
 			if (town) {
 				loc.fillOption('loc_town' , '0,'+province+','+city , town);
@@ -154,17 +154,17 @@ function showLocation3(province , city , town) {
 		}
 		
 	} else {
-		loc.fillOption('pppid' , '0');
+		loc.fillOption('dppid' , '0');
 	}
 		
 }
 
 $(function(){
-		showLocation3();
+		showLocation();
 		$('#btnval').click(function(){
-			alert($('#pppid').val() + ' - ' + $('#ppcid').val() + ' - ' +  $('#loc_town').val()) 
+			alert($('#dppid').val() + ' - ' + $('#dpcid').val() + ' - ' +  $('#loc_town').val()) 
 		})
 		$('#btntext').click(function(){
-			alert($('#pppid').select2('data').text + ' - ' + $('#ppcid').select2('data').text + ' - ' +  $('#loc_town').select2('data').text) 
+			alert($('#dppid').select2('data').text + ' - ' + $('#dpcid').select2('data').text + ' - ' +  $('#loc_town').select2('data').text) 
 		})
 	})

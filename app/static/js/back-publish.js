@@ -100,4 +100,6 @@ $(document).ready(function(){
 			console.log(result);
 		});
 	});
+
+	var is_checked = $("#infor_ctgid1").checked;
 });
