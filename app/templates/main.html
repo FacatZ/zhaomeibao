@@ -362,86 +362,18 @@
              <p>价格（元）</p>
              <a href="#"><img src="/static/main/picture/f5_03.png"></a>
            </div>
-           <div class="nosmoke-content-all">
+           {% for p in lianjiao_all %}
+          <div class="nosmoke-content-all nosmoke-content-last fire-all">
              <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
+             <p2>{{p['coal']}}</p2>
+             <p3>{{p['qnetar']}}</p3>
+             <p4>{{p['star']}}</p4>
+             <p5>{{p['stock']}}</p5>
+             <p6>{{p['dpaddr']|string_filter}}</p6>
+             <p7>{{p['price']}}</p7>
+             <a href="{{p['url']}}"><img src="/static/main/picture/cut2_56.png"></a>
            </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
-           <div class="nosmoke-content-all nosmoke-content-last">
-             <p1>无烟煤</p1>
-             <p2>石炭7</p2>
-             <p3>4984</p3>
-             <p4>0.51</p4>
-             <p5>45，000</p5>
-             <p6>中信江阴码头</p6>
-             <p7>375</p7>
-             <a href="#"><img src="/static/main/picture/cut2_44.png"></a>
-           </div>
+           {% endfor %}
          </div>
        </div>
        <div class="purchase-nosmoke">
@@ -491,7 +423,7 @@
            </div>
            {% for p in lianjiao_all %}
           <div class="nosmoke-content-all nosmoke-content-last fire-all">
-             <p1>无烟煤</p1>
+             <p1>炼焦煤</p1>
              <p2>{{p['coal']}}</p2>
              <p3>{{p['qnetar']}}</p3>
              <p4>{{p['star']}}</p4>
