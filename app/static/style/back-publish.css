@@ -351,11 +351,11 @@
 	.if_onsale{
 		display:none;
 	}
-	.span_add,.span_add1{
+	.span_add1,.span_add2,.span_add3{
 		margin-left:10px;
 		float:left;
 	}
-	.change_p,.change_p1{
+	.change_p1,.change_p2,.change_p3{
 		width:60px;
 		height:30px;
 		background-color:#3084BE;
@@ -366,7 +366,7 @@
 		margin-left:10px;
 		cursor:pointer;
 	}
-	#hide1{
+	#hide1,#hide2,#hide3{
 		display:none;
 		float:left;
 	}

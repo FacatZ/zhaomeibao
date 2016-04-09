@@ -105,5 +105,14 @@ $(document).ready(function(){
 		$(".change_p1").css("display","none");
 		$("#hide1").css("display","block");
 	});
-
+	$(".change_p2").click(function(){
+		$(".span_add2").css("display","none");
+		$(".change_p2").css("display","none");
+		$("#hide2").css("display","block");
+	});
+	$(".change_p3").click(function(){
+		$(".span_add3").css("display","none");
+		$(".change_p3").css("display","none");
+		$("#hide3").css("display","block");
+	});
 });
