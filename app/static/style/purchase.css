@@ -17,6 +17,10 @@
   	background-color:rgb(239,239,239);
   	float:left;
   }
+  .main_left{
+    float:left;
+    width:880px;
+  }
   .search{
   	margin-top:10px;
   	margin-left:20px;
@@ -291,10 +295,14 @@
     margin-top:10px;
     float:left;
   }
+  .main_right{
+    float:left;
+    width:360px;
+  }
   .entrust{
     background-color:rgb(216,216,216);
-    margin-left:20px;
-    margin-top:-1150px;
+    margin-left:10px;
+    margin-top:10px;
     height:350px;
     width:350px;
     float:left;
@@ -349,8 +357,8 @@
     background-color:rgb(216,216,216);
     height:990px;
     width:350px;
-    margin-left:20px;
-    margin-top:0px;
+    margin-left:10px;
+    margin-top:20px;
     float:left;
   }
   .nearnow p{
