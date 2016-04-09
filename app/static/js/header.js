@@ -137,5 +137,22 @@ $(document).ready(function(){
     $(this).addClass("active");
   });
   
+  if($(".nav-link").attr("activeid")=="0"){
+    $("#slide-act").css("margin-left","30px");
+    $("#slide-act").css("width","52px");
+  }else if($(".nav-link").attr("activeid")=="1"){
+    $("#slide-act").css("margin-left","130px");
+    $("#slide-act").css("width","110px");
+  }else if($(".nav-link").attr("activeid")=="2"){
+    $("#slide-act").css("margin-left","278px");
+    $("#slide-act").css("width","110px");
+  }else if($(".nav-link").attr("activeid")=="3"){
+    $("#slide-act").css("margin-left","436px");
+    $("#slide-act").css("width","52px");
+  }else if($(".nav-link").attr("activeid")=="4"){
+    $("#slide-act").css("margin-left","535px");
+    $("#slide-act").css("width","110px");
+  }
+
 });
 

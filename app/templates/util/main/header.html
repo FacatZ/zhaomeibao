@@ -36,7 +36,7 @@
         <img src="/static/header/img/nav-logo.png">
       </div>
 
-      <div class="nav-link">
+      <div class="nav-link" activeid="{{activeid}}">
         <a href="{{url_for('main.index')}}" id="main" {% if activeid == 0%}class="active" {% endif %}>首页</a>
         <a href="{{url_for('main.stock')}}" id="resource"  {% if activeid == 1 %}class="active" {% endif %}>现货资源</a>
         <a href="{{url_for('main.purchase')}}" id="purchase"  {% if activeid == 2%}class="active" {% endif %}>采购信息</a>
