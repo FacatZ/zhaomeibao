@@ -4,11 +4,28 @@ from flask import render_template, request, url_for, jsonify, redirect
 from ..models import User, ProductInformation, Category
 from sqlalchemy import and_, or_
 from sqlalchemy.exc import IntegrityError
-from flask.ext.login import current_user, login_required
+from flask.ext.login import current_user, login_required, login_user
 from ..decorators import admin_required
 from ..models import ArticleCategory, Article
 from ..util import data 
 from ..database import db_session
+
+@api.route('/admin/login', methods=['POST'])
+def admin_login():
+	username = request.form.get('name', '', type=str)
+	password = request.form.get('password', '', type=str)
+	print request.form
+	user = User.query.filter_by( username=username).first()
+	if not user:
+		return jsonify({'statecode': 404})
+	if user.verify_password(password):
+		login_user(user)
+		return jsonify({
+				'statecode': 200,
+				'url': url_for('admin.product_list')
+			})
+	return jsonify({'statecode': 406})
+
 
 @api.route('/<coalType>/<int:areaid>')
 def get_coal_type_by_area_id(coalType, areaid):

@@ -81,10 +81,10 @@ def setting_format(s):
 	return s.replace('-*', u'以上')
 
 
-@app.before_first_request
-def first_request_processor():
-	admin = User.query.filter_by(username='admin').first()
-	login_user(admin)
+# @app.before_first_request
+# def first_request_processor():
+# 	admin = User.query.filter_by(username='admin').first()
+# 	login_user(admin)
 
 @app.teardown_appcontext
 def teardown_database(exception=None):

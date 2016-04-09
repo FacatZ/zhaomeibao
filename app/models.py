@@ -135,7 +135,6 @@ class ProductInformation(Base):
         productInfo = ProductInformation()
         for key in dictionary:
             setattr(productInfo, key, dictionary[key])
-            print getattr(productInfo, key)
         return productInfo
 
     def modify_from_dict(self, dictionary):

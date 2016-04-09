@@ -75,17 +75,6 @@ def admin_logout():
 	logout_user()
 	return redirect( url_for('main.index'))
 
-@admin.route('/login', methods=['GET', 'POST'])
+@admin.route('/login')
 def admin_login():
-	print 'method:',request.method
-	if request.method == 'POST':
-		username = request.form.get('username', '', type=str)
-		password = request.form.get('password', '', type=str)
-		user = User.query.filter_by(username=username).first()
-		if not user:
-			return redirect( url_for('admin.admin_login') )
-		if user.verify_password(password):
-			return redirect(url_for('admin.product_list'))
-		return redirect(url_for('admin.admin_login'))
-
 	return render_template('login.html')
