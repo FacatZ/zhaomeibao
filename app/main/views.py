@@ -17,7 +17,8 @@ def stock():
 	count = request.args.get('count', 20, type=int)
 	
 	category = Category.query.all()
-	product = ProductInformation.query.filter_by(typeid = 1).offset((page-1)*count).limit(count);
+	product = ProductInformation.query.filter_by(typeid = 1).order_by(ProductInformation.rldate.desc()).all()
+	# product = ProductInformation.query.filter_by(typeid = 1).offset((page-1)*count).limit(count);
 	producingArea = data.getStockProducingArea()
 	jiaogeArea = data.getStockJiaogeArea()
 
@@ -35,7 +36,8 @@ def stock():
 @main.route('/purchase')
 def purchase():
 	activeid = 2
-	return render_template('purchase.html', activeid=activeid)
+	product = ProductInformation.query.filter_by( typeid = 0 ).all()
+	return render_template('purchase.html', activeid=activeid, product=product)
 
 
 @main.route('/logistics')

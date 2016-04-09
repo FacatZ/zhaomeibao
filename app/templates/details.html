@@ -11,9 +11,9 @@
 			<div class="details_box">
 				<div class="left_box">
 					<p1>{{pd.category.name}}<span></span><p2>江苏苏龙能源有限公司</p2></p1>
-					<p3>¥ {{pd.price}} 元<span>/吨</span><span>{{pd.prtype|prtype_filter}}</span><p5>交割地： {{pd.pdaddr|string_filter}}</p5><p6>供货单号: {{pd.ordnum}}</p6></p3>
+					<p3>¥ {{pd.price}} 元<span>/吨</span><span>{{pd.prtype|prtype_filter}}</span><p5>交割地： {{pd.dpaddr|string_filter}}</p5><p6>供货单号: {{pd.ordnum}}</p6></p3>
 					<div class="details_bottom"><span>{{pd.vldterm|string_filter}}</span><p4>有效期</p4></div>
-					<div class="details_bottom"><span>2,000 吨</span><p4>库存</p4></div>
+					<div class="details_bottom"><span>{{pd.stock|stock_filter}} 吨</span><p4>库存</p4></div>
 					<div class="details_bottom"><span>{{pd.pdtype|pdtype_filter}}</span><p4>货物类型</p4></div>
 					<div class="details_bottom"><span>{{pd.pdpid|province_filter}}</span><p4>产地</p4></div>
 					<a href="#">在线联系</a>
@@ -24,7 +24,7 @@
 					<div class="right_box_content">
 						<span>
 							<img src="picture/cut_29.png">
-							<p8>熊老师</p8>
+							<p8>专员名字</p8>
 						</span>
 						<span>
 							<img src="picture/cut_26.png" id="fixed_img">
@@ -37,16 +37,15 @@
 			<sp1>指标说明:</sp1>
 			<div class="details_bottom_box">
 				<sp1>工业指标:</sp1>
-				<sp2>发热量(Qnet)</sp2><sp3>5,500Kcal</sp3>
-				<sp2>全水份(Mt)</sp2><sp3>17.00%</sp3>
+				<sp2>发热量(Qnet)</sp2><sp3>{{pd.industryIndex.qnetar|Qnet_filter}}Kcal</sp3>
+				<sp2>全水份(Mt)</sp2><sp3>{{pd.industryIndex.mt|IndustryIndex_float_filter}}</sp3>
 				<sp2>内水(Mad)</sp2><sp3>-</sp3>
-				<sp2>挥发份(V ar)</sp2><sp3>28.00%</sp3>
-				<sp2>灰份(A ar)</sp2><sp3>10.00%</sp3>
-				<sp2>全硫份(St ar)</sp2><sp3>0.05%</sp3>
-				<sp2>固定碳(FC)</sp2><sp3>-</sp3>
-				<sp2>粒度(Size)</sp2><sp3>- 至 -mm 占比 -</sp3>
-				<sp2>密度(DE)</sp2><sp3>-</sp3>
-				<sp1 id="add_border">备注:</sp1>
+				<sp2>挥发份(V ar)</sp2><sp3>{{pd.industryIndex.mad|IndustryIndex_float_filter}}</sp3>
+				<sp2>灰份(A ar)</sp2><sp3>{{pd.industryIndex.aar|IndustryIndex_float_filter}}</sp3>
+				<sp2>全硫份(St ar)</sp2><sp3>{{pd.industryIndex.star|IndustryIndex_float_filter}}</sp3>
+				<sp2>固定碳(FC)</sp2><sp3>{{pd.industryIndex.fcar|IndustryIndex_float_filter}}</sp3>
+				<sp2>粒度(Size)</sp2><sp3>{{pd.industryIndex.szlowlm|IndustryIndex_int_filter}} 至 {{pd.industryIndex.szuplm|IndustryIndex_int_filter}}mm 占比 {{pd.industryIndex.szppt|IndustryIndex_int_filter}}</sp3>
+				<sp1 id="add_border">备注：{{pd.remark}}</sp1>
 			</div>
 		{% include '/util/main/footer.html' %}
 		</div>

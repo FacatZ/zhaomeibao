@@ -1,8 +1,8 @@
 from . import admin
 from ..decorators import admin_required
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, url_for
 from ..models import Article, User, ProductInformation, ArticleCategory, Category
-from flask.ext.login import login_required
+from flask.ext.login import login_required, logout_user, login_user
 from ..util import data
 
 @admin.route('/')
@@ -11,7 +11,7 @@ from ..util import data
 @admin_required
 def product_list():
 	page = request.args.get('page', 1, type=int)
-	count = request.args.get('count', 10, type=int)
+	count = request.args.get('count', 30, type=int)
 	pagination = data.Pagination(ProductInformation.query, page, count)
 	product = pagination.items
 	return render_template('back-production.html', product=product)#, pagination=pagination)
@@ -24,6 +24,20 @@ def create_product():
 	category = Category.query.all()
 
 	return render_template('back-publish.html', category=category)
+
+@admin.route('/modify/product/<int:id>')
+@login_required
+@admin_required
+def modify_product(id):
+	product = ProductInformation.query.filter_by(id=id).first()
+	if not product:
+		return redirect(url_for('admin.product_list'))
+
+	industryIndex = product.industryIndex
+	category = Category.query.all()
+
+	return render_template('back-modify.html', category=category,\
+		product=product, industryIndex=industryIndex)
 
 @admin.route('/article/list')
 @login_required
@@ -54,3 +68,24 @@ def modify_article(id):
 		return redirect('admin.article_list')
 	return render_template('back-issue-modify.html', categorylist=categorylist, article=article)
 
+@admin.route('/logout')
+@login_required
+@admin_required
+def admin_logout():
+	logout_user()
+	return redirect( url_for('main.index'))
+
+@admin.route('/login', methods=['GET', 'POST'])
+def admin_login():
+	print 'method:',request.method
+	if request.method == 'POST':
+		username = request.form.get('username', '', type=str)
+		password = request.form.get('password', '', type=str)
+		user = User.query.filter_by(username=username).first()
+		if not user:
+			return redirect( url_for('admin.admin_login') )
+		if user.verify_password(password):
+			return redirect(url_for('admin.product_list'))
+		return redirect(url_for('admin.admin_login'))
+
+	return render_template('login.html')

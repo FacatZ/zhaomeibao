@@ -2,14 +2,14 @@
 	<head>
 		<title>login</title>
 		<meta charset="utf-8">
-		<link href="login.css" rel="stylesheet">
+		<link href="/static/style/login.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="main">
+		<form class="main" action="{{url_for('admin.admin_login')}}", method="POST">
 			<span>用户名</span><input type="text" name="username" id="username"></br>
 			<span>密码</span><input type="password" name="password" id="username"></br>
 			<input type="submit" value="登陆" id="submit">
-		</div>
+		</form>
 	</body>
 
 </html>

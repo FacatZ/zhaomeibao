@@ -72,7 +72,7 @@ $(document).ready(function(){
 			dpcid : $("#dpcid").val(),
 			pdpid : $("#pdpid").val(),
 			pdcid : $("#pdcid").val(),
-			pdaddr : $("#pdaddr").val(),
+			dpaddr : $("#dpaddr").val(),
 			prtype : $("#prtype").val(),
 			prpid : $("#prpid").val(),
 			prcid : $("#prcid").val(),

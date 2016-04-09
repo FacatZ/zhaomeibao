@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/static/style/bootstrap.css">
     <link rel="stylesheet" href="/static/style/back.css">
     <link rel="stylesheet" href="/static/style/back-common.css">
+    <script type="text/javascript" src="/static/ckeditor/ckeditor.js"></script>
 </head>
 <body>
     {% include 'util/admin/top.html' %}
@@ -34,7 +35,7 @@
         <div class="form-group backIssueInner">
           <label class="col-sm-1 control-label">正文内容</label>
           <div class="col-sm-8">
-            <textarea name="body" rows="25" cols="100" class="form-control">{{article.body}}</textarea>
+            <textarea name="body" rows="25" cols="100" class="form-control ckeditor">{{article.body}}</textarea>
           </div>
         </div>
         <div class="form-group backIssueButtons">

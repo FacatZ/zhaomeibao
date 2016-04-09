@@ -45,14 +45,14 @@ class User(Base, UserMixin):
     @property
     def password(self):
         #raise AttributeError('Password is not readable')
-        return self.pwd_hash
+        return self.password_hash
 
     @password.setter
     def password(self, password):
-        self.pwd_hash = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password)
 
     def verify_password(self, password):
-        return check_password_hash(self.pwd_hash, password)
+        return check_password_hash(self.password_hash, password)
 
     def can(self, permissions):
         return self.permissions & permissions == permissions
@@ -108,6 +108,7 @@ class ProductInformation(Base):
 
     coal  = Column(String(64)) #煤种
     stock = Column(Integer) #库存
+    count = Column(Integer) #需求量
     #价格部分
     price  = Column(Float) #价格
     prtype = Column(String(64)) #价格类型

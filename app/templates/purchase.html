@@ -18,25 +18,26 @@
         <input type="text" name="number">
         <img src="/static/purchase/picture/cut_03.png">
       </div>
-      
+
+      {% for p in product %}
       <div class="main-infor">
         <div class="left-box">
             <div class="main-infor-lineone">
                 <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
+                <p2>{{p.ordnum}}</p2>
                 <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
+                <p3>{{p.rldate|rldate_filter}}</p3>
             </div>
             <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
+                <p4>{{p.category.name}} {{p.count}}吨, {{p.industryIndex.qnetar|Qnet_filter}}大卡</p4>
             </div>
             <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
+                <p5>{{p.price}}</p5>
+                <p6>元 ({{p.prtype|prtype_filter}}) 交货地：{{p.pdpid|province_filter}}{{p.dpaddr}}</p6>
             </div>
             <div class="main-infor-linefour">
                 <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
+                <p8>跟进交易员：</p8><p81>跟进员名</p81><div class="line"></div>
                 <img src="/static/purchase/picture/cut_26.png">
                 <p9>400-065-6868</p9><div class="line-two-purchase"></div>
                 <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
@@ -47,146 +48,7 @@
             <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
         </div>
       </div>
-      <div class="main-infor">
-        <div class="left-box">
-            <div class="main-infor-lineone">
-                <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
-                <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
-            </div>
-            <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
-            </div>
-            <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
-            </div>
-            <div class="main-infor-linefour">
-                <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
-                <img src="/static/purchase/picture/cut_26.png">
-                <p9>400-065-6868</p9><div class="line-two-purchase"></div>
-                <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
-            </div>
-        </div>
-        <div class="right-box">
-            <p7>代报价</p7>
-            <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
-        </div>
-      </div>
-      <div class="main-infor">
-        <div class="left-box">
-            <div class="main-infor-lineone">
-                <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
-                <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
-            </div>
-            <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
-            </div>
-            <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
-            </div>
-            <div class="main-infor-linefour">
-                <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
-                <img src="/static/purchase/picture/cut_26.png">
-                <p9>400-065-6868</p9><div class="line-two-purchase"></div>
-                <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
-            </div>
-        </div>
-        <div class="right-box">
-            <p7>代报价</p7>
-            <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
-        </div>
-      </div>
-      <div class="main-infor">
-        <div class="left-box">
-            <div class="main-infor-lineone">
-                <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
-                <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
-            </div>
-            <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
-            </div>
-            <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
-            </div>
-            <div class="main-infor-linefour">
-                <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
-                <img src="/static/purchase/picture/cut_26.png">
-                <p9>400-065-6868</p9><div class="line-two-purchase"></div>
-                <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
-            </div>
-        </div>
-        <div class="right-box">
-            <p7>代报价</p7>
-            <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
-        </div>
-      </div>
-      <div class="main-infor">
-        <div class="left-box">
-            <div class="main-infor-lineone">
-                <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
-                <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
-            </div>
-            <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
-            </div>
-            <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
-            </div>
-            <div class="main-infor-linefour">
-                <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
-                <img src="/static/purchase/picture/cut_26.png">
-                <p9>400-065-6868</p9><div class="line-two-purchase"></div>
-                <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
-            </div>
-        </div>
-        <div class="right-box">
-            <p7>代报价</p7>
-            <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
-        </div>
-      </div>
-      <div class="main-infor">
-        <div class="left-box">
-            <div class="main-infor-lineone">
-                <p1>采购单号:</p1>
-                <p2>ZS218375847</p2>
-                <p1>发布时间：</p1>
-                <p3>2015-12-05&nbsp;16:27</p3>
-            </div>
-            <div class="main-infor-linetwo">
-                <p4>动力煤 700吨, 5500</p4>
-            </div>
-            <div class="main-infor-linethree">
-                <p5>400.00</p5>
-                <p6>元 (平仓价) 交货地：江苏省长江沿岸平仓</p6>
-            </div>
-            <div class="main-infor-linefour">
-                <img src="/static/purchase/picture/cut_29.png">
-                <p8>跟进交易员：</p8><p81>熊老师</p81><div class="line"></div>
-                <img src="/static/purchase/picture/cut_26.png">
-                <p9>400-065-6868</p9><div class="line-two-purchase"></div>
-                <div><a href="#"><img src="/static/purchase/picture/cut_22.png"></a></div>
-            </div>
-        </div>
-        <div class="right-box">
-            <p7>代报价</p7>
-            <a href="#"><img src="/static/purchase/picture/cut_19.png"></a>
-        </div>
-      </div>
+      {% endfor %}
 
       <div class="entrust">
         <p>免费发布采购</p>

@@ -12,6 +12,46 @@ from app.util.location import location
 app = create_app('development')
 manager = Manager(app)
 
+
+@app.template_filter('productInformation_typeid_filter')
+def productInformation_typeid_filter(id):
+	id = str(id)
+	dd = {
+		u'0': u'需求',
+		u'1': u'供货'
+	}
+	return dd[id]
+
+@app.template_filter('IndustryIndex_int_filter')
+def IndustryIndex_int_filter(n):
+	n = int(n)
+	return '-' if not n or n == 0 or n == '' else '%d' %(n)
+
+@app.template_filter('IndustryIndex_float_filter')
+def IndustryIndex_float_filter(n):
+	n = float(n)
+	return '-' if (not n or n == 0.0 or n == '') else ('%.2f%%' %(n))
+
+@app.template_filter('Qnet_filter')
+def Qnet_filter(qnet):
+	print 'qnet filter:', qnet
+	l = []
+	qnet = int(qnet)
+	while qnet > 0:
+		l.append(qnet % 1000)
+		qnet /= 1000
+	l = l[::-1]
+	print (','.join([str(n) for n in l]))
+	return u'0' if qnet is None or qnet == '' else (','.join([str(n) for n in l]))
+
+@app.template_filter('rldate_filter')
+def rldate_filter(rldate):
+	return rldate.strftime('%Y-%m-%d %H:%M')
+
+@app.template_filter('stock_filter')
+def stock_filter(stock):
+	return u'0' if not stock or stock == '' else stock
+
 @app.template_filter('province_filter')
 def province_filter(id):
 	return location['0'][int(id)] if id else u'暂无'

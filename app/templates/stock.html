@@ -170,15 +170,15 @@
 			{% for p in product %}
 			<tr class="infoInner">
 				<td>
-					<div class="stockClassification">{{ p.category.name }}</div>
-					<div class="stockName">珠店电25</div>
+					<div class="stockClassification">{{ p.category.name | string_filter}}</div>
+					<div class="stockName">{{p.coal | string_filter}}</div>
 					<div class="stockCompany">广州珠江电力燃料有限公司</div>
 					<div class="stockKAL">{{p.industryIndex.qnetar}}Kcal</div>
-					<div class="stockQuantity">{{p.stock}}</div>
+					<div class="stockQuantity">{{p.stock|string_filter}}</div>
 					<div class="stockPrice">{{p.price}}</div>
-					<div class="stockPlace">珠电码头</div>
-					<div class="stockDate">2015/12/5</div>
-					<div class="stockOperationButton"></div>
+					<div class="stockPlace">{{p.dpaddr|string_filter}}</div>
+					<div class="stockDate">{{p.vldterm|string_filter}}</div>
+					<a href="{{url_for('main.detail', id=p.id)}}"><div class="stockOperationButton"></div></a>
 				</td>
 			</tr>
 			{% endfor %}

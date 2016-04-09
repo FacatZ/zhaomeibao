@@ -1,3 +1,4 @@
+#coding=utf-8
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
 from sqlalchemy import and_
 from flask import request
@@ -36,8 +37,8 @@ def getProductInformationByArea(areaId, num=10):
 
 def preprocessingArticleDict():
 	d = {
-		'title': request.form.get('title', '', type=str),
-		'body': request.form.get('body', '', type=str),
+		'title': request.form.get('title', '', type=unicode),
+		'body': request.form.get('body', '', type=unicode),
 		'ctgid': request.form.get('ctgid', 1, type=int)
 	}
 	return d
@@ -47,22 +48,24 @@ def preprocessingProductInformationDict():
 		'typeid': request.form.get('typeid', 0, type=int),
 		'pdpid': request.form.get('pdpid', 1, type=int),
 		'pdcid': request.form.get('pdcid', 1, type=int),
-		'coal': request.form.get('coal', '', type=str),
+		'coal': request.form.get('coal', '', type=unicode),
 		'count': request.form.get('count', 0, type=int),
 		'price': request.form.get('price', 0, type=int),
-		
-		'prtype': request.form.get('prtype', '', type=str),
+		'stock': request.form.get('stock', 0, type=int),
+		'prtype': request.form.get('prtype', '', type=unicode),
 		'prpid': request.form.get('prpid', 1, type=int),
 		'prcid': request.form.get('prcid', 1, type=int),
 		
-		'vldterm': request.form.get('vldterm', '', type=str),
+		'vldterm': request.form.get('vldterm', '', type=unicode),
 
 		'dppid': request.form.get('prpid', 1, type=int),
 		'dpcid': request.form.get('prcid', 1, type=int),
-		'dpaddr': request.form.get('dpaddr', '', type=str),
+		'dpaddr': request.form.get('dpaddr', '', type=unicode),
 
-		'paytype': request.form.get('paytype', '', type=str),
-		'remark': request.form.get('remark', '', type=str)
+		'prtype': request.form.get('prtype', '', type=unicode),
+		'pdtype': request.form.get('pdtype', 0, type=int),
+		'paytype': request.form.get('paytype', '', type=unicode),
+		'remark': request.form.get('remark', '', type=unicode)
 	}
 	return d
 
@@ -94,6 +97,8 @@ def processingIndustrialIndex():
 
 def processingProductInformation():
 	pi_dict = preprocessingProductInformationDict()
+	print 'ProductInformation dictionary:', pi_dict
+	print 'full form:', request.form
 	return ProductInformation.from_dict(pi_dict)
 
 def processingCategory():

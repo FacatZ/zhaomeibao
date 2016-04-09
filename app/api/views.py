@@ -1,3 +1,4 @@
+#coding=utf-8
 from . import api
 from flask import render_template, request, url_for, jsonify, redirect
 from ..models import User, ProductInformation, Category
@@ -49,8 +50,8 @@ def admin_get_article(id):
 @login_required
 @admin_required
 def admin_create_article():
-	title = request.form.get('title', '', type=str)
-	body = request.form.get('body', '', type=str)
+	title = request.form.get('title', '', type=unicode)
+	body = request.form.get('body', '', type=unicode)
 	body = data.filterUserInput(body)
 	ctgid = request.form.get('ctgid', 1, type=int)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
@@ -112,10 +113,8 @@ def admin_publish_product():
 	# print category
 	# print indIndex
 	# print productInfo
+	print "prtype:", request.form.get('prtype')
 	productInfo.user = user
-	print 'list:'
-	print request.form
-	print 'pdinfo typeid:', productInfo.typeid
 	productInfo.ordnum = data.generate_unique_serial_number(productInfo.typeid)
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
