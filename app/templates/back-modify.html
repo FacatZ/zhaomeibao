@@ -14,7 +14,7 @@
 			<div class="right-box">
 				<p1>发布产品</p1>
 				<div class="table-one">
-					<p1>信息分类</p1><p2><input type="radio" name="infor_ctgid" id="infor_ctgid0" value="0" disabled {% if product.typeid == 0%}checked{% endif %}><span>需求</span><input type="radio" name="infor_ctgid" id="infor_ctgid1" value="1" disabled {% if product.typeid == 1%}checked{% endif %}><span>供货</span></p2><p1 class="txt_type">支付类型</p1><p2><input type="radio" name="paytype" id="paytype0" value="1" checked><span class="txt_paytype">现汇</span><input type="radio" name="paytype" id="paytype1" value="2"><span class="txt_paytype">支票</span><input type="radio" name="paytype" id="paytype2" value="3"><span class="txt_paytype">电汇</span>
+					<p1>信息分类</p1><p2><input type="radio" name="infor_ctgid" id="infor_ctgid0" value="0" disabled {% if product.typeid == 0%}datachecked="true" checked{% endif %}><span>需求</span><input type="radio" name="infor_ctgid" id="infor_ctgid1" value="1" disabled {% if product.typeid == 1%}datachecked="true" checked{% endif %}><span>供货</span></p2><p1 class="txt_type">支付类型</p1><p2><input type="radio" name="paytype" id="paytype0" value="1" checked><span class="txt_paytype">现汇</span><input type="radio" name="paytype" id="paytype1" value="2"><span class="txt_paytype">支票</span><input type="radio" name="paytype" id="paytype2" value="3"><span class="txt_paytype">电汇</span>
 					<input type="radio" name="pdtype" id="pdtype0" value="0" checked><span class="txt_pdtype">期货</span><input type="radio" name="pdtype" id="pdtype1" value="1"><span class="txt_pdtype">现货</span></p2>
 
 					<p1>分类</p1><p2><select name="ctgid" id="ctgid">
@@ -23,13 +23,13 @@
 					{% endfor %}
 					</select></p2><p1>煤种</p1><p2><input type="text" name="coal" id="coal"></p2>
 
-					<p1>订单号</p1><p2></p2><p1>产地</p1><p2><select id="pdpid" style="width:100px;margin-left:10px;"></select><select id="pdcid" style="width:100px; margin-left: 10px"></select></p2>
+					<p1>订单号</p1><p2></p2><p1>产地</p1><p2><span class="span_add1">上海市</span><span class="span_add1">上海市</span><div class="change_p1">更改</div><select id="pdpid" style="width:100px;margin-left:10px;display:none"></select><select id="pdcid" style="width:100px; margin-left: 10px;display:none"></select></p2>
 
-					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2><select id="dppid" style="width:100px;margin-left:10px;"></select><select id="dpcid" style="width:100px; margin-left: 10px"></select></p2>
+					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2><span class="span_add">上海市</span><span class="span_add">上海市</span><div class="change_p">更改</div><div id="hide1"><select id="dppid" style="width:100px;margin-left:10px;"></select><select id="dpcid" style="width:100px; margin-left: 10px;"></select></div></p2>
 
 					<p1>价格类型</p1><p2><select name="prtype" id="prtype"><option value="平仓价">平仓价</option><option value="坑口价">坑口价</option><option value="出厂价">出厂价</option></select></p2><p1>交割地址</p1><p2><input type="text" name="dpaddr" id="dpaddr"></p2>
 
-					<p1>价格</p1><p2><input type="number" min="0" name="price" id="price" value="0"><span>元/吨</span></p2><p1>价格地</p1><p2><select id="prpid" style="width:100px;margin-left:10px;"></select><select id="prcid" style="width:100px; margin-left: 10px"></select></p2>
+					<p1>价格</p1><p2><input type="number" min="0" name="price" id="price" value="0"><span>元/吨</span></p2><p1>价格地</p1><p2><span class="span_add">上海市</span><span class="span_add">上海市</span><div class="change_p">更改</div><select id="prpid" style="width:100px;margin-left:10px;display:none"></select><select id="prcid" style="width:100px; margin-left: 10px;display:none"></select></p2>
 
 					<p1 id="if_count">数量</p1><p2><input type="number" min="0" name="count" value="0" id="count"><input type="number" min="0" name="stock" id="stock"></p2><p1 id="if_onsale"></p1><p2><input type="radio" name="onsale" id="onsale0" class="if_onsale" checked><span class="if_onsale">是</span><input type="radio" name="onsale" id="onsale1" class="if_onsale"><span class="if_onsale">否</span></p2>
 
@@ -51,11 +51,17 @@
 					<a href="#">帮助说明</a>
 					<img src="/static/back-publish/picture/btn_02.png" id="btn-publish">
 				</div>
+
+				<div id="infor_ctgid" style="display:none">{{product.typeid}}</div>
+				<div id="paytype" style="display:none">{{product.paytype}}</div>
+				<div id="pdtype" style="display:none">{{product.pdtype}}</div>
+				<div id="onsale" style="display:none">{{product.onsale}}</div>
+
 			</div>
 		</div>
 
 		<script src="/static/js/jquery.js"></script>
-		<script src="/static/js/back-publish.js"></script>
+		<script src="/static/js/back-modify.js"></script>
 		<script type="text/javascript" src="/static/js/area.js"></script>
 		<script type="text/javascript" src="/static/js/location.js"></script>
 		<script type="text/javascript" src="/static/js/select2.js"></script>

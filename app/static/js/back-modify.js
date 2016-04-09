@@ -3,7 +3,7 @@ $(document).ready(function(){
 	// var paytype = "0";
 	// var pdtype = "0";
 	// var onsale = "0";
-	$("#infor_ctgid0").click(function(){
+	if($("#infor_ctgid").html() == "0"){
 		$(".txt_type").html("支付类型");
 		$("#paytype0").css("display","block");
 		$("#paytype1").css("display","block");
@@ -18,8 +18,7 @@ $(document).ready(function(){
 		$("#count").css("display","block");
 		$("#stock").css("display","none");
 		$("#infor_ctgid").text("0");
-	});
-	$("#infor_ctgid1").click(function(){
+	} else {
 		$(".txt_type").html("供货类型");
 		$("#paytype0").css("display","none");
 		$("#paytype1").css("display","none");
@@ -34,7 +33,7 @@ $(document).ready(function(){
 		$("#count").css("display","none");
 		$("#stock").css("display","block");
 		$("#infor_ctgid").text("1");
-	});
+	}
 
 	$("#paytype0").click(function(){
 		$("#paytype").text("0");
@@ -101,5 +100,10 @@ $(document).ready(function(){
 		});
 	});
 
-	var is_checked = $("#infor_ctgid1").checked;
+	$(".change_p1").click(function(){
+		$(".span_add1").css("display","none");
+		$(".change_p1").css("display","none");
+		$("#hide1").css("display","block");
+	});
+
 });

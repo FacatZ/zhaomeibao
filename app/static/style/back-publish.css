@@ -351,3 +351,22 @@
 	.if_onsale{
 		display:none;
 	}
+	.span_add,.span_add1{
+		margin-left:10px;
+		float:left;
+	}
+	.change_p,.change_p1{
+		width:60px;
+		height:30px;
+		background-color:#3084BE;
+		text-align:center;
+		color:white;
+		float:left;
+		border-radius:5px;
+		margin-left:10px;
+		cursor:pointer;
+	}
+	#hide1{
+		display:none;
+		float:left;
+	}
