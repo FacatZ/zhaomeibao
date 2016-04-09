@@ -73,7 +73,8 @@ def admin_create_article():
 	ctgid = request.form.get('ctgid', 1, type=int)
 	ac = ArticleCategory.query.filter_by(id=ctgid).first()
 	if not ac:
-		return jsonify({'statecode': 406})
+		return redirect(url_for('admin.article_list'))
+		# return jsonify({'statecode': 406})
 	user = current_user._get_current_object()
 	a = Article(title=title, body=body, category=ac, author=user)
 	db_session.add(a)
@@ -81,8 +82,9 @@ def admin_create_article():
 		db_session.commit()
 	except Exception, e:
 		db_session.rollback()
-		return jsonify({'statecode': 406})
-	return jsonify({'statecode': 200})
+		return redirect(url_for('admin.article_list'))
+		# return jsonify({'statecode': 406})
+	return redirect(url_for('main.article', id=a.id))
 
 @api.route('/admin/modify/article/<int:id>', methods=['POST'])
 @login_required
@@ -90,16 +92,16 @@ def admin_create_article():
 def admin_modify_article(id):
 	article = Article.query.filter_by(id=id).first()
 	if not article:
-		return jsonify({'statecode': 404})
+		return redirect(url_for('admin.article_list'))
 	article_params_dict = data.preprocessingArticleDict()
 	article.modify_from_dict(article_params_dict)
 	db_session.add(article)
 	try:
 		db_session.commit()
-		return jsonify({'statecode': 200})
+		return redirect(url_for('main.article', id=article.id))
 	except Exception, e:
 		db_session.rollback()
-		return jsonify({'statecode': 406})
+		return redirect(url_for('admin.article_list'))
 
 @api.route('/admin/delete/article/<int:id>')
 @login_required
@@ -123,26 +125,30 @@ def admin_publish_product():
 
 	indIndex = data.processingIndustrialIndex()
 	productInfo = data.processingProductInformation()
+	print '-----------'
+	print indIndex
+	print productInfo
 	if not indIndex or not productInfo:
 		return jsonify({'statecode': 406})
 	user = current_user._get_current_object()
 	category = data.processingCategory()
-	# print category
-	# print indIndex
-	# print productInfo
-	print "prtype:", request.form.get('prtype')
+
 	productInfo.user = user
 	productInfo.ordnum = data.generate_unique_serial_number(productInfo.typeid)
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
 	productInfo.dpareaid = profile.get_jiaoge_group_id_by_name(productInfo.dpaddr)
-	print 'dpareaid: ',productInfo.dpareaid
 	db_session.add_all([indIndex, productInfo])
 	try:
 		db_session.commit()
-		return jsonify({'statecode': 200})
+		prid = productInfo.id
+		return jsonify({
+			'statecode': 200,
+			'url': url_for('main.detail', id=prid) if productInfo.typeid == 1 else url_for('main.purchase')
+			})
 	except Exception, e:
 		db_session.rollback()
+		print e
 		return jsonify({'statecode': 406})
 
 
@@ -169,33 +175,21 @@ def admin_modify_product(id):
 	if not product:
 		return jsonify({'statecode': 404})
 
-	print 'after'
-
-	print 'pdpid:',request.form.get('pdpid', -1, type=int)
-	print 'pdcid:',request.form.get('pdcid', -1, type=int)
-
-	print 'dppid:',request.form.get('dppid', -1, type=int)
-	print 'dpcid:',request.form.get('dpcid', -1, type=int)
-
-	print 'prpid:',request.form.get('prpid', -1, type=int)
-	print 'prcid:',request.form.get('prcid', -1, type=int)
-
-	print 'ctgid', request.form.get('ctgid')
 
 	product_dict = data.preprocessingProductInformationModifyDict()
-	print sorted(product_dict.iteritems())
 	product.modify_from_dict(product_dict)
 	industry_dict = data.preprocessingIndutrialIndex()
-	print industry_dict
 	industryIndex = product.industryIndex
 	industryIndex.modify_from_dict(industry_dict)
 
-	# return jsonify({'statecode': 200})
 	db_session.add_all([product, industryIndex])
 	try:
 		db_session.commit()
-		print 'after modify ctgid:', product.ctgid
-		return jsonify({'statecode': 200})
+		prid = product.id
+		return jsonify({
+					'statecode': 200,
+					'url': url_for('main.detail', id=prid) if product.typeid == 1 else url_for('main.purchase') 
+					})
 	except Exception, e:
 		db_session.rollback()
 	return jsonify({'statecode': 406})

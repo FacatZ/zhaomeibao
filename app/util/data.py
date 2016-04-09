@@ -51,7 +51,7 @@ def preprocessingProductInformationDict():
 		'pdcid': request.form.get('pdcid', -2, type=int),
 		'coal': request.form.get('coal', '', type=unicode),
 		'count': request.form.get('count', 0, type=int),
-		'price': request.form.get('price', 0, type=int),
+		'price': request.form.get('price', 0, type=float),
 		'stock': request.form.get('stock', 0, type=int),
 		'prtype': request.form.get('prtype', '', type=unicode),
 		'prpid': request.form.get('prpid', -2, type=int),
@@ -59,8 +59,8 @@ def preprocessingProductInformationDict():
 		
 		'vldterm': request.form.get('vldterm', '', type=unicode),
 
-		'dppid': request.form.get('prpid', -2, type=int),
-		'dpcid': request.form.get('prcid', -2, type=int),
+		'dppid': request.form.get('dppid', -2, type=int),
+		'dpcid': request.form.get('dpcid', -2, type=int),
 		'dpaddr': request.form.get('dpaddr', '', type=unicode),
 
 		'prtype': request.form.get('prtype', '', type=unicode),
@@ -98,7 +98,7 @@ def preprocessingProductInformationModifyDict():
 	not_allowed_key = ['typeid']
 	filter_area_key = ['pdpid', 'pdcid', 'dppid', 'dpcid', 'prpid', 'prcid']
 	for k,v in olddict.iteritems():
-		if (k in not_allowed_key) or (k in filter_area_key and k == -2):
+		if (k in not_allowed_key) or (k in filter_area_key and v == -2):
 			continue
 		newdict[k] = v
 	return newdict
@@ -172,7 +172,7 @@ def generate_unique_serial_number(pdtype=0):
 	if str(today) > str(last_date).split(' ')[0]:
 		last_date = today
 		ghorder.last_date = today
-		count = 0
+		count = 1
 	else:
 		count = count + 1
 	ghorder.count = count

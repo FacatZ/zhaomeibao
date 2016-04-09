@@ -97,7 +97,12 @@ $(document).ready(function(){
 			szlowlm : $("#szlowlm").val(),
 			szppt : $("#szppt").val(),
 		},function(result){
-			console.log(result);
+			if(result.statecode == 200 ){
+				alert("提交成功！");
+				window.location.href = result.url;
+			} else {
+				alert("提交失败！错误代码："+result.statecode);
+			}
 		});
 	});
 
