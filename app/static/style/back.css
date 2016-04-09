@@ -231,11 +231,11 @@ body {
 	background: url('../pictures/back-edit-edit.png');
 }
 
-.checkboxOptionCopy {
-	width: 72px;
+.checkboxOptionSee {
+	width: 82px;
 	height: 32px;
 	display: block;
-	background: url('../pictures/back-edit-copy.png');
+	background: url('../pictures/back-review.png');
 }
 
 .checkboxOptionDelete {

@@ -53,7 +53,7 @@
       		<table border="1">
       			<tr>
       				<td><a class="checkboxOptionEdit" href="{{url_for('admin.modify_article', id=article.id)}}"></a></td>
-      				<td><a class="checkboxOptionCopy" href="#"></a></td>
+      				<td><a class="checkboxOptionSee" href="{{url_for('main.article', id=article.id)}}"></a></td>
       				<td><a class="checkboxOptionDelete" href="#"></a></td>
       			</tr>
       		</table>
@@ -84,5 +84,21 @@
   <script src="/static/js/bootstrap.js"></script>
   <script src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
   <script type="text/javascript" src="/static/js/paginationbutton.js"></script>
+  <script type="text/javascript">
+    $('.checkboxOptionDelete').click(function(){
+      var issueID = $(this).parents('.checkboxOption').siblings('.checkboxID').text();
+      $.ajax({
+        type:'get',
+        url : '/api/admin/delete/article/' + issueID,
+        success : function(data) {
+          alert('删除成功');
+          window.location.reload();
+        },
+        error : function(){
+          alert('通信出问题了'); 
+        }
+      });
+    });
+  </script>
 </body>
 </html>
