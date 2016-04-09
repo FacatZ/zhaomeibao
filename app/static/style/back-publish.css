@@ -1,8 +1,18 @@
+	@font-face{
+		font-family:ownstyle;
+		src:url(../style/glyphicons-halflings-regular.woff);
+	}
+	body{
+		font-family:ownstyle;
+	}
 	select{
 		width:70px;
 		float:left;
 		margin-left:10px;
 		margin-top:5px;
+	}
+	select::-ms-expand{
+		display:none;
 	}
 	input{
 		width:100px;
@@ -379,7 +389,7 @@
     	-webkit-appearance:none;
     	background-color:#F9FAFA;
     	padding-right;
-
+    	border-radius:5px;
     	background: url("../back-publish/picture/down_cut.png") no-repeat scroll right transparent;
     	width:130px;
     	height:30px;
