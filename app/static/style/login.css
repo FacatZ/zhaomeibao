@@ -3,9 +3,68 @@ body{
 	margin:0 auto;
 }
 .main{
-	height:400px;
-	width:600px;
-	border:1px solid black;
+	height:300px;
+	width:350px;
+	border:1px solid;
+	border-color:#AAA9A8;
+	margin:0 auto;
+	background-color:#F9FAFA;
+	border-radius:5px;
+}
+.main .head{
+	width:350px;
+	height:70px;
 	float:left;
-	margin-left:329px;
+	background-color:;
+	border-radius:5px;
+}
+.main .head span{
+	font-size:21px;
+	line-height:70px;
+	float:left;
+	color:#848685;
+	font-weight:lighter;
+	margin-left:20px;
+}
+.main .login{
+	float:left;
+	margin-top:0px;
+	width:300px;
+	height:40px;
+	margin-left:25px;
+	border:1px solid;
+	border-color:#AAA9A8;
+	margin-bottom:30px;
+}
+.main .login span{
+	line-height:40px;
+	float:left;
+	font-size:18px;
+	color:#848685;
+	margin-left:10px;
+}
+.main .login input{
+	float:left;
+	height:40px;
+	margin-left:10px;
+	width:235px;
+	border:none;
+	background-color:#F9FAFA;
+	outline:none;
+	font-size:18px;
+}
+#btn_login{
+	float:left;
+	height:50px;
+	width:100px;
+	border-radius:5px;
+	background-color:#3084BE;
+	line-height:50px;
+	color:white;
+	text-align:center;
+	padding-right:0;
+	cursor:pointer;
+	font-size:18px;
+	margin-left:220px;
+	margin-top:5px;
 }

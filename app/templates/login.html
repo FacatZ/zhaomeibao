@@ -2,14 +2,26 @@
 	<head>
 		<title>login</title>
 		<meta charset="utf-8">
-		<link href="/static/style/login.css" rel="stylesheet">
+		<link href="login.css" rel="stylesheet">
 	</head>
 	<body>
-		<form class="main" action="{{url_for('admin.admin_login')}}", method="POST">
-			<span>用户名</span><input type="text" name="username" id="username"></br>
-			<span>密码</span><input type="password" name="password" id="username"></br>
-			<input type="submit" value="登陆" id="submit">
-		</form>
+		<div class="main">
+			<div class="head">
+				<span>会员登陆</span>	
+			</div>
+			<div class="login">
+				<span>账号</span>
+				<input type="text" name="name" id="name">
+			</div>
+			<div class="login">
+				<span>密码</span>
+				<input type="text" name="password" id="password">
+			</div> 
+			<div id="btn_login">立即登录</div>
+		</div>
+
+		<script src="jquery.js"></script>
+		<script src="login.js"></script>
 	</body>
 
 </html>
