@@ -6,6 +6,7 @@ allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',\
 
 ChandiSettingDictionary = {}
 JiaogeSettingDictionary = {}
+JiaogeSettingNameDictionary = {}
 QnetSettingDictionary = {}
 StSettingDictionary = {}
 VSettingDictionary = {}
@@ -63,9 +64,16 @@ class Setting(object):
 		global IdList
 		if id not in IdList:
 			IdList.append(id)
+
+		if category == u'交割地':
+			global JiaogeSettingNameDictionary
+			JiaogeSettingNameDictionary[self.name] = self
 	
 	def getName(self):
 		return self.name
+
+	def getGroupId(self):
+		return self.group
 
 	def getGroupName(self):
 		if self.group == -1:
@@ -237,3 +245,8 @@ def get_jiaogedi_name_by_id(id):
 		return JiaogeSettingDictionary[id].getName()
 	return ''
 
+def get_jiaoge_group_id_by_name(name):
+	global JiaogeSettingNameDictionary
+	if JiaogeSettingNameDictionary.has_key(name):
+		return JiaogeSettingNameDictionary[name].getGroupId()
+	return -1

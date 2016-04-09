@@ -127,6 +127,7 @@ class ProductInformation(Base):
     pdtype = Column(String(64), default=0) #产品类型 供货 0期货1现货
     paytype = Column(String(64), default=0) #需求 1现货2支票3电汇  
 
+
     remark = Column(String(256)) #备注
     onsale = Column(Boolean, default=False) #是否特价产品，默认为否
 

@@ -7,7 +7,7 @@ from sqlalchemy.exc import IntegrityError
 from flask.ext.login import current_user, login_required, login_user
 from ..decorators import admin_required
 from ..models import ArticleCategory, Article
-from ..util import data 
+from ..util import data, profile
 from ..database import db_session
 
 @api.route('/admin/login', methods=['POST'])
@@ -135,6 +135,8 @@ def admin_publish_product():
 	productInfo.ordnum = data.generate_unique_serial_number(productInfo.typeid)
 	productInfo.industryIndex = indIndex
 	productInfo.category = category
+	productInfo.dpareaid = profile.get_jiaoge_group_id_by_name(productInfo.dpaddr)
+	print 'dpareaid: ',productInfo.dpareaid
 	db_session.add_all([indIndex, productInfo])
 	try:
 		db_session.commit()
