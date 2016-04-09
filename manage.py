@@ -91,8 +91,20 @@ def teardown_database(exception=None):
 	db_session.remove()
 
 @app.context_processor
+def city_filter_processor():
+	def city_filter(pid, cid):
+		pstring = '0'
+		pstring = ','.join([pstring, str(pid)])
+		if not location[pstring].has_key(cid):
+			return u'暂无'
+		return location[pstring][cid]
+	return dict(city_filter=city_filter)
+
+@app.context_processor
 def datetime_format_processor():
 	def format_datetime(date):
+		if not date:
+			return ''
 		return str(date).split()[0]
 	return dict(format_datetime=format_datetime)
 

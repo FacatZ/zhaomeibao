@@ -21,30 +21,30 @@
 					{% for c in category %}
 					<option value="{{c.id}}">{{c.name}}</option>
 					{% endfor %}
-					</select></p2><p1>煤种</p1><p2><input type="text" name="coal" id="coal"></p2>
+					</select></p2><p1>煤种</p1><p2><input type="text" name="coal" id="coal" value="{{product.coal}}"></p2>
 
-					<p1>订单号</p1><p2></p2><p1>产地</p1><p2 class="span_add1"><span class="span_add1">上海市</span><span class="span_add1">上海市</span><div class="change_p1">更改</div></p2><p2 id="hide1"><select id="pdpid" style="width:100px;margin-left:10px;"></select><select id="pdcid" style="width:100px; margin-left: 10px;"></select></p2>
+					<p1>订单号</p1><p2><span>{{product.ordnum}}</span></p2><p1>产地</p1><p2 class="span_add1"><span class="span_add1">{{product.pdpid|province_filter}}</span><span class="span_add1">{{city_filter(product.pdpid, product.pdcid)}}</span><div class="change_p1">更改</div></p2><p2 id="hide1"><select id="pdpid" style="width:100px;margin-left:10px;"></select><select id="pdcid" style="width:100px; margin-left: 10px;"></select></p2>
 
-					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2 class="span_add2"><span class="span_add2">上海市</span><span class="span_add2">上海市</span><div class="change_p2">更改</div></p2><p2 id="hide2"><select id="dppid" style="width:100px;margin-left:10px;"></select><select id="dpcid" style="width:100px; margin-left: 10px;"></select></p2>
+					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2 class="span_add2"><span class="span_add2">{{product.dppid|province_filter}}</span><span class="span_add2">{{city_filter(product.dppid, product.dpcid)}}</span><div class="change_p2">更改</div></p2><p2 id="hide2"><select id="dppid" style="width:100px;margin-left:10px;"></select><select id="dpcid" style="width:100px; margin-left: 10px;"></select></p2>
 
-					<p1>价格类型</p1><p2><select name="prtype" id="prtype"><option value="平仓价">平仓价</option><option value="坑口价">坑口价</option><option value="出厂价">出厂价</option></select></p2><p1>交割地址</p1><p2><input type="text" name="dpaddr" id="dpaddr"></p2>
+					<p1>价格类型</p1><p2><select name="prtype" id="prtype"><option value="平仓价">平仓价</option><option value="坑口价">坑口价</option><option value="出厂价">出厂价</option></select></p2><p1>交割地址</p1><p2><input type="text" name="dpaddr" id="dpaddr" value="{{product.dpaddr}}"></p2>
 
-					<p1>价格</p1><p2><input type="number" min="0" name="price" id="price" value="0"><span>元/吨</span></p2><p1>价格地</p1><p2 class="span_add3"><span class="span_add3">上海市</span><span class="span_add3">上海市</span><div class="change_p3">更改</div></p2><p2 id="hide3"><select id="prpid" style="width:100px;margin-left:10px;"></select><select id="prcid" style="width:100px; margin-left: 10px;"></select></p2>
+					<p1>价格</p1><p2><input type="number" min="0" name="price" id="price" value="{{product.price}}"><span>元/吨</span></p2><p1>价格地</p1><p2 class="span_add3"><span class="span_add3">{{product.prpid|province_filter}}</span><span class="span_add3">{{city_filter(product.prpid, product.prcid)}}</span><div class="change_p3">更改</div></p2><p2 id="hide3"><select id="prpid" style="width:100px;margin-left:10px;"></select><select id="prcid" style="width:100px; margin-left: 10px;"></select></p2>
 
-					<p1 id="if_count">数量</p1><p2><input type="number" min="0" name="count" value="0" id="count"><input type="number" min="0" name="stock" id="stock"></p2><p1 id="if_onsale"></p1><p2><input type="radio" name="onsale" id="onsale0" class="if_onsale" checked><span class="if_onsale">是</span><input type="radio" name="onsale" id="onsale1" class="if_onsale"><span class="if_onsale">否</span></p2>
+					<p1 id="if_count">数量</p1><p2><input type="number" min="0" name="count" value="0" id="count" value="{{product.count}}"><input type="number" min="0" name="stock" id="stock" value="{{product.stock}}"></p2><p1 id="if_onsale"></p1><p2><input type="radio" name="onsale" id="onsale0" class="if_onsale" checked><span class="if_onsale">是</span><input type="radio" name="onsale" id="onsale1" class="if_onsale"><span class="if_onsale">否</span></p2>
 
-					<p1>备注</p1><p3><input type="text" name="remark" id="remark" maxlength="120"></p3>
+					<p1>备注</p1><p3><input type="text" name="remark" id="remark" maxlength="120" value="{{product.remark}}"></p3>
 				</div>
 
 				<div class="table-three">
 					<div class="first-blue">工业分析指标</div>
 					<div class="left-big-one">水份:</div>
-					<p1><span>全水份(Mt)</span><input type="number" min="0.00" max="60.00" name="mt" id="mt" value="0"><span>%</span></p1><p2>灰份(A):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="60.00" name="aar" id="aar" value="0"><span>%</span></p1><p2>全硫份(St):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="10.00" name="star" id="star" value="0"><span>%</span></p1>
-					<p1><span>内水(Mad)</span><input type="number" min="0.00" max="20.00" name="mad" id="mad" value="0"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="60.00" name="aad" id="aad" value="0"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="10.00" name="stad" id="stad" value="0"><span>%</span></p1>
+					<p1><span>全水份(Mt)</span><input type="number" min="0.00" max="60.00" name="mt" id="mt" value="{{industryIndex.mt}}"><span>%</span></p1><p2>灰份(A):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="60.00" name="aar" id="aar" value="{{industryIndex.aar}}"><span>%</span></p1><p2>全硫份(St):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="10.00" name="star" id="star" value="{{industryIndex.star}}"><span>%</span></p1>
+					<p1><span>内水(Mad)</span><input type="number" min="0.00" max="20.00" name="mad" id="mad" value="{{industryIndex.mad}}"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="60.00" name="aad" id="aad" value="{{industryIndex.aad}}"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="10.00" name="stad" id="stad" value="{{industryIndex.stad}}"><span>%</span></p1>
 					<div class="left-big-two">挥发份(V):</div>
-					<p1><span>收到基(ar)</span><input type="number" min="0.00" max="60.00" name="varr" id="varr" value="0"><span>%</span></p1><p2>固定碳(FC):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="100.00"  name="fcar" id="fcar" value="0"><span>%</span></p1><p2>低位发热量(Qnet):</p2><p1><span>收到基(ar)</span><input type="number" min="2000" max="9000" name="qnetar" id="qnetar" value="0"><span>大卡</span></p1>
-					<p1><span>空干基(ad)</span><input type="number" min="0.00" max="60.00" name="vad" id="vad" value="0"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="100.00" name="fcad" id="fcad" value="0"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0" max="9000" name="qnetad" id="qnetad" value="0"><span>大卡</span></p1>
-					<p3><span>干燥无灰基(daf)</span><input type="number" min="0.00" max="60.00" name="vdaf" id="vdaf" value="0"><span>%</span></p3><p2>颗度(Size)</p2><p4><input type="number" min="0" max="9000" name="szlowlm" id="szlowlm" value="0"><span>-</span><input type="number" min="0" max="9000" name="szuplm" id="szuplm" value="0"><span>mm 占比</span><input type="number" min="0" max="100" name="szppt" id="szppt" value="0"><span>%</span></p4>
+					<p1><span>收到基(ar)</span><input type="number" min="0.00" max="60.00" name="varr" id="varr" value="{{industryIndex.var}}"><span>%</span></p1><p2>固定碳(FC):</p2><p1><span>收到基(ar)</span><input type="number" min="0.00" max="100.00"  name="fcar" id="fcar" value="{{industryIndex.fcar}}"><span>%</span></p1><p2>低位发热量(Qnet):</p2><p1><span>收到基(ar)</span><input type="number" min="2000" max="9000" name="qnetar" id="qnetar" value="{{industryIndex.qnetar}}"><span>大卡</span></p1>
+					<p1><span>空干基(ad)</span><input type="number" min="0.00" max="60.00" name="vad" id="vad" value="{{industryIndex.vad}}"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0.00" max="100.00" name="fcad" id="fcad" value="{{industryIndex.fcad}}"><span>%</span></p1><p2 class="noborder"></p2><p1><span>空干基(ad)</span><input type="number" min="0" max="9000" name="qnetad" id="qnetad" value="{{industryIndex.qnetad}}"><span>大卡</span></p1>
+					<p3><span>干燥无灰基(daf)</span><input type="number" min="0.00" max="60.00" name="vdaf" id="vdaf" value="{{industryIndex.vdaf}}"><span>%</span></p3><p2>颗度(Size)</p2><p4><input type="number" min="0" max="9000" name="szlowlm" id="szlowlm" value="{{industryIndex.szlowlm}}"><span>-</span><input type="number" min="0" max="9000" name="szuplm" id="szuplm" value="{{industryIndex.szuplm}}"><span>mm 占比</span><input type="number" min="0" max="100" name="szppt" id="szppt" value="{{industryIndex.szppt}}"><span>%</span></p4>
 				</div>
 
 				<div class="last-table">
@@ -52,6 +52,7 @@
 					<img src="/static/back-publish/picture/btn_02.png" id="btn-publish">
 				</div>
 
+				<div id="pdid" style="display:none">{{product.id}}</div>
 				<div id="infor_ctgid" style="display:none">{{product.typeid}}</div>
 				<div id="paytype" style="display:none">{{product.paytype}}</div>
 				<div id="pdtype" style="display:none">{{product.pdtype}}</div>
@@ -66,6 +67,18 @@
 		<script type="text/javascript" src="/static/js/location.js"></script>
 		<script type="text/javascript" src="/static/js/select2.js"></script>
 		<script type="text/javascript" src="/static/js/select2_locale_zh-CN.js"></script>
+		<script type="text/javascript">
+			$("#prtype").val("{{product.prtype}}");
+			$("#vldterm").val("{{format_datetime(product.vldterm)}}");
+			$("#pdpid").val("{{product.pdpid}}");
+			$("#pdcid").val("{{product.pdcid}}");
+
+			$("#dppid").val("{{product.dppid}}");
+			$("#dpcid").val("{{product.dpcid}}");
+
+			$("#prpid").val("{{product.prpid}}");
+			$("#prcid").val("{{product.pdpid}}");
+		</script>
 	</body>
 
 </html>

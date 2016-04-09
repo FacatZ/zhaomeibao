@@ -36,6 +36,11 @@ def modify_product(id):
 	industryIndex = product.industryIndex
 	category = Category.query.all()
 
+	print 'before product'
+	for k, v in vars(product).items():
+		print '%s=%s' %(str(k), getattr(product, k, ''))
+
+
 	return render_template('back-modify.html', category=category,\
 		product=product, industryIndex=industryIndex)
 

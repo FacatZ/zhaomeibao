@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, url_for
 from ..models import ArticleCategory, Article, ProductInformation, Category
 from sqlalchemy import and_
 from ..util import data
+from ..database import db_session
 
 @main.route('/')
 def index():
@@ -63,3 +64,13 @@ def detail(id):
 	if not product:
 		return redirect(request.args.get('next') or url_for('main.index'))
 	return render_template('details.html', pd=product)
+
+@main.route('/article/<int:id>')
+def article(id):
+	article = Article.query.filter_by(id=id).first()
+	if not article:
+		return redirect(url_for('main.spot_quotation'))
+	article.hits += 1
+	db_session.add(article)
+	db_session.commit()
+	return render_template('details-article.html', article=article)

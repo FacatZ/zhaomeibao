@@ -3,6 +3,7 @@ $(document).ready(function(){
 	// var paytype = "0";
 	// var pdtype = "0";
 	// var onsale = "0";
+	var pdid = $("#pdid").html();
 	if($("#infor_ctgid").html() == "0"){
 		$(".txt_type").html("支付类型");
 		$("#paytype0").css("display","block");
@@ -58,7 +59,7 @@ $(document).ready(function(){
 	});
 
 	$("#btn-publish").click(function(){
-		$.post('/api/admin/publish/product',{
+		$.post('/api/admin/modify/product/' + pdid,{
 			'typeid' : $("#infor_ctgid").text(),
 			'paytype' : $("#paytype").text(),
 			'pdtype' : $("#pdtype").text(),

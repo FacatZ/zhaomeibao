@@ -161,7 +161,7 @@ def admin_delete_product(id):
 		db_session.rollback()
 		return jsonify({'statecode': 406})
 
-@api.route('/admin/modify/product/<int:id>')
+@api.route('/admin/modify/product/<int:id>', methods=['POST'])
 @login_required
 @admin_required
 def admin_modify_product(id):
@@ -169,6 +169,9 @@ def admin_modify_product(id):
 	if not product:
 		return jsonify({'statecode': 404})
 
+	print 'after'
+	print 'pdpid:',request.form.get('pdpid')
+	return jsonify({'statecode': 200})
 	product_dict = data.preprocessingProductInformationModifyDict()
 	product.modify_from_dict(product_dict)
 	industry_dict = data.preprocessingIndutrialIndex()

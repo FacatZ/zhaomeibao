@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>文章详情</title>
+    <meta charset="utf-8">
+    <link href="/static/style/details.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+    {% include 'util/main/header.html' %}
+       <p>您当前位置： <span>首页-文章详情</span></p>
+       <div class="article-titleBox">
+         <p class="article-title">{{article.title}}</p>
+         <div class="article-info">
+          <span class="article-date">日期：{{format_datetime(article.rldate)}}</span>
+          <span class="article-origin">作者：{{article.author.username}}</span>
+          <span class="article-kind">类别：{{article.category.name}}</span>
+          <span class="article-times">点击量：{{article.hits}}</span>
+          
+        </div>
+        <hr class="article-hr" />
+      </div>
+      <div class="article-body">
+        {{article.body|safe}}
+      </div>
+      <hr class="article-hr" />
+      <!-- JiaThis Button BEGIN -->
+      <div class="jiathis_style_24x24">
+        <span>分享到：</span>
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_renren"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+      </div>
+      <!-- JiaThis Button END -->
+      {% include '/util/main/footer.html' %}
+    </div>
+
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+  </body>
+</html>
