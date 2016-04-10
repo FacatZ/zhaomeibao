@@ -80,6 +80,7 @@
 		text-align:center;
 		padding-top:5px;
 		color:black;
+		font-size:20px;
 	}
 	.table-one p2{
 		width:349px;
@@ -94,6 +95,7 @@
 		/*text-align:center;*/
 		padding-top:5px;
 		color:black;
+		font-size:20px;
 	}
 	.table-one p3{
 		width:799px;
@@ -108,6 +110,10 @@
 		/*text-align:center;*/
 		padding-top:5px;
 		color:black;
+		font-size:20px;
+	}
+	#left_move{
+		margin-left:10px;
 	}
 	#age{
 		width:100px;

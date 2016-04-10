@@ -14,7 +14,7 @@
       .footer-content{
         width:1258px;
         height:250px;
-        background-color:576165;
+        background-color:#576165;
         float:left;
       }
       .friend-link{
@@ -46,7 +46,7 @@
         float:left;
       }
       .friend-link a:hover{
-        color:E4A15D;
+        color:#E4A15D;
       }
       .buybuy{
         border-left:3px solid;
@@ -89,7 +89,7 @@
         width:90px;
         height:90px;
         float:left;
-        background-color:B5B4B4;
+        background-color:#B5B4B4;
         border:1px solid white;
       }
       .picture1{
@@ -101,7 +101,7 @@
       .footer-copyright{
         width:1258px;
         height:200px;
-        background-color:0B314F;
+        background-color:#0B314F;
         float:left;
       }
       .line-one{
@@ -114,7 +114,7 @@
         text-decoration:none;
       }
       .line-one a:hover{
-        color:E4A15D;
+        color:#E4A15D;
       }
       .line-two{
         margin-left:330px;
@@ -129,6 +129,6 @@
         text-decoration:none;
       }
       .line-two a:hover{
-        color:E4A15D;
+        color:#E4A15D;
       }
 </style>

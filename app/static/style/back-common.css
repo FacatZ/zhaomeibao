@@ -44,7 +44,7 @@
 		font-size:26px;
 	}
 	.top a:hover{
-		color:E4A15D;
+		color:#E4A15D;
 	}
 	#img-position1{
 		margin-top:8px;
@@ -88,7 +88,9 @@
 		font-size:22px;
 		font-weight:bold;
 		float:left;
+		cursor:pointer;
 	}
 	.common-box a:hover{
-		color:E4A15D;
+		cursor:pointer;
+		color:#E4A15D;
 	}

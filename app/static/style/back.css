@@ -348,16 +348,34 @@ body {
 	display: block;
 	width: 100px;
 	height: 46px;
+	text-decoration:none;
+	color:black;
 }
 
 .backIssue02 {
 	margin-left: 100px;
 	float: left;
-	background: url(../back-issue/picture/backIssue02.png);
+	background-color:rgb(184,206,235);
+	width:100px;
+	height:46px;
+	border:none;
+	border-radius:5px;
+	font-size:18px;
+	cursor:pointer;
+	color:black;
+	line-height:46px;
 }
 
 .backIssue01 {
 	margin-left: 35px;
 	float: left;
-	background: url(../back-issue/picture/backIssue01.png);
+	background-color:rgb(184,206,235);
+	width:100px;
+	height:46px;
+	border:none;
+	border-radius:5px;
+	font-size:18px;
+	cursor:pointer;
+	text-align:center;
+	line-height:46px;
 }

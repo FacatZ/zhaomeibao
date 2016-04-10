@@ -8,6 +8,8 @@ body {
 }
 
 .Box {
+	width:1258px;
+	float:left;
 	background-color: #D2D2D2;
 }
 
@@ -401,6 +403,7 @@ body {
 	background-position:center;
 	background-repeat:no-repeat;
 	line-height: 30px;
+	float:left;
 }
 
 .stockButtonPrePre {

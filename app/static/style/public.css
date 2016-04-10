@@ -28,12 +28,12 @@
   .top a{
     margin-top:18px;
     font-size:18px;
-    color:3078BE;
+    color:#3078BE;
     text-decoration:none;
     float:left;
   }
   .top a:hover{
-    color:E4A15D;
+    color:#E4A15D;
   }
   #free{
     margin-left:20px;
@@ -93,7 +93,7 @@
     margin-left:5px;
     margin-top:20px;
     font-size:18px;
-    color:3078BE;
+    color:#3078BE;
     float:left;
   }
 
@@ -135,21 +135,21 @@
     padding-left:35px;
     padding-right:30px;
     font-size:21px;
-    color:B5B4B4;
+    color:#B5B4B4;
     font-weight:bold;
     text-decoration:none;
     float:left;
   }
   .nav-link a:hover{
-    color:E4A15D;
+    color:#E4A15D;
   }
   #slide-act{
     height:5px;
-    background-color:21A3DE;
+    background-color:#21A3DE;
     float:left;
   }
   .active{
-    color:21A3DE !important;
+    color:#21A3DE !important;
   }
   a{
     text-decoration:none !important;

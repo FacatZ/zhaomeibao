@@ -23,7 +23,7 @@
 					{% endfor %}
 					</select></p2><p1>煤种</p1><p2><input type="text" name="coal" id="coal" value="{{product.coal}}"></p2>
 
-					<p1>订单号</p1><p2><span>{{product.ordnum}}</span></p2><p1>产地</p1><p2 class="span_add1"><span class="span_add1">{{product.pdpid|province_filter}}</span><span class="span_add1">{{city_filter(product.pdpid, product.pdcid)}}</span><div class="change_p1">更改</div></p2><p2 id="hide1"><select id="pdpid" style="width:100px;margin-left:10px;"></select><select id="pdcid" style="width:100px; margin-left: 10px;"></select></p2>
+					<p1>订单号</p1><p2><span id="left_move">{{product.ordnum}}</span></p2><p1>产地</p1><p2 class="span_add1"><span class="span_add1">{{product.pdpid|province_filter}}</span><span class="span_add1">{{city_filter(product.pdpid, product.pdcid)}}</span><div class="change_p1">更改</div></p2><p2 id="hide1"><select id="pdpid" style="width:100px;margin-left:10px;"></select><select id="pdcid" style="width:100px; margin-left: 10px;"></select></p2>
 
 					<p1>有效期</p1><p2><input type="date" name="vldterm" id="vldterm"></p2><p1>交割地</p1><p2 class="span_add2"><span class="span_add2">{{product.dppid|province_filter}}</span><span class="span_add2">{{city_filter(product.dppid, product.dpcid)}}</span><div class="change_p2">更改</div></p2><p2 id="hide2"><select id="dppid" style="width:100px;margin-left:10px;"></select><select id="dpcid" style="width:100px; margin-left: 10px;"></select></p2>
 
