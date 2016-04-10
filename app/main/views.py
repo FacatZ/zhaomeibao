@@ -40,9 +40,27 @@ def index():
 
 	article = Article.query.order_by(Article.hits.desc()).limit(10)
 
+	dongli_chandi = data.main_chandi(1)
+	dongli_qnet = data.main_Qnet(1)
+	dongli_st = data.main_St(1)
+	dongli_mt = data.main_Mt(1)
+
+	wuyan_chandi = data.main_chandi(3)
+	wuyan_qnet = data.main_Qnet(3)
+	wuyan_st = data.main_St(3)
+	wuyan_mt = data.main_Mt(3)
+
+	lianjiao_chandi = data.main_chandi(2)
+	lianjiao_qnet = data.main_Qnet(2)
+	lianjiao_st = data.main_St(2)
+	lianjiao_mt = data.main_Mt(2)
+
 	return render_template('main.html', activeid=activeid, dongli_huadong=dongli_huadong,
 				dongli_huabei=dongli_huabei, dongli_huanan=dongli_huanan, dongli_other=dongli_other,
-				wuyan_all=wuyan_all, lianjiao_all=lianjiao_all, article=article)
+				wuyan_all=wuyan_all, lianjiao_all=lianjiao_all, article=article,
+				dongli_chandi=dongli_chandi, dongli_qnet=dongli_qnet, dongli_st=dongli_st, dongli_mt=dongli_mt,
+				wuyan_chandi=wuyan_chandi, wuyan_qnet=wuyan_qnet, wuyan_st=wuyan_st, wuyan_mt=wuyan_mt,
+				lianjiao_chandi=lianjiao_chandi, lianjiao_qnet=lianjiao_qnet, lianjiao_st=lianjiao_st, lianjiao_mt=lianjiao_mt)
 
 @main.route('/stock')
 def stock():

@@ -206,13 +206,15 @@ Setting(id=503, name=u'珠电码头', category=u'交割地', group=7)
 Setting(id=510, name=u'广州港', category=u'交割地', group=7)
 
 #group 8
-Setting(id=74, name=u'朝鲜', category=u'交割地', group=8)
-Setting(id=109, name=u'俄罗斯', category=u'交割地', group=8)
-Setting(id=471, name=u'越南', category=u'交割地', group=8)
-Setting(id=476, name=u'南非', category=u'交割地', group=8)
-Setting(id=479, name=u'澳大利亚', category=u'交割地', group=8)
-Setting(id=482, name=u'印度尼西亚', category=u'交割地', group=8)
-Setting(id=488, name=u'美国', category=u'交割地', group=8)
+Setting(id=5100, name=u'朝鲜', category=u'交割地', group=8)
+Setting(id=5101, name=u'俄罗斯', category=u'交割地', group=8)
+Setting(id=5102, name=u'越南', category=u'交割地', group=8)
+Setting(id=5103, name=u'南非', category=u'交割地', group=8)
+Setting(id=5104, name=u'澳大利亚', category=u'交割地', group=8)
+Setting(id=5105, name=u'印度尼西亚', category=u'交割地', group=8)
+Setting(id=5106, name=u'美国', category=u'交割地', group=8)
+
+#Qnet
 Setting(id=5001, name='1500-3500', category=u'Qnet')
 Setting(id=5002, name='3500-4500', category=u'Qnet')
 Setting(id=5003, name='4500-5000', category=u'Qnet')
@@ -239,9 +241,34 @@ Setting(id=5032, name='10-20', category=u'Mt')
 Setting(id=5033, name='20-30', category=u'Mt')
 Setting(id=5034, name='30-*', category=u'Mt')
 
+def get_Qnet_setting_by_id(id):
+	if QnetSettingDictionary.has_key(id):
+		return QnetSettingDictionary[id]
+	return None
+
+def get_St_setting_by_id(id):
+	if StSettingDictionary.has_key(id):
+		return StSettingDictionary[id]
+	return None
+
+def get_V_setting_by_id(id):
+	if VSettingDictionary.has_key(id):
+		return VSettingDictionary[id]
+	return None
+
+
+def get_Mt_setting_by_id(id):
+	if MtSettingDictionary.has_key(id):
+		return MtSettingDictionary[id]
+	return None
+
+def get_chandi_setting_by_id(id):
+	if ChandiSettingDictionary.has_key(id):
+		return ChandiSettingDictionary[id]
+	return None
 
 def get_jiaogedi_name_by_id(id):
-	if id in JiaogeSettingDictionary:
+	if JiaogeSettingDictionary.has_key(id):
 		return JiaogeSettingDictionary[id].getName()
 	return ''
 

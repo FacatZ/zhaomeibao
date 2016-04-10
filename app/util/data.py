@@ -1,7 +1,7 @@
 #coding=utf-8
 from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
 from sqlalchemy import and_, or_
-from flask import request
+from flask import request, url_for
 from ..database import db_session
 import bleach
 import profile
@@ -242,3 +242,33 @@ def Mt_filter(id):
 
 	if id == 5034:
 		return and_(IndustryIndex.mt >= 30.0)
+
+
+def main_chandi(fenlei=1):
+	id_list_dict = {
+		1: [622, 406, 4136, 1992, 4334, 3235, 5104, 5105, 5102, 5101],
+		3: [406, 2197, 4588, 3561, 622, 5100, 5102], 
+		2: [406, 1036, 1992, 5101]
+	}
+	id_list = id_list_dict[fenlei]
+	chandi_list = map(lambda id: profile.get_chandi_setting_by_id(id), id_list)
+	chandi_dict = [{'name': setting.getName(), 'url': url_for('main.stock', chandi=setting.id, fenlei=fenlei)} for setting in chandi_list]
+	return chandi_dict
+
+def main_Qnet(fenlei=1):
+	id_list = [i+5000 for i in range(1, 8)]
+	Qnet_list = map(lambda id: profile.get_Qnet_setting_by_id(id), id_list)
+	Qnet_dict = [{'name': setting.getName(), 'url': url_for('main.stock', Qnet=setting.id, fenlei=fenlei)} for setting in Qnet_list]
+	return Qnet_dict
+
+def main_St(fenlei=1):
+	id_list = [i+5010 for i in range(1, 5)]
+	St_list = map(lambda id: profile.get_St_setting_by_id(id), id_list)
+	St_dict = [{'name': setting.getName(), 'url': url_for('main.stock', St=setting.id, fenlei=fenlei)} for setting in St_list]
+	return St_dict
+
+def main_Mt(fenlei=1):
+	id_list = [i+5030 for i in range(1, 5)]
+	Mt_list = map(lambda id: profile.get_Mt_setting_by_id(id), id_list)
+	Mt_dict = [{'name': setting.getName(), 'url': url_for('main.stock', Mt=setting.id, fenlei=fenlei)} for setting in Mt_list]
+	return Mt_dict
