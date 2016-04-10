@@ -12,7 +12,7 @@
 				<div class="top-class">
 					<ul>
 						{% for c in categorylist %}
-						<li {% if actgid == c.id%} class="active" {% endif %}><a href="{{url_for('main.spot_quotation', type=c.id)}}">{{c.name}}</a></li>
+						<li {% if type == c.id%} class="active" {% endif %}><a href="{{url_for('main.spot_quotation', type=c.id)}}">{{c.name}}</a></li>
 						{% endfor %}
 						
 					</ul>
