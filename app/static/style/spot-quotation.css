@@ -304,6 +304,10 @@
   	.stockButtonNextNext {
     	background-image: url("../spot-quotation/picture/stock13.png");
   	}
+  	.activeButton {
+  		color:#E4A15D;
+  		border-color: #E4A15D;
+  	}
 </style>
 
 

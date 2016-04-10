@@ -12,7 +12,7 @@
 				<div class="top-class">
 					<ul>
 						{% for c in categorylist %}
-						<li {% if type == c.id%} class="active" {% endif %}><a href="{{url_for('main.spot_quotation', type=c.id)}}">{{c.name}}</a></li>
+						<a href="{{url_for('main.spot_quotation', type=c.id)}}"><li {% if type == c.id%} class="active" {% endif %}>{{c.name}}</li></a>
 						{% endfor %}
 						
 					</ul>
@@ -20,7 +20,7 @@
 				</div>
 				<ul class="information-box show-box">
 				{% for a in articles %}
-					<div class="line-one-spot"><a href="{{url_for('main.article', id=a.id)}}"><p1>{{a.title}}</p1></a><p2>{{format_datetime(a.rldate)}}</p2></div>
+					<div class="line-one-spot"><a href="{{url_for('main.article', id=a.id)}}"><p1>{{a.title|article_title_filter}}</p1></a><p2>{{format_datetime(a.rldate)}}</p2></div>
 				{% endfor %}
 					
 				</ul>
@@ -71,7 +71,7 @@
 				{% for p in pagination.iter_pages() %}
 					{% if p %}
 						{% if p == pagination.page %}
-						<input type="button" class="stockButton" disabled="disabled" url="{{url_for('main.spot_quotation', page=p,count=count, type=type)}}" value="{{p}}">
+						<input type="button" class="stockButton activeButton" disabled="disabled" url="{{url_for('main.spot_quotation', page=p,count=count, type=type)}}" value="{{p}}">
 						{% else %}
 						<input type="button" class="stockButton" url="{{ url_for('main.spot_quotation', page=p, count=count,type=type)}}" value="{{p}}">
 						{% endif %}

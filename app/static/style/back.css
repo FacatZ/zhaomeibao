@@ -379,3 +379,7 @@ body {
 	text-align:center;
 	line-height:46px;
 }
+.activeButton {
+	color:#E4A15D;
+	border-color: #E4A15D;
+}

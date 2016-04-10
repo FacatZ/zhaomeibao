@@ -13,6 +13,10 @@ app = create_app('development')
 manager = Manager(app)
 
 
+@app.template_filter('article_title_filter')
+def article_title_filter(title):
+	return u'暂无标题' if not title or title == u'' else title
+
 @app.template_filter('productInformation_typeid_filter')
 def productInformation_typeid_filter(id):
 	id = str(id)

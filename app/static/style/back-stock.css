@@ -421,3 +421,7 @@ body {
 .stockButtonNextNext {
 	background-image: url("../back-stocks/picture/stock13.png");
 }
+.activeButton {
+	color:#E4A15D;
+	border-color: #E4A15D;
+}

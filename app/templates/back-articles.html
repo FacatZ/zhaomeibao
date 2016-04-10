@@ -45,7 +45,7 @@
     	<div class="checkboxNormal">
       	<input type="checkbox">
       	<div class="checkboxID">{{article.id}}</div>
-      	<div class="checkboxTitle">{{article.title}}</div>
+      	<div class="checkboxTitle">{{article.title|article_title_filter}}</div>
       	<div class="checkboxType">{{article.category.name}}</div>
       	<div class="checkboxOrigin">{{article.author.username}}</div>
       	<div class="checkboxDate">{{format_datetime(article.rldate)}}</div>
@@ -66,7 +66,7 @@
         {% for p in pagination.iter_pages() %}
           {% if p %}
             {% if p == pagination.page %}
-            <input type="button" class="stockButton" disabled="disabled" url="{{url_for('admin.article_list', page=p,count=count)}}" value="{{p}}">
+            <input type="button" class="stockButton activeButton" disabled="disabled" url="{{url_for('admin.article_list', page=p,count=count)}}" value="{{p}}">
             {% else %}
             <input type="button" class="stockButton" url="{{ url_for('admin.article_list', page=p, count=count)}}" value="{{p}}">
             {% endif %}

@@ -116,28 +116,9 @@
            </div>
            <div class="bd">
              <ul class="infoList">
-               <li><a href="#">c</a></li>
-               <li><a href="#">c++</a></li>
-               <li><a href="#">jsp</a></li>
-               <li><a href="#">css</a></li>
-               <li><a href="#">c#</a></li>
-               <li><a href="#">bootstrap</a></li>
-               <li><a href="#">superslide</a></li>
-               <li><a href="#">熊老师熊老师熊老师熊老师</a></li>
-               <li><a href="#">javascript</a></li>
-               <li><a href="#">熊老师熊老师熊老师</a></li>
-               <li><a href="#">php</a></li>
-               <li><a href="#">html</a></li>
-               <li><a href="#">熊老师熊老师熊老师熊老师</a></li>
-               <li><a href="#">java</a></li>
-               <li><a href="#">熊老师熊老师熊老师</a></li>
-               <li><a href="#">熊老师熊老师</a></li>
-               <li><a href="#">熊老师熊老师熊老师</a></li>
-               <li><a href="#">张老汉张老汉张老汉张老汉</a></li>
-               <li><a href="#">python</a></li>
-               <li><a href="#">张老汉张老汉张老汉</a></li>
-               <li><a href="#">张老汉张老汉张老汉张老汉</a></li>
-               <li><a href="#">张老汉张老汉张老汉张老汉</a></li>
+             {% for a in article %}
+               <li><a href="{{url_for('main.article', id=a.id)}}">{{a.title|article_title_filter}}</a></li>
+              {% endfor %}
              </ul>
            </div>
          </div>

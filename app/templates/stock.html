@@ -195,7 +195,7 @@
 				{% for p in pagination.iter_pages() %}
 					{% if p %}
 						{% if p == pagination.page %}
-						<input type="button" class="stockButton" disabled="disabled" url="{{url_for('main.stock', page=p,count=count, fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}" value="{{p}}">
+						<input type="button" class="stockButton activeButton" disabled="disabled" url="{{url_for('main.stock', page=p,count=count, fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}" value="{{p}}">
 						{% else %}
 						<input type="button" class="stockButton" url="{{ url_for('main.stock', page=p, count=count,fenlei=fenlei_query_string, chandi=chandi_query_string, jiaogedi=jiaogedi_query_string, Qnet=Qnet_query_string, St=St_query_string, V=V_query_string, Mt=Mt_query_string)}}" value="{{p}}">
 						{% endif %}

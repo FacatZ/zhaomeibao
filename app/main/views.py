@@ -38,9 +38,11 @@ def index():
 	lianjiao_all = c.productInformation.order_by(ProductInformation.rldate.desc()).limit(15)
 	lianjiao_all = [p.to_brief_json() for p in lianjiao_all]
 
+	article = Article.query.order_by(Article.hits.desc()).limit(10)
+
 	return render_template('main.html', activeid=activeid, dongli_huadong=dongli_huadong,
 				dongli_huabei=dongli_huabei, dongli_huanan=dongli_huanan, dongli_other=dongli_other,
-				wuyan_all=wuyan_all, lianjiao_all=lianjiao_all)
+				wuyan_all=wuyan_all, lianjiao_all=lianjiao_all, article=article)
 
 @main.route('/stock')
 def stock():

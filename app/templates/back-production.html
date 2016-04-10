@@ -68,7 +68,7 @@
         {% for p in pagination.iter_pages() %}
           {% if p %}
             {% if p == pagination.page %}
-            <input type="button" class="stockButton" disabled="disabled" url="{{url_for('admin.product_list', page=p,count=count)}}" value="{{p}}">
+            <input type="button" class="stockButton activeButton" disabled="disabled" url="{{url_for('admin.product_list', page=p,count=count)}}" value="{{p}}">
             {% else %}
             <input type="button" class="stockButton" url="{{ url_for('admin.product_list', page=p, count=count)}}" value="{{p}}">
             {% endif %}
