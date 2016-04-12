@@ -1,4 +1,14 @@
 Flask==0.10.1
 Flask-Login==0.2.7
+Flask-Script==2.0.5
+Jinja2==2.8
+MarkupSafe==0.23
 SQLAlchemy==0.9.9
-Flask-script==2.0.5
+Werkzeug==0.11.4
+argparse==1.2.1
+bleach==1.4.2
+gunicorn==19.4.5
+html5lib==0.9999999
+itsdangerous==0.24
+six==1.10.0
+wsgiref==0.1.2

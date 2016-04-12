@@ -14,7 +14,6 @@ from ..database import db_session
 def admin_login():
 	username = request.form.get('name', '', type=str)
 	password = request.form.get('password', '', type=str)
-	print request.form
 	user = User.query.filter_by( username=username).first()
 	if not user:
 		return jsonify({'statecode': 404})
@@ -37,7 +36,6 @@ def get_coal_type_by_area_id(coalType, areaid):
 						.filter(ProductInformation.areaid==areaid) \
 						.all()#.offset((page-1)*count).limit(count)
 
-		print productInfo
 
 		if not productInfo:
 			return jsonify({'statecode': 404})
@@ -47,7 +45,6 @@ def get_coal_type_by_area_id(coalType, areaid):
 			'info': [ product.to_brief_json() for product in productInfo]
 			})
 	except Exception, e:
-		print e
 		return jsonify({'statecode': 404})
 
 #api below belong to admin account
@@ -125,9 +122,7 @@ def admin_publish_product():
 
 	indIndex = data.processingIndustrialIndex()
 	productInfo = data.processingProductInformation()
-	print '-----------'
-	print indIndex
-	print productInfo
+
 	if not indIndex or not productInfo:
 		return jsonify({'statecode': 406})
 	user = current_user._get_current_object()
@@ -148,7 +143,6 @@ def admin_publish_product():
 			})
 	except Exception, e:
 		db_session.rollback()
-		print e
 		return jsonify({'statecode': 406})
 
 
