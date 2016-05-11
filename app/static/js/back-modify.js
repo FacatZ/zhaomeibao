@@ -58,52 +58,75 @@ $(document).ready(function(){
 		$("#onsale").text("1");
 	});
 
+	$('#price').change(function(){
+		if($('#price').val()<0){
+			alert('价格数据错误');
+			$('#price').val('0');
+		}
+	});
+	$('#count').change(function(){
+		if($('#count').val()<0){
+			alert('数量数据错误');
+			$('#count').val('0');
+		}
+	});
+	$('#stock').change(function(){
+		if($('#stock').val()<0){
+			alert('库存数据错误');
+			$('#stock').val('0');
+		}
+	});
+
 	$("#btn-publish").click(function(){
-		$.post('/api/admin/modify/product/' + pdid,{
-			'typeid' : $("#infor_ctgid").text(),
-			'paytype' : $("#paytype").text(),
-			'pdtype' : $("#pdtype").text(),
-			'onsale' : $("#onsale").text(),
-			ctgid : $("#ctgid").val(),
-			indid : $("#indid").val(),
-			stock : $("#stock").val(),
-			vldterm : $("#vldterm").val(),
-			dppid : $("#dppid").val(),
-			dpcid : $("#dpcid").val(),
-			pdpid : $("#pdpid").val(),
-			pdcid : $("#pdcid").val(),
-			dpaddr : $("#dpaddr").val(),
-			prtype : $("#prtype").val(),
-			prpid : $("#prpid").val(),
-			prcid : $("#prcid").val(),
-			coal : $("#coal").val(),
-			count : $("#count").val(),
-			price : $("#price").val(),
-			remark : $("#remark").val(),
-			mt : $("#mt").val(),
-			aar : $("#aar").val(),
-			star : $("#star").val(),
-			mad : $("#mad").val(),
-			aad : $("#aad").val(),
-			stad : $("#stad").val(),
-			varr : $("#varr").val(),
-			fcar : $("#fcar").val(),
-			qnetar : $("#qnetar").val(),
-			vad : $("#vad").val(),
-			fcad : $("#fcad").val(),
-			qnetad : $("#qnetad").val(),
-			vdaf : $("#vdaf").val(),
-			szuplm : $("#szuplm").val(),
-			szlowlm : $("#szlowlm").val(),
-			szppt : $("#szppt").val(),
-		},function(result){
-			if(result.statecode == 200 ){
-				alert("提交成功！");
-				window.location.href = result.url;
-			} else {
-				alert("提交失败！错误代码："+result.statecode);
-			}
-		});
+		if(arr.eq(14).val()<arr.eq(13).val()){
+			alert('数据错误:颗度极大值不能小于极小值');
+		}else{
+			$.post('/api/admin/modify/product/' + pdid,{
+				'typeid' : $("#infor_ctgid").text(),
+				'paytype' : $("#paytype").text(),
+				'pdtype' : $("#pdtype").text(),
+				'onsale' : $("#onsale").text(),
+				ctgid : $("#ctgid").val(),
+				indid : $("#indid").val(),
+				stock : $("#stock").val(),
+				vldterm : $("#vldterm").val(),
+				dppid : $("#dppid").val(),
+				dpcid : $("#dpcid").val(),
+				pdpid : $("#pdpid").val(),
+				pdcid : $("#pdcid").val(),
+				dpaddr : $("#dpaddr").val(),
+				prtype : $("#prtype").val(),
+				prpid : $("#prpid").val(),
+				prcid : $("#prcid").val(),
+				coal : $("#coal").val(),
+				count : $("#count").val(),
+				price : $("#price").val(),
+				remark : $("#remark").val(),
+				mt : $("#mt").val(),
+				aar : $("#aar").val(),
+				star : $("#star").val(),
+				mad : $("#mad").val(),
+				aad : $("#aad").val(),
+				stad : $("#stad").val(),
+				varr : $("#varr").val(),
+				fcar : $("#fcar").val(),
+				qnetar : $("#qnetar").val(),
+				vad : $("#vad").val(),
+				fcad : $("#fcad").val(),
+				qnetad : $("#qnetad").val(),
+				vdaf : $("#vdaf").val(),
+				szuplm : $("#szuplm").val(),
+				szlowlm : $("#szlowlm").val(),
+				szppt : $("#szppt").val(),
+			},function(result){
+				if(result.statecode == 200 ){
+					alert("提交成功！");
+					window.location.href = result.url;
+				} else {
+					alert("提交失败！错误代码："+result.statecode);
+				}
+			});
+		}
 	});
 
 	$(".change_p1").click(function(){
@@ -120,5 +143,103 @@ $(document).ready(function(){
 		$(".span_add3").css("display","none");
 		$(".change_p3").css("display","none");
 		$("#hide3").css("display","block");
+	});
+
+	var arr = $('.value_checked');
+	arr.eq(0).change(function(){
+		if(0>arr.eq(0).val()||arr.eq(0).val()>60){
+			alert('数据错误:全水份(Mt) 0.00% ~ 60.00%');
+			arr.eq(0).val('0.0');
+		}
+	});
+	arr.eq(1).change(function(){
+		if(0>arr.eq(1).val()||arr.eq(1).val()>60){
+			alert('数据错误:收到基(Aar) 0.00% ~ 60.00%');
+			arr.eq(1).val('0.0');
+		}
+	});
+	arr.eq(2).change(function(){
+		if(0>arr.eq(2).val()||arr.eq(2).val()>10){
+			alert('数据错误:收到基(Star) 0.00% ~ 10.00%');
+			arr.eq(2).val('0.0');
+		}
+	});
+	arr.eq(3).change(function(){
+		if(0>arr.eq(3).val()||arr.eq(3).val()>20){
+			alert('数据错误:内水(Mad) 0.00% ~ 20.00%');
+			arr.eq(3).val('0.0');
+		}
+	});
+	arr.eq(4).change(function(){
+		if(0>arr.eq(4).val()||arr.eq(4).val()>60){
+			alert('数据错误:空干基(Aad) 0.00% ~ 60.00%');
+			arr.eq(4).val('0.0');
+		}
+	});
+	arr.eq(5).change(function(){
+		if(0>arr.eq(5).val()||arr.eq(5).val()>10){
+			alert('数据错误:空干基(Stad) 0.00% ~ 10.00%');
+			arr.eq(5).val('0.0');
+		}
+	});
+	arr.eq(6).change(function(){
+		if(0>arr.eq(6).val()||arr.eq(6).val()>60){
+			alert('数据错误:收到基(Var) 0.00% ~ 60.00%');
+			arr.eq(6).val('0.0');
+		}
+	});
+	arr.eq(7).change(function(){
+		if(0>arr.eq(7).val()||arr.eq(7).val()>100){
+			alert('数据错误:收到基(Fcar) 0.00% ~ 100.00%');
+			arr.eq(7).val('0.0');
+		}
+	});
+	arr.eq(8).change(function(){
+		if(2000>arr.eq(8).val()||arr.eq(8).val()>9000){
+			alert('数据错误:收到基(Qnetar) 2000 ~ 9000');
+			arr.eq(8).val('2000');
+		}
+	});
+	arr.eq(9).change(function(){
+		if(0>arr.eq(9).val()||arr.eq(9).val()>60){
+			alert('数据错误:空干基(Vad) 0.00% ~ 60.00%');
+			arr.eq(9).val('0.0');
+		}
+	});
+	arr.eq(10).change(function(){
+		if(0>arr.eq(10).val()||arr.eq(10).val()>100){
+			alert('数据错误:空干基(Fcad) 0.00% ~ 100.00%');
+			arr.eq(10).val('0.0');
+		}
+	});
+	arr.eq(11).change(function(){
+		if(0>arr.eq(11).val()||arr.eq(11).val()>9000){
+			alert('数据错误:空干基(Qnetad) 0 ~ 9000');
+			arr.eq(11).val('0');
+		}
+	});
+	arr.eq(12).change(function(){
+		if(0>arr.eq(12).val()||arr.eq(12).val()>60){
+			alert('数据错误:干燥无灰基(Vdaf) 0.00% ~ 60.00%');
+			arr.eq(12).val('0.0');
+		}
+	});
+	arr.eq(13).change(function(){
+		if(0>arr.eq(13).val()||arr.eq(13).val()>9000){
+			alert('数据错误:颗度极小值 0 ~ 9000');
+			arr.eq(13).val('0.0');
+		}
+	});
+	arr.eq(14).change(function(){
+		if(0>arr.eq(14).val()||arr.eq(14).val()>9000){
+			alert('数据错误:颗度极大值 0 ~ 9000');
+			arr.eq(14).val('0.0');
+		}
+	});
+	arr.eq(15).change(function(){
+		if(0>arr.eq(15).val()||arr.eq(15).val()>100){
+			alert('数据错误:颗度极大值 0.00% ~ 100.00%');
+			arr.eq(15).val('0.0');
+		}
 	});
 });
