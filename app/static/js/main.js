@@ -1,9 +1,11 @@
 $(document).ready(function(){
     var a = $(".ui_asideMenu").offset().left;
     var b = a+250;
+    var c = a+1150;
     $(".action-imformation").css("left",b);
     $(".nosmoke-imformation").css("left",b);
     $(".fire-imformation").css("left",b);
+    $(".suspend").css("left",c);
 
   $(".action").mouseover(function(){
     $(".action").css("background-image","url(/static/main/picture/change_cut_23.png)");
@@ -54,7 +56,9 @@ $(document).ready(function(){
   $(window).resize(function(){
     var a = $(".ui_asideMenu").offset().left;
     var b = a+250;
+    var c = a+1120;
     $(".action-imformation").css("left",b);
+    $(".suspend").css("left",c);
   });
   $(window).resize(function(){
     var a = $(".ui_asideMenu").offset().left;

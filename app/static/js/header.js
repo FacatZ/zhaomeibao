@@ -1,14 +1,14 @@
 $(document).ready(function(){
   var a = $(".top").offset().left;
   var b = a+730;
-  var c = a+840;
+  var c = a+895;
   $(".shift-hide").css("left",b);
   $(".help-hide").css("left",c);
 
   $(window).resize(function(){
     var d = $(".top").offset().left;
     var e = d+730;
-    var f = d+840;
+    var f = d+895;
     // console.log(e);
     $(".shift-hide").css("left",e);
     $(".help-hide").css("left",f);

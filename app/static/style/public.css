@@ -110,12 +110,25 @@
   .help-hide{
     position:absolute;
     height:100px;
-    width:200px;
+    width:109px;
     background-color:rgb(243,243,243);
     top:50px;
     left:930px;
     border-radius:0 0 10px 10px;
     display:none;
+  }
+  .help-hide a{
+    margin-top:5px;
+    height:40px;
+    width:109px;
+    float:left;
+    font-size:16px;
+    padding:10px;
+    text-align:center;
+    color:#3078BE;
+  }
+  .help-hide a:hover{
+    color:#E4A15D;
   }
   .logo img{
     margin-left:20px;

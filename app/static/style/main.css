@@ -1023,5 +1023,18 @@
         text-align:center;
         float:left;
       }
+      .suspend{
+        position:fixed;
+        width:54px;
+        height:180px;
+        top:500px;
+      }
+      .suspend img{
+        margin-bottom:5px;
+        width:54px;
+        height:54px;
+        cursor:pointer;
+        opacity:0.8;
+      }
 </style>
 
