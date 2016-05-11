@@ -28,6 +28,7 @@
 	}
 	span{
 		float:left;
+		margin-left:5px;
 	}
 	.main{
 		width:1258px;
@@ -64,12 +65,12 @@
 		border-top:none;
 		border-color:rgb(193,211,229);
 		float:left;
-		height:320px;
+		height:314px;
 		width:900px;
 	}
 	.table-one p1{
 		width:99px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -78,13 +79,13 @@
 		padding:0px;
 		float:left;
 		text-align:center;
-		padding-top:5px;
+		padding-top:10px;
 		color:black;
-		font-size:20px;
+		font-size:16px;
 	}
 	.table-one p2{
 		width:349px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -95,11 +96,11 @@
 		/*text-align:center;*/
 		padding-top:5px;
 		color:black;
-		font-size:20px;
+		font-size:16px;
 	}
 	.table-one p3{
 		width:799px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -112,8 +113,15 @@
 		color:black;
 		font-size:20px;
 	}
+	.table-height{
+		padding-top: 10px !important;
+	}
+	.font-height{
+		margin-top:5px !important;
+	}
 	#left_move{
 		margin-left:10px;
+		margin-top:5px;
 	}
 	#age{
 		width:100px;
@@ -122,8 +130,8 @@
 
 	}
 	.table-three{
-		width:900px;
-		height:240px;
+		width:897px;
+		height:236px;
 		text-align:center;
 		color:black;
 		border:1px solid;
@@ -141,7 +149,7 @@
 		border-top:none !important;
 	}
 	.first-blue{
-		width:889px;
+		width:896px;
 		height:39px;
 		float:left;
 		color:white;
@@ -156,9 +164,9 @@
 	}
 	.left-big-one{
 		width:99px;
-		padding-top:10px;
-		font-size:28px;
-		height:69px;
+		padding-top:25px;
+		font-size:16px;
+		height:78px;
 		float:left;
 		border:1px solid;
 		border-color:rgb(193,211,229);
@@ -167,9 +175,9 @@
 	}
 	.left-big-two{
 		width:99px;
-		padding-top:10px;
-		font-size:28px;
-		height:109px;
+		padding-top:45px;
+		font-size:16px;
+		height:119px;
 		float:left;
 		border:1px solid;
 		border-color:rgb(193,211,229);
@@ -178,7 +186,7 @@
 	}
 	.table-three p1{
 		width:199px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -194,7 +202,7 @@
 	}
 	.table-three p2{
 		width:99px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -209,8 +217,8 @@
 		font-size:16px;
 	}
 	.table-three p3{
-		width:299px;
-		height:34px;
+		width:298px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -226,7 +234,7 @@
 	}
 	.table-three p4{
 		width:399px;
-		height:34px;
+		height:39px;
 		border:1px solid;
 		border-color:rgb(193,211,229);
 		border-bottom:none;
@@ -295,10 +303,15 @@
 		width:180px;
 	}
 	#style,#infor_ctgid0,#infor_ctgid1,#paytype0,#paytype1,#paytype2,#pdtype0,#pdtype1,#onsale0,#onsale1{
-		margin-top:7px !important;
-		margin-right:10px !important;
+		margin-top:3px !important;
+		/* margin-right:5px !important; */
 		width:20px !important;
 		height:20px !important;
+		margin-left:5px;
+		border:none;
+	}
+	#infor_ctgid0,#paytype0,#pdtype0,#onsale0{
+		margin-left: 10px;
 	}
 	#stock{
 		margin-right:10px;
@@ -369,24 +382,26 @@
 	}
 	.span_add1,.span_add2,.span_add3{
 		margin-left:10px;
+		margin-top:5px;
 		float:left;
 	}
 	.change_p1,.change_p2,.change_p3{
-		width:60px;
-		height:30px;
+		width:50px;
+		height:25px;
 		background-color:#3084BE;
 		text-align:center;
 		color:white;
 		float:left;
 		border-radius:5px;
 		margin-left:10px;
+		margin-top:4px;
 		cursor:pointer;
 	}
 	#hide1,#hide2,#hide3{
 		display:none;
 		float:left;
 	}
-	#ctgid,#prtype{
+	/*#ctgid,#prtype{
 		margin-top:0px;
 		border: solid 1px #000;
   		border-color:#AAA9A8;
@@ -402,4 +417,23 @@
   		padding-left:10px;
   		outline:none;
   		font-size:18px;
+	}*/
+	#ctgid,#prtype{
+		margin: 0px;
+		width: 130px;
+		margin-left:10px;
+	}
+	.form-control{
+		width:100px;
+		height:30px;
+		padding:4px 10px;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
 	}
