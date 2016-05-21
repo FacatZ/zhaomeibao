@@ -9,7 +9,7 @@ from app.models import User, ProductInformation, Category, IndustryIndex, Articl
 from flask.ext.login import login_user
 from app.util.location import location
 
-app = create_app('development')
+app = create_app('product')
 manager = Manager(app)
 
 

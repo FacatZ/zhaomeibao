@@ -11,7 +11,7 @@ class DevelopmentConfig(Config):
 
 class ProductConfig(Config):
 	DEBUG = False
-	DB_PATH = ''  #None for now
+	DB_PATH = 'sqlite:///product.db'  #None for now
 
 config = {
 	'development': DevelopmentConfig,

@@ -1,7 +1,8 @@
 #coding=utf-8
 from sqlalchemy import create_engine
 from flask import current_app
-engine = create_engine('sqlite:///test.db', convert_unicode=True, echo=False)
+# engine = create_engine('sqlite:///test.db', convert_unicode=True, echo=False)
+engine = create_engine('sqlite:///product.db', convert_unicode=True, echo=False)
 
 from sqlalchemy.orm import scoped_session, sessionmaker
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
@@ -71,7 +72,7 @@ def init_db():
 		print 'init coal category failed'
 
 	#create an admin count
-	admin = models.User(username='admin', password='admin', permissions=0xFF)
+	admin = models.User(username='admin', password='admin2zhaomeibao', permissions=0xFF)
 	db_session.add(admin)
 	try:
 		db_session.commit()
