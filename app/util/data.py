@@ -1,5 +1,5 @@
 #coding=utf-8
-from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
+from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, SupportRecord, DemandRecord
 from sqlalchemy import and_, or_
 from flask import request, url_for
 from ..database import db_session
@@ -155,32 +155,33 @@ def filterUserInput(value):
 
 
 
-def generate_unique_serial_number(pdtype=0):
+def generate_unique_serial_number(pdtype=0, gross=0):
 	import datetime
 
 	print '-----pdtype:',pdtype
-	ordernum = 'GH' if pdtype == 1 else 'XQ'
-	ghorder = OrderNumberRecord.query.filter_by(pdtype=pdtype).first()
+	if pdtype == 1:
+		ordernum = 'GH'
+		Record = DemandRecord
+	else:
+		ordernum = 'XQ'
+		Record = SupportRecord
+	today = datetime.date.today()
+	today = datetime.datetime(today.year, today.month, today.day)
+	ghorder = Record.query.filter(Record.record_date == today).first()
 
 	if not ghorder:
-		return None
+		ghorder = Record(record_date=today, count=0, gross=0)
 
-	last_date = ghorder.last_date
-	count = ghorder.count
+	last_date = today
+	count = ghorder.count + 1
 
-	today = datetime.date.today()
-	if str(today) > str(last_date).split(' ')[0]:
-		last_date = today
-		ghorder.last_date = today
-		count = 1
-	else:
-		count = count + 1
 	ghorder.count = count
+	ghorder.gross += gross
+
 	db_session.add(ghorder)
 	db_session.commit()
 
 	ordernum = ordernum + ''.join(str(today).split(' ')[0].split('-')) + '{count:06}'.format(count=count)
-	print ordernum
 	return ordernum
 
 def Qnet_filter(id):

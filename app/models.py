@@ -312,10 +312,28 @@ class Article(Base):
         }
 
 
-class OrderNumberRecord(Base):
-    __tablename__ = 'ordernumberrecords'
+class SupportRecord(Base):
+
+    __tablename__ = 'supportrecords'
 
     id = Column(Integer, primary_key=True)
-    last_date = Column(DateTime)
+    record_date = Column(DateTime)
     count = Column(Integer)
-    pdtype = Column(Integer)
+    gross = Column(Integer)
+
+    def __repr__(self):
+        return '<%s\t%d\t%d>' %(str(self.record_date).split(' ')[0], self.count, self.gross)
+
+
+class DemandRecord(Base):
+
+    __tablename__ = 'demandrecords'
+
+    id = Column(Integer, primary_key=True)
+    record_date = Column(DateTime)
+    count = Column(Integer)
+    gross = Column(Integer)
+
+
+    def __repr__(self):
+        return '<%s\t%d\t%d>' %(str(self.record_date).split(' ')[0], self.count, self.gross)

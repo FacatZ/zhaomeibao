@@ -1,16 +1,40 @@
 #coding=utf-8
 from app import create_app
-from app.database import db_session
 from flask.ext.script import Manager, Shell
-# from app.models import User
-from app.database import db_session, init_db, generate_fake_articles
+from app.database import db_session
+from app.database import init_db as database_init_db
 from app.util import resources
-from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article, OrderNumberRecord
+from app.models import User, ProductInformation, Category, IndustryIndex, ArticleCategory, Article
 from flask.ext.login import login_user
 from app.util.location import location
 
 app = create_app('product')
 manager = Manager(app)
+
+
+@manager.command
+def create_superuser():
+	import getpass
+	username = raw_input('username: ')
+	pwd = getpass.getpass('password: ')
+	pwd_again = getpass.getpass('password(again): ')
+	if pwd != pwd_again:
+		print 'Fail to create super user. Please type the same password'
+		return 
+
+	admin = User(username=username, password=pwd, permissions=0xFF)
+	db_session.add(admin)
+	try:
+		db_session.commit()
+	except Exception, e:
+		db_session.rollback()
+		print 'Create admin count failed.'
+		print e
+	print 'Super user created successfully'
+
+@manager.command
+def init_db():
+	database_init_db()
 
 
 @app.template_filter('article_title_filter')
@@ -130,8 +154,8 @@ def article_context_processor():
 	return dict(get_article_context_or_none=get_article_context_or_none)
 
 def make_shell_context():
-    return dict(app=app, db_session=db_session, init_db=init_db, User=User, ProductInformation=ProductInformation, Category=Category, IndustryIndex=IndustryIndex, ArticleCategory=ArticleCategory, Article=Article, \
-    		generate_fake_articles=generate_fake_articles, OrderNumberRecord=OrderNumberRecord)
+    return dict(app=app, db_session=db_session, User=User, ProductInformation=ProductInformation, Category=Category, IndustryIndex=IndustryIndex, ArticleCategory=ArticleCategory, Article=Article, \
+    		generate_fake_articles=generate_fake_articles)
 manager.add_command('shell', Shell(make_context=make_shell_context))
 
 if __name__ == '__main__':
